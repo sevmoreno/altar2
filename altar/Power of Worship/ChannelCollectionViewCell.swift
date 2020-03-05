@@ -1,0 +1,194 @@
+//
+//  ChannelCollectionViewCell.swift
+//  altar
+//
+//  Created by Juan Moreno on 2/12/20.
+//  Copyright © 2020 Juan Moreno. All rights reserved.
+//
+
+import UIKit
+
+class ChannelCollectionViewCell: UICollectionViewCell {
+    
+
+        
+        var post: wChannel? {
+            
+            didSet {
+               
+                  guard let imagenDevo = post!.photoURL else { return }
+                
+                 imagenDevocional.loadImage(urlString: imagenDevo)
+                
+                guard let titulotext = post?.title else { return }
+                
+                titulo.text = titulotext
+                
+                
+                subTitulo.text = post?.subtitle
+                
+                let fecha = post?.creationDate
+                         //  let fecha = Date(milliseconds: Int64(post?.creationDate ?? 0))
+                           
+                praysDate.text = "Selected"
+                
+                if post?.channelID == advengers.shared.currentChurchInfo.channelActive {
+                    
+                    praysDate.text = "Selected"
+                } else {
+                    
+                    praysDate.text = ""
+                }
+                /*
+                
+                guard let postImageUrl = post?.photoImage else { return }
+          
+                
+                photoImageView.loadImage(urlString: postImageUrl)
+
+                usernameLabel.text = post?.author
+                guard let profileuserURL = post?.userPhoto else {return}
+                userProfileImageView.loadImage(urlString: profileuserURL)
+
+
+                // --------------- CODE POST DESIGN   --------------------------
+                if post!.likes  > 0 {
+                    likeButton.setImage(UIImage(named: "cellprayiconRed")?.withRenderingMode(.alwaysOriginal), for: .normal)
+                
+                } else {
+                    
+                    likeButton.setImage(UIImage(named: "cellPrayIcon")?.withRenderingMode(.alwaysOriginal), for: .normal)
+                }
+                
+                likeCount.text = " " + String(post!.likes) + " Praying "
+                
+                if let tiene = post?.comments {
+                commentCount.text = String(tiene)
+                }
+                
+                let fecha = post?.creationDate
+              //  let fecha = Date(milliseconds: Int64(post?.creationDate ?? 0))
+                
+                praysDate.text = fecha!.timeAgoDisplay()
+                
+                // ==========================================================
+                setupAttributedCaption()
+                
+               */
+            }
+            
+
+        }
+        
+        
+        
+        
+        lazy var imagenDevocional: CustomImageView = {
+            let iv = CustomImageView()
+            
+            
+            iv.contentMode = .scaleToFill
+            
+            iv.clipsToBounds = true
+            iv.layer.masksToBounds = true
+            iv.contentMode = .scaleAspectFit
+            iv.layer.cornerRadius = 22
+ 
+            return iv
+        }()
+        
+        lazy var titulo: UILabel = {
+                  let label2 = UILabel ()
+                  label2.font = UIFont(name: "Avenir-Black", size: 25)
+                  label2.text = "You prayed 1"
+               label2.textColor = .white
+               //   button.setImage(UIImage(named: "cellPrayIcon")?.withRenderingMode(.alwaysOriginal), for: .normal)
+                 // button.addTarget(self, action: #selector(handleLike), for: .touchUpInside)
+                  return label2
+              }()
+        
+        lazy var praysDate: UILabel = {
+                     let label2 = UILabel ()
+                     label2.font = UIFont(name: "Avenir-Medium", size: 12)
+                     label2.text = ""
+                     label2.textColor = .white
+                     label2.layer.backgroundColor = advengers.shared.colorOrange.cgColor
+            label2.layer.cornerRadius = 5
+            label2.padding = UIEdgeInsets(top: 4, left: 4, bottom: 4, right: 4)
+                  //   button.setImage(UIImage(named: "cellPrayIcon")?.withRenderingMode(.alwaysOriginal), for: .normal)
+                    // button.addTarget(self, action: #selector(handleLike), for: .touchUpInside)
+                     return label2
+                 }()
+    
+    lazy var subTitulo: UILabel = {
+        let label2 = UILabel ()
+        label2.font = UIFont(name: "Avenir-Medium", size: 14)
+        label2.text = "Instrumentl Praise & Worship"
+     label2.textColor = .white
+        label2.alpha = 0.8
+     //   button.setImage(UIImage(named: "cellPrayIcon")?.withRenderingMode(.alwaysOriginal), for: .normal)
+       // button.addTarget(self, action: #selector(handleLike), for: .touchUpInside)
+        return label2
+    }()
+        
+        
+        override init(frame: CGRect) {
+            super.init(frame: frame)
+            
+        addSubview(imagenDevocional)
+            
+            imagenDevocional.contentMode = .scaleAspectFill
+            imagenDevocional.anchor(top: topAnchor, left: leftAnchor, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: frame.width,height: frame.height)
+            
+            addSubview(titulo)
+            
+            titulo.anchor(top: nil, left: leftAnchor, bottom: bottomAnchor, right: nil, paddingTop: 0, paddingLeft: 15, paddingBottom: 30, paddingRight: 0, width: 0, height: 0)
+           // titulo.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+            
+            addSubview(subTitulo)
+            
+            
+            subTitulo.anchor(top: titulo.bottomAnchor, left: titulo.leftAnchor, bottom: nil, right: nil, paddingTop: 4, paddingLeft: 0, paddingBottom: 30, paddingRight: 0, width: 0, height: 0)
+            
+            
+          //  imagenDevocional.image = UIImage(named: "devoback1")
+            
+            
+            addSubview(praysDate)
+            praysDate.anchor(top: nil, left: titulo.leftAnchor, bottom: titulo.topAnchor, right: nil, paddingTop: 0, paddingLeft: 0, paddingBottom: 10, paddingRight: 0, width: 0, height: 0)
+            
+            //titulo.heightAnchor.constraint(equalToConstant: 140).isActive = true
+           // titulo.widthAnchor.constraint(equalToConstant: 140).isActive = true
+          //  titulo.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+         //   titulo.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 40).isActive = true
+
+            
+    //        addSubview(imagenDevocional)
+    //
+    //        addSubview(titulo)
+    //
+    ////        imagenDevocional.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: imagenDevocional.frame.width, height: 0)
+    ////
+    ////        titulo.anchor(top: nil, left: leftAnchor, bottom: imagenDevocional.bottomAnchor, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 10, paddingRight: 0, width: 0, height: 0)
+    //
+    //        addSubview(imagenDevocional)
+    //        imagenDevocional.translatesAutoresizingMaskIntoConstraints = false
+    //
+    //        imagenDevocional.heightAnchor.constraint(equalToConstant: 140).isActive = true
+    //        imagenDevocional.widthAnchor.constraint(equalToConstant: 140).isActive = true
+    //        imagenDevocional.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+    //        imagenDevocional.topAnchor.constraint(equalTo: topAnchor, constant: 0).isActive = true
+    ////
+    //
+           
+        }
+        
+        required init?(coder: NSCoder) {
+            fatalError("init(coder:) has not been implemented")
+        }
+ 
+    
+    
+    
+    
+}

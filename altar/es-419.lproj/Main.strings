@@ -1,0 +1,153 @@
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "03H-q2-U51"; */
+"03H-q2-U51.title" = "Item";
+
+/* Class = "UIButton"; normalTitle = "Edit Picture"; ObjectID = "1MM-qv-I2B"; */
+"1MM-qv-I2B.normalTitle" = "Edit Picture";
+
+/* Class = "UILabel"; text = "Full Name"; ObjectID = "1oU-4q-a5u"; */
+"1oU-4q-a5u.text" = "Full Name";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "2XX-0u-S6X"; */
+"2XX-0u-S6X.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "3Ms-Cc-2wM"; */
+"3Ms-Cc-2wM.text" = "Label";
+
+/* Class = "UITabBarItem"; title = "Power of Pray"; ObjectID = "53m-hi-SVr"; */
+"53m-hi-SVr.title" = "Power of Pray";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "5e4-Yk-Fsu"; */
+"5e4-Yk-Fsu.placeholder" = "Email";
+
+/* Class = "UIButton"; normalTitle = "Style5"; ObjectID = "7Ct-HX-F72"; */
+"7Ct-HX-F72.normalTitle" = "Style5";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "89g-8m-uDk"; */
+"89g-8m-uDk.title" = "Item";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "8RK-md-cSH"; */
+"8RK-md-cSH.text" = "Label";
+
+/* Class = "UIBarButtonItem"; title = "Add prayer"; ObjectID = "BEb-rR-cC1"; */
+"BEb-rR-cC1.title" = "Add prayer";
+
+/* Class = "UIButton"; normalTitle = "Photo/Video"; ObjectID = "Csx-GS-71j"; */
+"Csx-GS-71j.normalTitle" = "Photo/Video";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "GKh-Ge-m98"; */
+"GKh-Ge-m98.text" = "Label";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "Gxn-Ua-1xY"; */
+"Gxn-Ua-1xY.title" = "Item";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "HwI-PK-bSy"; */
+"HwI-PK-bSy.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "KgI-o4-j0o"; */
+"KgI-o4-j0o.text" = "Label";
+
+/* Class = "UITextField"; placeholder = "Name"; ObjectID = "Kr5-C7-chO"; */
+"Kr5-C7-chO.placeholder" = "Name";
+
+/* Class = "UILabel"; text = "The only thing that I see that is distinctly different from me is: I'm not afraid to die on a treadmill. I will not be outworked, period. You might have more talent than me, you might be smarter than me, you might be sexier than me."; ObjectID = "L3R-ks-JIL"; */
+"L3R-ks-JIL.text" = "The only thing that I see that is distinctly different from me is: I'm not afraid to die on a treadmill. I will not be outworked, period. You might have more talent than me, you might be smarter than me, you might be sexier than me.";
+
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit "; ObjectID = "LIw-gw-FZc"; */
+"LIw-gw-FZc.text" = "Lorem ipsum dolor sit er elit ";
+
+/* Class = "UIButton"; normalTitle = "Background image"; ObjectID = "Nmy-ys-uJV"; */
+"Nmy-ys-uJV.normalTitle" = "Background image";
+
+/* Class = "UIButton"; normalTitle = "Sing in"; ObjectID = "O0A-1R-zTG"; */
+"O0A-1R-zTG.normalTitle" = "Sing in";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "OHc-3R-AJq"; */
+"OHc-3R-AJq.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "OXC-za-Q6Q"; */
+"OXC-za-Q6Q.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Style4"; ObjectID = "Onz-fe-qtF"; */
+"Onz-fe-qtF.normalTitle" = "Style4";
+
+/* Class = "UIButton"; normalTitle = "Post"; ObjectID = "QHy-37-KRr"; */
+"QHy-37-KRr.normalTitle" = "Post";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "QSD-Og-clK"; */
+"QSD-Og-clK.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Sign In"; ObjectID = "RNC-D6-GfG"; */
+"RNC-D6-GfG.normalTitle" = "Sign In";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "SEq-Ul-DKH"; */
+"SEq-Ul-DKH.text" = "Label";
+
+/* Class = "UINavigationItem"; title = "Altar"; ObjectID = "SPw-Fw-lh0"; */
+"SPw-Fw-lh0.title" = "Altar";
+
+/* Class = "UILabel"; text = "En un mismo espirtu"; ObjectID = "Sgd-7N-No7"; */
+"Sgd-7N-No7.text" = "En un mismo espíritu";
+
+/* Class = "UIBarButtonItem"; title = "logout"; ObjectID = "T38-kH-M16"; */
+"T38-kH-M16.title" = "logout";
+
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "; ObjectID = "ZMA-6U-zMI"; */
+"ZMA-6U-zMI.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ";
+
+/* Class = "UIButton"; normalTitle = "Post"; ObjectID = "axB-Gi-qNy"; */
+"axB-Gi-qNy.normalTitle" = "Post";
+
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "dNJ-Td-0sR"; */
+"dNJ-Td-0sR.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "eWC-JX-ZAf"; */
+"eWC-JX-ZAf.placeholder" = "Email";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "esq-bz-5Mw"; */
+"esq-bz-5Mw.text" = "Label";
+
+/* Class = "UINavigationItem"; title = "Altar"; ObjectID = "fLZ-C6-76v"; */
+"fLZ-C6-76v.title" = "Altar";
+
+/* Class = "UIButton"; normalTitle = "Audible Prayer"; ObjectID = "ooa-gF-WHf"; */
+"ooa-gF-WHf.normalTitle" = "Audible Prayer";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "pE6-KP-56C"; */
+"pE6-KP-56C.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Style3"; ObjectID = "pgE-zd-qew"; */
+"pgE-zd-qew.normalTitle" = "Style3";
+
+/* Class = "UINavigationItem"; title = "Power of Prayer"; ObjectID = "pkq-IK-ZeI"; */
+"pkq-IK-ZeI.title" = "Power of Prayer";
+
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim"; ObjectID = "pvp-hd-VXQ"; */
+"pvp-hd-VXQ.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "qVH-1X-tyT"; */
+"qVH-1X-tyT.placeholder" = "Password";
+
+/* Class = "UIButton"; normalTitle = "Sign Up"; ObjectID = "qcy-2h-B2e"; */
+"qcy-2h-B2e.normalTitle" = "Sign Up";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "sDZ-Z7-Pva"; */
+"sDZ-Z7-Pva.placeholder" = "Password";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "sEK-Wa-ysU"; */
+"sEK-Wa-ysU.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Style2"; ObjectID = "tHQ-Wq-q99"; */
+"tHQ-Wq-q99.normalTitle" = "Style2";
+
+/* Class = "UITabBarItem"; title = "Users"; ObjectID = "uPw-uh-Mzn"; */
+"uPw-uh-Mzn.title" = "Users";
+
+/* Class = "UILabel"; text = "text editing"; ObjectID = "uiL-wg-zhO"; */
+"uiL-wg-zhO.text" = "text editing";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "umP-gQ-xSf"; */
+"umP-gQ-xSf.placeholder" = "Password";
+
+/* Class = "UIButton"; normalTitle = "Style1"; ObjectID = "yWf-SN-EX8"; */
+"yWf-SN-EX8.normalTitle" = "Style1";
