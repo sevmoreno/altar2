@@ -301,6 +301,12 @@ class SettingsViewController: UIViewController, UIActivityItemSource {
     
      @objc func editChurchProfileAction () {
         
+        
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "EditChurchProfile") as! EditChurchProfileViewController
+        // nextViewController.referalDetailsFromDB()
+         self.navigationController?.pushViewController(nextViewController, animated: true)
+        
     }
     
     

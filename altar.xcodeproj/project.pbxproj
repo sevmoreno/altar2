@@ -93,6 +93,7 @@
 		659595CD23D21C3C007FB09C /* seleccionVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659595CC23D21C3C007FB09C /* seleccionVideoViewController.swift */; };
 		659595CF23D64192007FB09C /* DevocionalSeleccionado.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659595CE23D64192007FB09C /* DevocionalSeleccionado.swift */; };
 		659E3BF7240EDCF500B71ECB /* editUserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659E3BF6240EDCF500B71ECB /* editUserProfile.swift */; };
+		659FAF022413346F00BCAD30 /* EditChurchProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659FAF012413346F00BCAD30 /* EditChurchProfileViewController.swift */; };
 		65A7AFCD2405DA3700A233C0 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65A7AFCC2405DA3700A233C0 /* StoreKit.framework */; };
 		65A7AFD22405FD7000A233C0 /* IAP_ProductIDs.plist in Resources */ = {isa = PBXBuildFile; fileRef = 65A7AFD12405FD7000A233C0 /* IAP_ProductIDs.plist */; };
 		65A7AFD72405FED900A233C0 /* IAPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A7AFD62405FED900A233C0 /* IAPManager.swift */; };
@@ -207,6 +208,7 @@
 		659595CC23D21C3C007FB09C /* seleccionVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = seleccionVideoViewController.swift; sourceTree = "<group>"; };
 		659595CE23D64192007FB09C /* DevocionalSeleccionado.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevocionalSeleccionado.swift; sourceTree = "<group>"; };
 		659E3BF6240EDCF500B71ECB /* editUserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editUserProfile.swift; sourceTree = "<group>"; };
+		659FAF012413346F00BCAD30 /* EditChurchProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditChurchProfileViewController.swift; sourceTree = "<group>"; };
 		65A7AFCC2405DA3700A233C0 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		65A7AFD12405FD7000A233C0 /* IAP_ProductIDs.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = IAP_ProductIDs.plist; sourceTree = "<group>"; };
 		65A7AFD62405FED900A233C0 /* IAPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPManager.swift; sourceTree = "<group>"; };
@@ -264,6 +266,7 @@
 			children = (
 				65372DD723ECFEF30078778A /* SettingsViewController.swift */,
 				659E3BF6240EDCF500B71ECB /* editUserProfile.swift */,
+				659FAF012413346F00BCAD30 /* EditChurchProfileViewController.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -733,6 +736,7 @@
 				65626CD723CE63E900B41386 /* Message.swift in Sources */,
 				653C0FBC23FB8D9000700ACE /* CreateEventViewController.swift in Sources */,
 				659595C623D0F4B4007FB09C /* VideoResultcolCollectionViewCell.swift in Sources */,
+				659FAF022413346F00BCAD30 /* EditChurchProfileViewController.swift in Sources */,
 				65CFE1C623CCE442006C4E76 /* DevotionalCreatorViewController.swift in Sources */,
 				6561CA1623F4E1C500AA8C15 /* Church.swift in Sources */,
 				65421CCE23AAABFE000B0437 /* extensions.swift in Sources */,
