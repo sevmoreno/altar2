@@ -48,8 +48,8 @@ class UsersViewController: UIViewController, UIScrollViewDelegate {
         let maximumVerticalOffset: CGFloat = scrollView.contentSize.height - scrollView.frame.height
         let currentVerticalOffset: CGFloat = scrollView.contentOffset.y
         
-        let percentageHorizontalOffset: CGFloat = currentHorizontalOffset / maximumHorizontalOffset
-        let percentageVerticalOffset: CGFloat = currentVerticalOffset / maximumVerticalOffset
+        let _: CGFloat = currentHorizontalOffset / maximumHorizontalOffset
+        let _: CGFloat = currentVerticalOffset / maximumVerticalOffset
         
         
  

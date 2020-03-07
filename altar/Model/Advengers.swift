@@ -57,7 +57,7 @@ class advengers {
                       "fcmToken":[""],
                       "inbox":["":0]
                      
-                        ] as! [String:Any]
+        ] as! [String : Any] 
     
 
     var updateToPastor = false

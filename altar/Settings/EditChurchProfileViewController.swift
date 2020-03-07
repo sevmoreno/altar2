@@ -41,6 +41,7 @@
         @IBOutlet var phonenumber: UITextField!
         @IBOutlet var displayname: UITextField!
         @IBOutlet var creatProfile: UIButton!
+        @IBOutlet var website: UITextField!
         
         
         @IBOutlet var errorLabel: UILabel!
@@ -83,6 +84,7 @@
                                     email.delegate = self
                                     phonenumber.delegate = self
                                     displayname.delegate = self
+                                    website.delegate = self
                       
                       name.layer.cornerRadius = 22
                       address.layer.cornerRadius = 22
@@ -111,6 +113,7 @@
                             self.phonenumber.text = advengers.shared.currentChurchInfo.phoneNumber
                             self.displayname.text = advengers.shared.currentChurchInfo.displayname
                             self.email.text = advengers.shared.currentChurchInfo.email
+                            self.website.text = advengers.shared.currentChurchInfo.webSite
                             
                             if advengers.shared.currentChurchInfo.userID != Auth.auth().currentUser?.uid {
                                 
@@ -290,7 +293,7 @@
                 {
                 
                 guard let usuarioNumber = Auth.auth().currentUser?.uid else {return}
-                accounthelper.creatChurch(userID: usuarioNumber, name: name.text!, address: address.text ?? "", state: state.text ?? "", country: country.text ?? "", zipCode: zipcode.text ?? "", email: email.text!, facebook: "", instragram: "", webSite: "", phoneNumber: phonenumber.text ?? "", displayname: displayname.text!, completionHandler: { (success) -> Void in
+                    accounthelper.creatChurch(userID: usuarioNumber, name: name.text!, address: address.text ?? "", state: state.text ?? "", country: country.text ?? "", zipCode: zipcode.text ?? "", email: email.text!, facebook: "", instragram: "", webSite: website.text ?? "", phoneNumber: phonenumber.text ?? "", displayname: displayname.text!, completionHandler: { (success) -> Void in
                     
                     
                     
@@ -304,7 +307,8 @@
 //                        self.ref.child("users").child(userID).updateChildValues(userinfo)
 //
 //                        self.accounthelper.loadFirstContent()
-                         self.performSegue(withIdentifier: "welcome", sender: self)
+                      //   self.performSegue(withIdentifier: "welcome", sender: self)
+                        self.navigationController?.popToRootViewController(animated: true)
                       //  advengers.shared.isPastor =  true
                         advengers.shared.currentChurch = self.displayname.text!
                         
