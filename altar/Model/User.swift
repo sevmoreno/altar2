@@ -19,18 +19,21 @@ class User: NSObject {
     var title: String = ""
     var churchID: String = ""
     var isPastor: Int = 0
+     var inbox: [String:Int]?
+
 
    func setup(uid: String, dictionary: [String: Any]) {
            self.fullName = dictionary["name"] as? String ?? ""
            self.photoUser = dictionary["photoURL"]  as? String ?? ""
            self.userID = dictionary["userid"] as? String ?? ""
            self.churchUser = dictionary["church"]  as? String ?? ""
-        
+           self.inbox = dictionary["inbox"]  as? [String:Int]
           self.title = dictionary["title"]  as? String ?? ""
           self.churchID = dictionary["churchID"] as? String ?? ""
           self.isPastor = dictionary["isPastor"]  as? Int ?? 0
         
            self.uid = uid
        }
+    
     
 }

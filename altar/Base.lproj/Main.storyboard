@@ -1002,13 +1002,22 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newImage" translatesAutoresizingMaskIntoConstraints="NO" id="pEu-Xy-6Gh">
+                                                    <rect key="frame" x="364" y="35" width="20" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="20" id="aSC-dm-keS"/>
+                                                        <constraint firstAttribute="height" constant="20" id="fKg-0X-HHz"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="Qb6-af-xwX" firstAttribute="centerY" secondItem="gWL-ey-GSy" secondAttribute="centerY" id="2I4-05-OCb"/>
                                                 <constraint firstItem="Qb6-af-xwX" firstAttribute="leading" secondItem="gWL-ey-GSy" secondAttribute="leading" constant="20" id="7db-wC-kws"/>
                                                 <constraint firstItem="4g1-Ig-Y9c" firstAttribute="centerY" secondItem="gWL-ey-GSy" secondAttribute="centerY" id="Hkc-RG-Agd"/>
-                                                <constraint firstItem="4g1-Ig-Y9c" firstAttribute="leading" secondItem="Qb6-af-xwX" secondAttribute="trailing" constant="10" id="lXN-32-Fp1"/>
+                                                <constraint firstItem="pEu-Xy-6Gh" firstAttribute="centerY" secondItem="gWL-ey-GSy" secondAttribute="centerY" id="MLk-Ah-mDJ"/>
+                                                <constraint firstItem="4g1-Ig-Y9c" firstAttribute="leading" secondItem="Qb6-af-xwX" secondAttribute="trailing" constant="10" id="Md1-z5-458"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="pEu-Xy-6Gh" secondAttribute="trailing" constant="10" id="YBE-k3-lNv"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1016,6 +1025,7 @@
                                         <connections>
                                             <outlet property="foto" destination="Qb6-af-xwX" id="ck4-bi-E7V"/>
                                             <outlet property="nombre" destination="4g1-Ig-Y9c" id="tbl-a5-lQP"/>
+                                            <outlet property="tieneMensaje" destination="pEu-Xy-6Gh" id="DRt-1f-W41"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -2578,13 +2588,14 @@
         <image name="devoback9" width="396" height="594"/>
         <image name="fullsky2" width="1920" height="1200"/>
         <image name="iconphoto&amp;video" width="45" height="45"/>
+        <image name="newImage" width="20" height="20"/>
         <image name="wordicon" width="25" height="19"/>
         <image name="worshipicon" width="30" height="23"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="uqV-EX-8A7"/>
         <segue reference="t9C-jd-6oV"/>
-        <segue reference="Y7e-C5-Ka2"/>
+        <segue reference="O50-xJ-ZqN"/>
         <segue reference="BJb-6s-AhC"/>
     </inferredMetricsTieBreakers>
 </document>

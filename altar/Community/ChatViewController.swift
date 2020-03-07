@@ -13,6 +13,12 @@ import FirebaseFirestore
 import SDWebImage
 
 
+//protocol UpdateMsgDelegate {
+//  func whoNeedsUpdate(value: String)
+//}
+
+
+
 class ChatViewController: MessagesViewController,InputBarAccessoryViewDelegate, MessagesDataSource, MessagesLayoutDelegate, MessagesDisplayDelegate {
     
     var currentUser  = Auth.auth().currentUser!
@@ -23,7 +29,7 @@ class ChatViewController: MessagesViewController,InputBarAccessoryViewDelegate, 
     var user2ImgUrl: String?
     var user2UID: String?
     
-    
+ //   var delegate: UpdateMsgDelegate?
     // -------------------------------------- messses data soruce
     func currentSender() -> SenderType {
         return Sender(id: Auth.auth().currentUser!.uid, displayName: Auth.auth().currentUser?.displayName ?? "Name not found")
@@ -83,6 +89,11 @@ class ChatViewController: MessagesViewController,InputBarAccessoryViewDelegate, 
     
     func loadChat() {
         //Fetch all the chats which has current user in it
+        
+       
+      
+        
+        
         let db = Firestore.firestore().collection("Chats").whereField("users", arrayContains: Auth.auth().currentUser?.uid ?? "Not Found User 1")
         db.getDocuments { (chatQuerySnap, error) in
             if let error = error {
@@ -98,6 +109,46 @@ class ChatViewController: MessagesViewController,InputBarAccessoryViewDelegate, 
                     self.createNewChat()
                 }
                 else if queryCount >= 1 {
+                    
+                    // BORRO LO QUE LEI
+                    
+                    
+                    let diction = [self.user2UID!: 0]
+                          
+                          Database.database().reference().child("users").child( Auth.auth().currentUser!.uid).child("inbox").updateChildValues(diction)
+                          { (err, ref) in
+                              if let err = err {
+                                  self.navigationItem.rightBarButtonItem?.isEnabled = true
+                                  print("Failed to save post to DB", err)
+                                  return
+                              }
+                              
+                              print("Successfully saved post to DB")
+                          
+                            
+                            var diction2 = advengers.shared.currenUSer["inbox"] as! [String:Int]
+                            diction2.updateValue(0, forKey: self.user2UID!)
+                                                //   let diction = [chat.user2UID: 0]
+                                                 //  Database.database().reference().child("users").child( Auth.auth().currentUser!.uid).child("inbox").updateChildValues(diction2)
+                                                 //  accountHelper.fetchUserInfo()
+                                                 //  tableView.reloadRows(at: [indexPath], with: .automatic)
+                                               
+                                               
+                                                   print("LLEGO AQUI en reloadDataChats" )
+                                                   print(diction2)
+                                          
+                                          
+                         //   let queUsuario = ["usuario2UID" : self.user2UID!]
+                      //    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "UpdateMSG"), object: nil, userInfo: queUsuario)
+                            
+                            //  self.delegate?.whoNeedsUpdate(value: self.user2UID!)
+                             // self.dismiss(animated: true, completion: nil)
+                          }
+                    
+                    // -------------------
+                    
+                    
+                    
                     //Chat(s) found for currentUser
                     for doc in chatQuerySnap!.documents {
                         let chat = Chat(dictionary: doc.data())
@@ -116,7 +167,7 @@ class ChatViewController: MessagesViewController,InputBarAccessoryViewDelegate, 
                                         for message in threadQuery!.documents {
                                             let msg = Message(dictionary: message.data())
                                             self.messages.append(msg!)
-                                            print("Data: \(msg?.content ?? "No message found")")
+                                            // print("Data: \(msg?.content ?? "No message found")")
                                         }
                                         self.messagesCollectionView.reloadData()
                                         self.messagesCollectionView.scrollToBottom(animated: true)
@@ -170,6 +221,23 @@ class ChatViewController: MessagesViewController,InputBarAccessoryViewDelegate, 
                 return
             }
             self.messagesCollectionView.scrollToBottom()
+            
+            
+          //  let newMesg = [self.currentUser:1]
+            
+            let diction = [Auth.auth().currentUser?.uid: 1]
+            
+            Database.database().reference().child("users").child(self.user2UID!).child("inbox").updateChildValues(diction) { (err, ref) in
+                if let err = err {
+                    self.navigationItem.rightBarButtonItem?.isEnabled = true
+                    print("Failed to save post to DB", err)
+                    return
+                }
+                
+                print("Successfully saved post to DB")
+               // self.dismiss(animated: true, completion: nil)
+            }
+
         })
     }
     

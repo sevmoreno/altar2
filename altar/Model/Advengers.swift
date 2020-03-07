@@ -54,7 +54,9 @@ class advengers {
                       "churchID":"",
                       "isPastor": 0,
                       "uid":"",
-                      "fcmToken":[""]
+                      "fcmToken":[""],
+                      "inbox":["":0]
+                     
                         ] as! [String:Any]
     
 
@@ -81,6 +83,9 @@ class advengers {
      var eventolToDelete = Event (dictionary: ["fsd":"FDSFSD"])
     
     var fondoSeleccionado = ""
+    
+  //  var chatIndexSelection = IndexPath()
+    
     
     var fondoSeleccionadoIndex = ""
     

@@ -10,6 +10,7 @@ import UIKit
 
 class UsuariosUITableTableViewCell: UITableViewCell {
     
+    @IBOutlet var tieneMensaje: UIImageView!
     
     @IBOutlet var foto: CustomImageView! = {
         

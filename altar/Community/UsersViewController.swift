@@ -14,21 +14,26 @@ import SDWebImage
 import InputBarAccessoryView
 
 class UsersViewController: UIViewController, UIScrollViewDelegate {
-    
+//    func whoNeedsUpdate(value: String) {
+//        print("--------------------DISPARA ----------------------")
+//
+//    }
+//
+//
     
     
     
     @IBOutlet weak var tablaUsuarios: UITableView!
     
     @IBOutlet weak var contenedor: UIView!
-    
+    let accountHelper = AccountHelpers ()
     var users = [User] ()
     @IBOutlet weak var pageController: UIPageControl!
     var slides:[Slide3Type] = []
     var eventos:[Event] = []
     @IBOutlet var scrollView: UIScrollView!
     
-    
+    var recive = ChatViewController ()
     // let chat = ChatViewController ()
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -84,16 +89,51 @@ class UsersViewController: UIViewController, UIScrollViewDelegate {
         navigationItem.rightBarButtonItem?.tintColor = advengers.shared.colorOrange
         
         navigationItem.title = advengers.shared.currentChurch
+        
+       
+               
+        
     }
     
+//    @objc func updateMSG (_ notification: NSNotification) {
+//
+//      //  print(notification.userInfo as? [String:String])
+//
+//        if let dict = notification.userInfo as? [String:String] {
+//
+//           dict["usuario2UID"]
+//
+//
+//
+//
+//
+//        }
+        
+ //   }
     
-    
+
     
     
     override func viewDidLoad() {
       
        // mewMessageSearch ()
         super.viewDidLoad()
+        
+      //  recive.delegate = self
+       
+    //    NotificationCenter.default.addObserver(self, selector: #selector(self.updateMSG(_:)), name: NSNotification.Name(rawValue: "UpdateMSG"), object: nil)
+       // NotificationCenter.default.addObserver(self, selector: #selector(updateMSG), name: NSNotification.Name(rawValue: "UpdateMSG"), object: nil)
+        
+        retriveUsers(completionHandler: { (success) -> Void in
+                     
+                          if success {
+                              
+                              
+                          }
+                          
+                      })
+        
+        
         
         generateEvents ()
         
@@ -115,8 +155,7 @@ class UsersViewController: UIViewController, UIScrollViewDelegate {
         
         
     
-        retriveUsers ()
-        
+       
         
         newSearchForMessage ()
         
@@ -147,8 +186,8 @@ class UsersViewController: UIViewController, UIScrollViewDelegate {
             
             
          // AHORA TENGO TODOS LOS DOCUMENTOS
-            print("Encontro esta cantidad de Documentos o chats digamos")
-            print(snapshot.documents.count)
+         //   print("Encontro esta cantidad de Documentos o chats digamos")
+          //  print(snapshot.documents.count)
             
             for cadaChat in snapshot.documents {
              
@@ -161,10 +200,10 @@ class UsersViewController: UIViewController, UIScrollViewDelegate {
                         return
                     } else {
                         
-                        print("Cuenta cuantos mensajes hay en el chat: \(threadQuery?.documents.count)")
+                      //  print("Cuenta cuantos mensajes hay en el chat: \(threadQuery?.documents.count)")
                         let source = threadQuery?.metadata.isFromCache
                         if source! { return }
-                        print("Es del cache o nuevot \(source)")
+                     //   print("Es del cache o nuevot \(source)")
                         // HORA LO QUE HAGO ES QUE EL LISENER SE DISPARE CUANDO SOLO HAY UN CAMBIO EN LA PRIERMA DATA
                         threadQuery?.documentChanges.forEach { diff in
                             
@@ -172,6 +211,10 @@ class UsersViewController: UIViewController, UIScrollViewDelegate {
                                 
                                // print("New chat: \(diff.document.data())")
                                print("NUEVO ELEMENTO DE CHAT ")
+                                guard let quien = diff.document.data() as? NSDictionary else { return}
+                           //      print("New chat: \(quien)")
+                                guard let senderID = quien["senderID"] as? String else { return }
+                                self.reloadDataChats (chatid: senderID )
                             }
                             if (diff.type == .modified) {
                                 //   print("Modified city: \(diff.document.data())")
@@ -344,12 +387,14 @@ class UsersViewController: UIViewController, UIScrollViewDelegate {
         performSegue(withIdentifier: "addEvent", sender: self)
     }
     
-    func retriveUsers () -> Void {
+    func retriveUsers (completionHandler: @escaping (_ success:Bool) -> Void) -> Void {
         
-        advengers.shared.usersStatusRef.queryOrderedByKey().observe(.value) { (datasnap) in
+      //  self.users.removeAll()
+        // advengers.shared.postPrayFeed.child(currentChurchID).observeSingleEvent(of: .value, with: { (data) in
+        advengers.shared.usersStatusRef.queryOrderedByKey().observeSingleEvent(of: .value) { (datasnap) in
             let usersRead = datasnap.value as! [ String : NSDictionary]
             //self.users.removeAll()
-            
+            print("----------------------------------------RETRIVE DATA ES LLAMADO --------------------------------------")
             for (_,value) in usersRead {
                 
                 
@@ -363,14 +408,28 @@ class UsersViewController: UIViewController, UIScrollViewDelegate {
                             
                             let userToShow = User()
                             userToShow.setup(uid: value["userid"] as? String ?? "", dictionary:  value as! [String : Any])
+
                             
-                            //                            let userToShow = User(uid: value["userid"] as? String ?? "", dictionary: value as! [String : Any])
-                            //                            userToShow.userID = value["userid"] as? String ?? ""
-                            //                            userToShow.fullName = value["name"] as? String ?? ""
-                            //                            userToShow.email = value["email"] as? String ?? ""
-                            //                            userToShow.photoUser = value["photoURL"] as? String ?? ""
+                            let usuario2Uid = userToShow.userID
+                                    
+                                    guard let mydictionary = advengers.shared.currenUSer["inbox"] as? [String:Int] else  {return}
+                                    
+    
+                                    
+                                    if let cantindadDeMensajes = mydictionary[usuario2Uid] {
+                                        if cantindadDeMensajes > 0 {
+                                        self.users.insert(userToShow, at: 0)
+                                        } else {
+                                           self.users.append(userToShow)
+                                        }
+                                    } else {
+                                    
+                                    
+                                      self.users.append(userToShow)
+                                    
+                                    }
                             
-                            self.users.append(userToShow)
+        
                             self.tablaUsuarios.reloadData()
                             
                         }
@@ -380,7 +439,7 @@ class UsersViewController: UIViewController, UIScrollViewDelegate {
                 }
             }
             
-            
+            completionHandler(true)
             
         }
         // advengers.shared.usersStatusRef.removeAllObservers()
@@ -397,11 +456,84 @@ class UsersViewController: UIViewController, UIScrollViewDelegate {
         
     }
     
+    func rotate<T>(_ chars: inout [T], _ k: Int) {
+        var initialDigits : Int = 0
+        k >= 0 ? (initialDigits = chars.count - (k % chars.count)) : (initialDigits = (abs(k) % chars.count))
+        let elementToPutAtEnd = Array(chars[0..<initialDigits])
+        let elementsToPutAtBeginning = Array(chars[initialDigits..<chars.count])
+        chars = elementsToPutAtBeginning + elementToPutAtEnd
+    }
+    
+    func reloadDataChats (chatid: String) {
+//        self.users.removeAll()
+        
+        var updateIndex: Int?
+        
+        for usario in self.users {
+            
+            if usario.userID == chatid {
+                
+                guard let indice = self.users.firstIndex(of:usario) else { return }
+                updateIndex = indice
+                
+            }
+           
+           if  updateIndex != nil {
+                
+                self.users[updateIndex!].inbox?[chatid] = 0
+                print("Este es el STRING \(chatid)")
+             //   tablaUsuarios.index
+                
+                
+                var diction2 = advengers.shared.currenUSer["inbox"] as! [String:Int]
+                diction2.updateValue(1, forKey: chatid)
+                      //   let diction = [chat.user2UID: 0]
+                       //  Database.database().reference().child("users").child( Auth.auth().currentUser!.uid).child("inbox").updateChildValues(diction2)
+                       //  accountHelper.fetchUserInfo()
+                       //  tableView.reloadRows(at: [indexPath], with: .automatic)
+           
+                     
+       //                  print("LLEGO AQUI en reloadDataChats" )
+       //                  print(diction2)
+                
+                advengers.shared.currenUSer["inbox"] = diction2
+         //       accountHelper.fetchUserInfo()
+            
+            if updateIndex != 0 {
+            
+                self.users.rearrange(from: updateIndex!, to: 0)
+             
+            }
+              //  self.tablaUsuarios.reloadRows(at: updateIndex, with: .automatic)
+            }
+            
+            
+            
+            self.tablaUsuarios.reloadData()
+        }
+        
+        
+        
+//        retriveUsers (completionHandler: { (success) -> Void in
+//
+//            if success {
+//                     self.tablaUsuarios.reloadData()
+//
+//            }
+//
+//        })
+//
+        
+    }
+    
+    
+    
+    
     @IBAction func reloadData(_ sender: Any) {
         
         
-        print(self.users.count)
-        
+       
+  
      //   self.users = users.sorted { $0.fullName < $1.fullName }
         self.tablaUsuarios.reloadData()
         
@@ -450,13 +582,46 @@ extension UsersViewController: UITableViewDelegate, UITableViewDataSource {
         
         cell.foto.loadImage(urlString: users[indexPath.row].photoUser)
         
-        DispatchQueue.main.async {
-//            print("este es el full name")
-//            print(self.users[indexPath.row].fullName)
-            cell.nombre.text = self.users[indexPath.row].fullName
-//            print(cell.nombre.text)
-        }
+      
         
+//        if (users[indexPath.row].inbox?[Auth.auth().currentUser!.uid])! > 0 {
+//
+//            print("MILAGRO ENCONTRO!!!")
+//        }
+        
+        DispatchQueue.main.async {
+            
+            
+            let usuario2Uid = self.users[indexPath.row].userID
+            
+            guard let mydictionary = advengers.shared.currenUSer["inbox"] as? [String:Int] else  {return}
+            
+            print("----------------------------- EN TABLE VIEW ------------------------------")
+            print(mydictionary)
+
+            
+            print(usuario2Uid)
+            
+            if let cantindadDeMensajes = mydictionary[usuario2Uid] {
+                if cantindadDeMensajes > 0 {
+                cell.tieneMensaje.isHidden = false
+                } else {
+                   cell.tieneMensaje.isHidden = true
+                }
+            } else {
+            
+            
+              cell.tieneMensaje.isHidden = true
+            
+            }
+
+            
+        }
+//
+
+        cell.nombre.text = self.users[indexPath.row].fullName
+//
+      
         
       
         
@@ -466,10 +631,28 @@ extension UsersViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        
          let chat = ChatViewController ()
         chat.user2Name = users[indexPath.row].fullName
         chat.user2UID = users[indexPath.row].uid
         chat.user2ImgUrl = users[indexPath.row].photoUser
+        
+        
+        
+    
+        var diction2 = advengers.shared.currenUSer["inbox"] as! [String:Int]
+            diction2.updateValue(0, forKey: users[indexPath.row].uid)
+         //   let diction = [chat.user2UID: 0]
+            Database.database().reference().child("users").child( Auth.auth().currentUser!.uid).child("inbox").updateChildValues(diction2)
+          //  accountHelper.fetchUserInfo()
+            tableView.reloadRows(at: [indexPath], with: .automatic)
+        
+        
+            print("LLEGO AQUI")
+            print(diction2)
+        
+ 
+    
         navigationController?.pushViewController(chat, animated: true)
         
         
@@ -484,4 +667,10 @@ extension UsersViewController: UITableViewDelegate, UITableViewDataSource {
 extension UsersViewController: UITextViewDelegate {
     
     
+}
+extension RangeReplaceableCollection where Indices: Equatable {
+    mutating func rearrange(from: Index, to: Index) {
+        precondition(from != to && indices.contains(from) && indices.contains(to), "invalid indices")
+        insert(remove(at: from), at: to)
+    }
 }

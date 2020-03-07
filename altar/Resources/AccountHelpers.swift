@@ -48,7 +48,9 @@ class AccountHelpers  {
                             advengers.shared.currenUSer["church"] = value["church"] as? String
                             advengers.shared.currenUSer["fcmToken"] = value["fcmToken"] as? [String]
                             advengers.shared.currenUSer["churchID"] = value["churchID"] as? String
-                           
+                           //
+                            advengers.shared.currenUSer["inbox"] = value["inbox"] as? [String:Int]
+                            
                                advengers.shared.currenUSer["title"] = value["title"] as? String
                             
                               advengers.shared.currenUSer["isPastor"] = value["isPastor"] as? Int

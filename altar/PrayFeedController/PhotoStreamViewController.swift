@@ -470,8 +470,7 @@ class PhotoStreamViewController: UICollectionViewController, UICollectionViewDel
         accountHelper.loadCurrentUserInfo(completionHandler: { (success) -> Void in
             
             if success {
-                print("Current User")
-                print(advengers.shared.currenUSer )
+              
                 self.loadEverything ()
                 
                 self.accountHelper.loadCurrentChurch(codigo: advengers.shared.currenUSer["churchID"] as! String,completionHandler: { (success) -> Void in
