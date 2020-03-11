@@ -79,7 +79,7 @@
                 
             })
             
-            accounthelper.fetchUserInfo()
+       //     accounthelper.fetchUserInfo()
             
          //   print(advengers.shared.currenUSer as [String:Any])
             
@@ -266,7 +266,7 @@
                         
                         self.ref.child("users").child(userID).updateChildValues(userinfo)
                         
-                        self.accounthelper.loadFirstContent()
+                        self.accounthelper.loadFirstContent(uidUsers: userID, uidChurch: advengers.shared.currentChurchInfo.uidChurch)
                          self.performSegue(withIdentifier: "welcome", sender: self)
                         advengers.shared.isPastor =  true
                         advengers.shared.currentChurch = self.displayname.text!

@@ -146,10 +146,15 @@ class PowerOfWorshipViewController:  UIViewController, AVAudioPlayerDelegate{
     
     @objc func Logout () {
         
-        let settingsController = SettingsViewController()
-        // navigationController?.pushViewController(signUpController, animated: true)
-        
-        present(settingsController, animated: true, completion: nil)
+       let settingsController = SettingsViewController()
+        //
+        //
+        //        navigationController?.pushViewController(settingsController, animated: true)
+                
+                let navController = UINavigationController(rootViewController: settingsController)
+                
+                present(navController, animated: true, completion: nil)
+            
     }
     
     

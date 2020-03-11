@@ -61,6 +61,9 @@ class UsersViewController: UIViewController, UIScrollViewDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
+        
+        navigationItem.title = "              "
         navigationController?.navigationBar.backgroundColor = advengers.shared.colorBlue
         navigationController?.navigationBar.barTintColor = advengers.shared.colorBlue
         
@@ -68,17 +71,14 @@ class UsersViewController: UIViewController, UIScrollViewDelegate {
         
         navigationItem.leftBarButtonItem?.tintColor = advengers.shared.colorOrange
         
-        
-        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white,
-                              NSAttributedString.Key.font:UIFont(name: "Avenir-Heavy", size: 15)]
-        navigationController?.navigationBar.titleTextAttributes = textAttributes as [NSAttributedString.Key : Any]
-        
-        
-        
+  
         
         if advengers.shared.isPastor {
             
             navigationItem.rightBarButtonItem = UIBarButtonItem(title: "+ Event", style: .plain, target: self, action: #selector(addEnvent))
+            
+            
+            
             
         }
         
@@ -87,8 +87,6 @@ class UsersViewController: UIViewController, UIScrollViewDelegate {
         
         navigationItem.rightBarButtonItem?.setTitleTextAttributes(textAttributes2 as [NSAttributedString.Key : Any], for: .normal)
         navigationItem.rightBarButtonItem?.tintColor = advengers.shared.colorOrange
-        
-        navigationItem.title = advengers.shared.currentChurch
         
        
                
@@ -448,11 +446,14 @@ class UsersViewController: UIViewController, UIScrollViewDelegate {
     
     @IBAction func logout(_ sender: Any) {
         
-        
-        let settingsController = SettingsViewController()
-        // navigationController?.pushViewController(signUpController, animated: true)
-        
-        present(settingsController, animated: true, completion: nil)
+       let settingsController = SettingsViewController()
+              //
+              //
+              //        navigationController?.pushViewController(settingsController, animated: true)
+                      
+                      let navController = UINavigationController(rootViewController: settingsController)
+                      
+                      present(navController, animated: true, completion: nil)
         
     }
     

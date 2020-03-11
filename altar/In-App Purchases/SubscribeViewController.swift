@@ -11,6 +11,7 @@ import StoreKit
 
 class SubscribeViewController: UIViewController {
     
+    @IBOutlet var subcribeButton: UIButton!
     
     // https://www.appcoda.com/in-app-purchases-guide/
      let model = Model()
@@ -48,6 +49,17 @@ class SubscribeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        subcribeButton.backgroundColor = UIColor.rgb(red: 247, green: 131, blue: 97)
+        subcribeButton.layer.cornerRadius = 22
+        subcribeButton.layer.masksToBounds = true
+        subcribeButton.setTitleColor(.white , for: .normal)
+        
+      
+        subcribeButton.setTitleColor(UIColor.white.withAlphaComponent(0.3), for: .highlighted )
+        subcribeButton.applyGradient(colors: [WelcomeViewController.UIColorFromRGB(0xF78361).cgColor,WelcomeViewController.UIColorFromRGB(0xF54B64).cgColor])
+        
+        
         model.delegate = self
         
                 // ------------- CHECK APP STORE
@@ -66,7 +78,12 @@ class SubscribeViewController: UIViewController {
                          
                         print(self.model.products.debugDescription)
                         
+                        DispatchQueue.main.async {
+                            
+                             self.subcribeButton.setTitle("Subscribe for S\(self.model.products[0].price)/ mo", for: .normal)
+                        }
                         
+                       
         //                case .success(let products): self.model.products = products
                 //       case .failure(let error): self.delegate?.showIAPRelatedError(error)
                        case .failure(_):
@@ -80,6 +97,8 @@ class SubscribeViewController: UIViewController {
     @IBAction func subscribe(_ sender: Any) {
         
         showAlert(for: model.products[0])
+        
+        
         
     }
     

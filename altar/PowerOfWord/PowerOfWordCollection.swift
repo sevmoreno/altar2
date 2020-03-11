@@ -147,11 +147,15 @@ class PowerOfWordCollectionView: UICollectionViewController,  UICollectionViewDe
     
     @objc func settings () {
         
-        
-              let settingsController = SettingsViewController()
-             // navigationController?.pushViewController(signUpController, animated: true)
-              
-               present(settingsController, animated: true, completion: nil)
+      let settingsController = SettingsViewController()
+        //
+        //
+        //        navigationController?.pushViewController(settingsController, animated: true)
+                
+                let navController = UINavigationController(rootViewController: settingsController)
+                
+                present(navController, animated: true, completion: nil)
+            
     }
     
     func loadDevocionales (completionHandler: @escaping (_ success:Bool) -> Void) {

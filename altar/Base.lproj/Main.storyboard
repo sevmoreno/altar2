@@ -937,7 +937,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hie-4W-y4D" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="871" y="-480"/>
+            <point key="canvasLocation" x="29" y="-462"/>
         </scene>
         <!--Altar-->
         <scene sceneID="TiS-yx-EPF">
@@ -1626,10 +1626,10 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="341" placeholderIntrinsicHeight="66" axis="vertical" distribution="equalCentering" alignment="center" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="sgg-j8-1A5">
-                                <rect key="frame" x="36.5" y="676" width="341" height="96"/>
+                                <rect key="frame" x="36.5" y="586" width="341" height="186"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Csx-GS-71j">
-                                        <rect key="frame" x="97.5" y="0.0" width="146" height="45"/>
+                                        <rect key="frame" x="75" y="0.0" width="191" height="90"/>
                                         <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="16"/>
                                         <inset key="titleEdgeInsets" minX="17" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" title="Photo / Video" image="iconphoto&amp;video">
@@ -1640,7 +1640,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ooa-gF-WHf" userLabel="Audible Prayer">
-                                        <rect key="frame" x="89" y="51" width="163" height="45"/>
+                                        <rect key="frame" x="66.5" y="96" width="208" height="90"/>
                                         <inset key="titleEdgeInsets" minX="17" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" title="Audible Prayer" image="Audible">
                                             <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2221,45 +2221,271 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subscribe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hH1-4S-ba4">
-                                <rect key="frame" x="168.5" y="99" width="77" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="amanecer" translatesAutoresizingMaskIntoConstraints="NO" id="RgQ-JP-EfS">
+                                <rect key="frame" x="-7" y="-13" width="432" height="917"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.75" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg copy" translatesAutoresizingMaskIntoConstraints="NO" id="y7I-lB-Yff">
+                                <rect key="frame" x="-6" y="-1" width="426" height="898"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add your church or ministry" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hH1-4S-ba4">
+                                <rect key="frame" x="48.5" y="94" width="317.5" height="33"/>
+                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rvj-sE-bt7">
+                                <rect key="frame" x="180.5" y="822" width="53" height="30"/>
+                                <state key="normal" title="Restore">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="restore:" destination="aYX-82-lxS" eventType="touchUpInside" id="cQQ-fZ-BXL"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Z5-Gq-1dU">
+                                <rect key="frame" x="35" y="142" width="344" height="537"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Once you ">
+                                        <attributes>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="17" name="Avenir-Medium"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="1" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="add your church">
+                                        <attributes>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="17" name="Avenir-BlackOblique"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="1" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content"> or ministry you can share with your community these tools:
+
+</string>
+                                        <attributes>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="17" name="Avenir-Medium"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="1" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="Power of Pray">
+                                        <attributes>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="18" name="Avenir-Black"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="1" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">
+Where everyone agrees on earth about anything they ask.
+
+</string>
+                                        <attributes>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="17" name="Avenir-Medium"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="1" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="Power of the ">
+                                        <attributes>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="17" name="Avenir-Black"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <font key="NSOriginalFont" size="17" name="Avenir-Black"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="1" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="W">
+                                        <attributes>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="17" name="Avenir-Black"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="1" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="ord">
+                                        <attributes>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="17" name="Avenir-Black"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <font key="NSOriginalFont" size="17" name="Avenir-Black"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="1" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">
+Where you share power from teach and preach Jesus as the Christ.
+
+</string>
+                                        <attributes>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="17" name="Avenir-Medium"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="1" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="Power of Worship">
+                                        <attributes>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="17" name="Avenir-Black"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <font key="NSOriginalFont" size="17" name="Avenir-Black"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="1" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">
+Where everyone is together in the same praise and worship.
+
+</string>
+                                        <attributes>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="17" name="Avenir-Medium"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="1" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="Community">
+                                        <attributes>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="18" name="Avenir-Black"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="1" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">
+Where everyone is connected in brotherhood.
+
+We give you the ability to </string>
+                                        <attributes>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="18" name="Avenir-Medium"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="1" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="connect your church">
+                                        <attributes>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="18" name="Avenir-HeavyOblique"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="1" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" to become ">
+                                        <attributes>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="18" name="Avenir-Medium"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="1" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="stronger">
+                                        <attributes>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="18" name="Avenir-BlackOblique"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="1" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" in the power of ">
+                                        <attributes>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="18" name="Avenir-Medium"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="1" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="unity">
+                                        <attributes>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="18" name="Avenir-BlackOblique"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="1" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=".">
+                                        <attributes>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="18" name="Avenir-Medium"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="1" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BWN-wQ-UWC">
+                                <rect key="frame" x="12" y="761" width="390" height="81"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="390" id="VGX-BS-BTq"/>
+                                    <constraint firstAttribute="height" constant="81" id="gIA-9T-YBb"/>
+                                </constraints>
+                                <string key="text">Billed monthly. Subscription terms: Altar subscription automatically renews unless auto-renew is turned off at least 24h before current period ends. Payment is charged to your iTunes accounts. Manage subscription and turn off auto-renewal in Account Settings. Terms and Privacy Policy.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mWn-c0-gsf">
-                                <rect key="frame" x="172.5" y="744" width="69" height="30"/>
+                                <rect key="frame" x="57" y="724" width="300" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="SnN-OL-x9i"/>
+                                    <constraint firstAttribute="width" constant="300" id="Tyx-mW-Y2a"/>
+                                </constraints>
                                 <state key="normal" title="Subscribe"/>
                                 <connections>
                                     <action selector="subscribe:" destination="aYX-82-lxS" eventType="touchUpInside" id="APw-dS-nWh"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rvj-sE-bt7">
-                                <rect key="frame" x="180.5" y="795" width="53" height="30"/>
-                                <state key="normal" title="Restore"/>
-                                <connections>
-                                    <action selector="restore:" destination="aYX-82-lxS" eventType="touchUpInside" id="cQQ-fZ-BXL"/>
-                                </connections>
-                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="* Android version will be released in Spring 2020." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cly-JL-H2V">
+                                <rect key="frame" x="78.5" y="687" width="257" height="16"/>
+                                <fontDescription key="fontDescription" name="Avenir-HeavyOblique" family="Avenir" pointSize="11"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="mWn-c0-gsf" firstAttribute="top" secondItem="6Z5-Gq-1dU" secondAttribute="bottom" constant="45" id="2Rc-ga-bjw"/>
+                            <constraint firstItem="BWN-wQ-UWC" firstAttribute="centerX" secondItem="Ny1-zh-Zir" secondAttribute="centerX" id="2wh-Kv-8I7"/>
+                            <constraint firstItem="cly-JL-H2V" firstAttribute="top" secondItem="6Z5-Gq-1dU" secondAttribute="bottom" constant="8" id="7fv-Yc-XN9"/>
                             <constraint firstItem="mWn-c0-gsf" firstAttribute="centerX" secondItem="Ny1-zh-Zir" secondAttribute="centerX" id="86s-6y-f9O"/>
                             <constraint firstItem="hH1-4S-ba4" firstAttribute="centerX" secondItem="Ny1-zh-Zir" secondAttribute="centerX" id="9m4-wK-TAg"/>
-                            <constraint firstItem="iBX-b9-3S9" firstAttribute="bottom" secondItem="rvj-sE-bt7" secondAttribute="bottom" constant="37" id="ERq-Wp-Qbq"/>
+                            <constraint firstItem="iBX-b9-3S9" firstAttribute="bottom" secondItem="rvj-sE-bt7" secondAttribute="bottom" constant="10" id="ERq-Wp-Qbq"/>
+                            <constraint firstItem="iBX-b9-3S9" firstAttribute="bottom" secondItem="BWN-wQ-UWC" secondAttribute="bottom" constant="20" id="EXr-hc-0pH"/>
+                            <constraint firstItem="BWN-wQ-UWC" firstAttribute="centerX" secondItem="Ny1-zh-Zir" secondAttribute="centerX" id="HWt-Vc-lDW"/>
                             <constraint firstItem="rvj-sE-bt7" firstAttribute="centerX" secondItem="Ny1-zh-Zir" secondAttribute="centerX" id="Ib5-kL-aoI"/>
-                            <constraint firstItem="hH1-4S-ba4" firstAttribute="top" secondItem="iBX-b9-3S9" secondAttribute="top" constant="55" id="gne-Sm-QZA"/>
+                            <constraint firstItem="iBX-b9-3S9" firstAttribute="trailing" secondItem="6Z5-Gq-1dU" secondAttribute="trailing" constant="35" id="Ofj-2T-bKz"/>
+                            <constraint firstItem="6Z5-Gq-1dU" firstAttribute="top" secondItem="hH1-4S-ba4" secondAttribute="bottom" constant="15" id="Psa-OM-URh"/>
+                            <constraint firstAttribute="bottom" secondItem="RgQ-JP-EfS" secondAttribute="bottom" constant="-8" id="QQe-EY-SGi"/>
+                            <constraint firstItem="6Z5-Gq-1dU" firstAttribute="centerX" secondItem="Ny1-zh-Zir" secondAttribute="centerX" id="XJB-hH-dZR"/>
+                            <constraint firstItem="hH1-4S-ba4" firstAttribute="top" secondItem="iBX-b9-3S9" secondAttribute="top" constant="50" id="gne-Sm-QZA"/>
+                            <constraint firstItem="RgQ-JP-EfS" firstAttribute="top" secondItem="Ny1-zh-Zir" secondAttribute="top" constant="-13" id="itp-Y8-pTh"/>
                             <constraint firstItem="iBX-b9-3S9" firstAttribute="bottom" secondItem="mWn-c0-gsf" secondAttribute="bottom" constant="88" id="jY1-gO-1er"/>
+                            <constraint firstItem="cly-JL-H2V" firstAttribute="centerX" secondItem="Ny1-zh-Zir" secondAttribute="centerX" id="tt0-kC-nO7"/>
+                            <constraint firstItem="RgQ-JP-EfS" firstAttribute="leading" secondItem="Ny1-zh-Zir" secondAttribute="leading" constant="-7" id="wji-CA-8IX"/>
+                            <constraint firstAttribute="trailing" secondItem="RgQ-JP-EfS" secondAttribute="trailing" constant="-11" id="xLq-z0-fJD"/>
+                            <constraint firstItem="6Z5-Gq-1dU" firstAttribute="leading" secondItem="iBX-b9-3S9" secondAttribute="leading" constant="35" id="zFb-o7-N0R"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="iBX-b9-3S9"/>
                     </view>
                     <connections>
+                        <outlet property="subcribeButton" destination="mWn-c0-gsf" id="AfF-fm-zSQ"/>
                         <segue destination="7Wz-hj-dBA" kind="show" identifier="compraOK" id="uqV-EX-8A7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rmI-zx-wWe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2035" y="-1250"/>
+            <point key="canvasLocation" x="-2036.2318840579712" y="-1250.2232142857142"/>
         </scene>
         <!--Add Your Curch View Controller-->
         <scene sceneID="1dn-fe-OPk">
@@ -2276,13 +2502,13 @@
                                 <rect key="frame" x="-6" y="-1" width="426" height="898"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a church or ministry" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ijq-w0-tNE">
-                                <rect key="frame" x="67.5" y="74" width="279" height="33"/>
+                                <rect key="frame" x="67.5" y="118" width="279" height="33"/>
                                 <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view alpha="0.20000000298023224" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ka4-CN-E8B" userLabel="NameBackground">
-                                <rect key="frame" x="49.5" y="137" width="315" height="44"/>
+                                <rect key="frame" x="49.5" y="181" width="315" height="44"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="315" id="9Qg-et-TU3"/>
@@ -2290,7 +2516,7 @@
                                 </constraints>
                             </view>
                             <textField opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="350" placeholderIntrinsicHeight="34" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Name" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WpC-MY-tj9">
-                                <rect key="frame" x="67.5" y="137" width="280" height="44"/>
+                                <rect key="frame" x="67.5" y="181" width="280" height="44"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -2302,7 +2528,7 @@
                                 <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                             </textField>
                             <view alpha="0.20000000298023224" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Npx-aG-Aou" userLabel="AddressBackground3">
-                                <rect key="frame" x="49.5" y="196" width="315" height="44"/>
+                                <rect key="frame" x="49.5" y="240" width="315" height="44"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="315" id="6oE-oJ-XY9"/>
@@ -2311,7 +2537,7 @@
                                 <viewLayoutGuide key="safeArea" id="85D-7u-8RN"/>
                             </view>
                             <textField opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="350" placeholderIntrinsicHeight="34" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Address" placeholder="Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nsc-wu-n06">
-                                <rect key="frame" x="66.5" y="196" width="280" height="44"/>
+                                <rect key="frame" x="66.5" y="240" width="280" height="44"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="tgl-fM-JJP"/>
@@ -2322,7 +2548,7 @@
                                 <textInputTraits key="textInputTraits" textContentType="password"/>
                             </textField>
                             <view alpha="0.20000000298023224" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dac-Lj-4Eh" userLabel="StateBackground3">
-                                <rect key="frame" x="49.5" y="255" width="315" height="44"/>
+                                <rect key="frame" x="49.5" y="299" width="315" height="44"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="315" id="atk-LQ-BCY"/>
@@ -2331,7 +2557,7 @@
                                 <viewLayoutGuide key="safeArea" id="LnM-WL-vja"/>
                             </view>
                             <textField opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="350" placeholderIntrinsicHeight="34" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="State" placeholder="State" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GHS-Vc-nI2">
-                                <rect key="frame" x="67.5" y="255" width="280" height="44"/>
+                                <rect key="frame" x="67.5" y="299" width="280" height="44"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -2343,7 +2569,7 @@
                                 <textInputTraits key="textInputTraits" textContentType="password"/>
                             </textField>
                             <view alpha="0.20000000298023224" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wcK-ku-kkq" userLabel="zipCode Background3">
-                                <rect key="frame" x="49.5" y="314" width="315" height="44"/>
+                                <rect key="frame" x="49.5" y="358" width="315" height="44"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="315" id="R6j-xY-lYD"/>
@@ -2352,7 +2578,7 @@
                                 <viewLayoutGuide key="safeArea" id="uch-2h-tfs"/>
                             </view>
                             <textField opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="350" placeholderIntrinsicHeight="34" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Zip Code" placeholder="Zip Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eRp-Vp-wFc" userLabel="ZipCode">
-                                <rect key="frame" x="66" y="314" width="280" height="44"/>
+                                <rect key="frame" x="66" y="358" width="280" height="44"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -2364,7 +2590,7 @@
                                 <textInputTraits key="textInputTraits" textContentType="email"/>
                             </textField>
                             <view alpha="0.20000000298023224" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kwu-yI-EtV" userLabel="countryBackground4">
-                                <rect key="frame" x="49.5" y="373" width="315" height="44"/>
+                                <rect key="frame" x="49.5" y="417" width="315" height="44"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="315" id="RMd-6X-bxq"/>
@@ -2373,7 +2599,7 @@
                                 <viewLayoutGuide key="safeArea" id="dqY-qH-qMf"/>
                             </view>
                             <textField opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="350" placeholderIntrinsicHeight="34" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Country" placeholder="Country" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oAS-Tu-ap7" userLabel="Country">
-                                <rect key="frame" x="67" y="373" width="280" height="44"/>
+                                <rect key="frame" x="67" y="417" width="280" height="44"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -2385,7 +2611,7 @@
                                 <textInputTraits key="textInputTraits" textContentType="email"/>
                             </textField>
                             <view alpha="0.20000000298023224" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U6u-za-NIg" userLabel="email-Background2">
-                                <rect key="frame" x="49.5" y="432" width="315" height="44"/>
+                                <rect key="frame" x="49.5" y="476" width="315" height="44"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="315" id="G4V-jR-T62"/>
@@ -2394,7 +2620,7 @@
                                 <viewLayoutGuide key="safeArea" id="JXO-tK-kLa"/>
                             </view>
                             <textField opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="350" placeholderIntrinsicHeight="34" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Email" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ppw-pf-bDX">
-                                <rect key="frame" x="69" y="432" width="280" height="44"/>
+                                <rect key="frame" x="69" y="476" width="280" height="44"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -2406,7 +2632,7 @@
                                 <textInputTraits key="textInputTraits" textContentType="email"/>
                             </textField>
                             <view alpha="0.20000000298023224" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sYq-6G-TSD" userLabel="phone-Background2">
-                                <rect key="frame" x="49.5" y="491" width="315" height="44"/>
+                                <rect key="frame" x="49.5" y="535" width="315" height="44"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="315" id="GQs-rr-r0i"/>
@@ -2415,7 +2641,7 @@
                                 <viewLayoutGuide key="safeArea" id="eOE-mR-Qbv"/>
                             </view>
                             <textField opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="350" placeholderIntrinsicHeight="34" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Phone number" placeholder="Phone number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dc6-SE-jeK">
-                                <rect key="frame" x="67" y="491" width="280" height="44"/>
+                                <rect key="frame" x="67" y="535" width="280" height="44"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -2427,7 +2653,7 @@
                                 <textInputTraits key="textInputTraits" textContentType="email"/>
                             </textField>
                             <view alpha="0.20000000298023224" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jAO-MO-ark" userLabel="display-Background2">
-                                <rect key="frame" x="49.5" y="550" width="315" height="44"/>
+                                <rect key="frame" x="49.5" y="594" width="315" height="44"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="5Tr-Bj-P3t"/>
@@ -2436,7 +2662,7 @@
                                 <viewLayoutGuide key="safeArea" id="YZz-SW-Zbk"/>
                             </view>
                             <textField opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="350" placeholderIntrinsicHeight="34" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Display name" placeholder="Display name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pe1-db-Yfg">
-                                <rect key="frame" x="67" y="550" width="280" height="44"/>
+                                <rect key="frame" x="67" y="594" width="280" height="44"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -2448,7 +2674,7 @@
                                 <textInputTraits key="textInputTraits" textContentType="email"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nU5-wX-Nrz">
-                                <rect key="frame" x="49.5" y="637" width="315" height="44"/>
+                                <rect key="frame" x="49.5" y="681" width="315" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="315" id="arD-Oi-7F9"/>
                                     <constraint firstAttribute="height" constant="44" id="jRy-hT-D7M"/>
@@ -2460,7 +2686,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.85000002384185791" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y6V-6G-UKL">
-                                <rect key="frame" x="41" y="612" width="332" height="0.0"/>
+                                <rect key="frame" x="41" y="656" width="332" height="0.0"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="332" id="0hu-kJ-lKI"/>
                                 </constraints>
@@ -2571,7 +2797,7 @@
                                 <rect key="frame" x="-6" y="-1" width="426" height="898"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit church or ministry" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xNb-M5-8LH">
-                                <rect key="frame" x="78.5" y="64" width="257" height="33"/>
+                                <rect key="frame" x="78.5" y="74" width="257" height="33"/>
                                 <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -2776,7 +3002,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.85000002384185791" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qS6-zQ-GDu">
-                                <rect key="frame" x="41" y="602" width="332" height="0.0"/>
+                                <rect key="frame" x="41" y="710" width="332" height="0.0"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="332" id="BwR-ku-8wR"/>
                                 </constraints>
@@ -2787,7 +3013,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="xNb-M5-8LH" firstAttribute="top" secondItem="WRc-75-XEs" secondAttribute="top" constant="20" id="1Vx-Hn-LaV"/>
+                            <constraint firstItem="xNb-M5-8LH" firstAttribute="top" secondItem="WRc-75-XEs" secondAttribute="top" constant="30" id="1Vx-Hn-LaV"/>
                             <constraint firstAttribute="bottom" secondItem="YNI-OF-m1Q" secondAttribute="bottom" constant="-1" id="2rl-uD-VLp"/>
                             <constraint firstItem="ESK-HN-LIE" firstAttribute="top" secondItem="AXy-Gt-UwC" secondAttribute="top" constant="-20" id="3jq-oY-BOs"/>
                             <constraint firstItem="NoC-hT-cmy" firstAttribute="centerX" secondItem="AXy-Gt-UwC" secondAttribute="centerX" id="5yZ-kD-kN8"/>
@@ -2804,6 +3030,7 @@
                             <constraint firstItem="4pW-vm-rLq" firstAttribute="top" secondItem="Wl5-Uz-PWF" secondAttribute="bottom" constant="10" id="J36-7N-nZr"/>
                             <constraint firstAttribute="bottom" secondItem="ESK-HN-LIE" secondAttribute="bottom" constant="-14" id="Jbb-sM-fsb"/>
                             <constraint firstItem="b90-3d-TmJ" firstAttribute="leading" secondItem="2Bo-yG-t2O" secondAttribute="trailing" constant="-297.5" id="K8S-nU-69c"/>
+                            <constraint firstItem="qS6-zQ-GDu" firstAttribute="top" secondItem="waf-cp-xD7" secondAttribute="bottom" constant="8" id="M5U-28-hnA"/>
                             <constraint firstItem="cBF-n9-zCd" firstAttribute="centerX" secondItem="AXy-Gt-UwC" secondAttribute="centerX" id="MN8-vl-wEP"/>
                             <constraint firstItem="fWE-Nz-4tr" firstAttribute="leading" secondItem="Wl5-Uz-PWF" secondAttribute="trailing" constant="-297.5" id="MY0-ef-FbY"/>
                             <constraint firstItem="NoC-hT-cmy" firstAttribute="top" secondItem="TQd-5z-uzR" secondAttribute="bottom" constant="15" id="Miv-yt-md6"/>
@@ -2811,12 +3038,11 @@
                             <constraint firstItem="YNI-OF-m1Q" firstAttribute="leading" secondItem="AXy-Gt-UwC" secondAttribute="leading" constant="-6" id="NyX-oD-ccn"/>
                             <constraint firstItem="xhR-iD-rBJ" firstAttribute="centerX" secondItem="AXy-Gt-UwC" secondAttribute="centerX" id="Op4-3V-pwP"/>
                             <constraint firstItem="Gas-Xz-wTP" firstAttribute="top" secondItem="TQd-5z-uzR" secondAttribute="bottom" constant="-44" id="OsF-Xb-Ig3"/>
-                            <constraint firstItem="TQd-5z-uzR" firstAttribute="top" secondItem="xNb-M5-8LH" secondAttribute="bottom" constant="30" id="RJZ-LX-ZDh"/>
+                            <constraint firstItem="TQd-5z-uzR" firstAttribute="top" secondItem="xNb-M5-8LH" secondAttribute="bottom" constant="20" id="RJZ-LX-ZDh"/>
                             <constraint firstAttribute="trailing" secondItem="ESK-HN-LIE" secondAttribute="trailing" constant="-21" id="RfY-5c-ODg"/>
                             <constraint firstItem="76P-qG-0NY" firstAttribute="leading" secondItem="dXj-a7-XGo" secondAttribute="trailing" constant="-297.5" id="S0R-e7-m7g"/>
                             <constraint firstItem="76P-qG-0NY" firstAttribute="top" secondItem="dXj-a7-XGo" secondAttribute="bottom" constant="-44" id="SEv-3n-Boi"/>
                             <constraint firstItem="xhR-iD-rBJ" firstAttribute="top" secondItem="NoC-hT-cmy" secondAttribute="bottom" constant="15" id="WZJ-CD-BQq"/>
-                            <constraint firstItem="qS6-zQ-GDu" firstAttribute="top" secondItem="Wl5-Uz-PWF" secondAttribute="bottom" constant="18" id="Wu3-m3-3Kz"/>
                             <constraint firstItem="Ooc-c0-6wR" firstAttribute="leading" secondItem="cBF-n9-zCd" secondAttribute="trailing" constant="-295.5" id="XbA-bX-T73"/>
                             <constraint firstItem="waf-cp-xD7" firstAttribute="centerX" secondItem="AXy-Gt-UwC" secondAttribute="centerX" id="bCr-mz-8dW"/>
                             <constraint firstItem="ESK-HN-LIE" firstAttribute="leading" secondItem="WRc-75-XEs" secondAttribute="leading" id="d5Y-Ug-Y91"/>
@@ -2872,6 +3098,7 @@
         <image name="background_Login" width="375" height="812"/>
         <image name="background_image-1" width="375" height="812"/>
         <image name="background_image-2" width="375" height="812"/>
+        <image name="bg copy" width="375" height="812"/>
         <image name="bg_dark-1" width="375" height="812"/>
         <image name="bg_dark_F" width="375" height="812"/>
         <image name="bg_darkogin" width="375" height="812"/>
@@ -2885,7 +3112,7 @@
         <image name="worshipicon" width="30" height="23"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="uqV-EX-8A7"/>
+        <segue reference="VFo-jh-LeN"/>
         <segue reference="UFf-p7-lIO"/>
         <segue reference="O50-xJ-ZqN"/>
         <segue reference="BJb-6s-AhC"/>

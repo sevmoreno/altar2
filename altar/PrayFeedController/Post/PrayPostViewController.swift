@@ -644,7 +644,7 @@ class PrayPostViewController: UIViewController, UIImagePickerControllerDelegate,
         case 60...70:
         fontSize = 40
         default:
-            fontSize = 14
+            fontSize = 20
         }
         
         
@@ -723,7 +723,7 @@ class PrayPostViewController: UIViewController, UIImagePickerControllerDelegate,
              case 60...70:
              fontSize = 40
              default:
-                 fontSize = 14
+                 fontSize = 20
              }
              
              
@@ -813,7 +813,7 @@ class PrayPostViewController: UIViewController, UIImagePickerControllerDelegate,
                case 60...70:
                fontSize = 40
                default:
-                   fontSize = 14
+                   fontSize = 20
                }
                
                
@@ -875,7 +875,7 @@ class PrayPostViewController: UIViewController, UIImagePickerControllerDelegate,
                       case 60...70:
                       fontSize = 40
                       default:
-                          fontSize = 14
+                          fontSize = 20
                       }
                       
                       
@@ -935,7 +935,7 @@ class PrayPostViewController: UIViewController, UIImagePickerControllerDelegate,
                          case 60...70:
                          fontSize = 40
                          default:
-                             fontSize = 14
+                             fontSize = 20
                          }
                          
                          
@@ -1150,7 +1150,7 @@ extension PrayPostViewController: UITextViewDelegate {
                           let quote = textoIngresado.text!
                           let font = attributes[.font] as! UIFont
             
-                          fontSize = 14
+                          fontSize = 20
                           attributes[.font] = UIFont(name: "Avenir-Book", size: fontSize)
                           let paragraphStyle = NSMutableParagraphStyle()
                           paragraphStyle.alignment = .left

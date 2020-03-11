@@ -137,6 +137,10 @@ class AnnotatedPhotoCell: UICollectionViewCell, UIGestureRecognizerDelegate {
     
     @objc func handleLike() {
         print("Handling like from within cell...")
+         
+     
+        
+        
          delegate?.ImageOnlyDelegate_didLike(for: self)
     }
     
@@ -162,6 +166,7 @@ class AnnotatedPhotoCell: UICollectionViewCell, UIGestureRecognizerDelegate {
     @objc func handleComment() {
         print("Trying to show comments...")
         guard let post = post else { return }
+        
         
         delegate?.ImageOnlyDelegate_didTapComment(post: post)
         
@@ -222,6 +227,8 @@ class AnnotatedPhotoCell: UICollectionViewCell, UIGestureRecognizerDelegate {
                        print("Swiper no Swiper !!!!")
                        
                        let contenedor = UIView()
+                        
+                        contenedor.tag = 300
 
                        addSubview(contenedor)
                        

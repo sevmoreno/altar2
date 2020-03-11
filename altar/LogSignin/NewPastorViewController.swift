@@ -183,6 +183,8 @@ textbackbroundpassword.layer.cornerRadius = 22
        mainScrollViewBottomConstraint.constant = 0
    }
  */
+    
+    var accounthelper = AccountHelpers ()
 
     @IBAction func signIn(_ sender: Any) {
         
@@ -240,22 +242,34 @@ textbackbroundpassword.layer.cornerRadius = 22
                              "photoURL": modoString ,
                              "fcmToken": stringdeToken,
                              "title" : self.titlePastor.text,
-                             "churchID" : "",
+                             "churchID" : "37E98093-7B60-4029-8DE2-7BD7C15840BE",
                              "isPastor" : 1,
-                             "uid" : ""]
+                             "uid" : "37E98093-7B60-4029-8DE2-7BD7C15840BE"]
                         
                         let userID = String ((user?.user.uid)!) ?? "NoTiene"
                         //   self.databaseReference.child("users").child("\(user!.user.uid)").setValue(user?.user.uid, forKeyPath: "userid")
                         self.ref.child("users").child(userID).setValue(userinfo)
+                        
+                        self.accounthelper.loadCurrentUserInfo(completionHandler: { (success) -> Void in
+                                       
+                                       if success {
+                                        
+                                        
+                                      //  self.performSegue(withIdentifier: "creatChurch", sender: self)
+                                           // self.isUserLoaded = true
+                                       }
+                                           
+                                       
+                                   })
                         //self.ref.child("users").child(userID).setValue(self.email.text!)
                         //   self.databaseReference.child("users").child("\(user!.user.uid)").setValue(self.selectedChurch, forKeyPath: "church")
-                        self.performSegue(withIdentifier: "creatChurch", sender: self)
+                        
                         
                         
                         
                     })
                     
-                    
+                     self.performSegue(withIdentifier: "creatChurch", sender: self)
                     
                     })
                     

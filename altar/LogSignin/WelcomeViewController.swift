@@ -84,7 +84,7 @@ class WelcomeViewController: UIViewController {
                
                // do some tasks..
      
-     //   try! Auth.auth().signOut()
+       //  try! Auth.auth().signOut()
         
         navigationController?.navigationBar.isHidden = true
 //        Auth.auth().addStateDidChangeListener() { auth, user in
@@ -125,7 +125,7 @@ class WelcomeViewController: UIViewController {
             let a = UIImageView ()
             a.image = #imageLiteral(resourceName: "bg copy")
             a.contentMode = .scaleAspectFit
-            a.alpha = 0.6
+            a.alpha = 0.8
             
             return a
             
@@ -135,7 +135,7 @@ class WelcomeViewController: UIViewController {
             
             let a = UIImageView ()
             
-            a.image = UIImage(named: "logo")
+            a.image = UIImage(named: "logonuevo")
             
             return a
             
@@ -205,21 +205,21 @@ class WelcomeViewController: UIViewController {
     //    let subtitulo: NSAttributedString = {
             
             let together = NSMutableAttributedString (string: "together", attributes: [
-                .font : UIFont(name: "Prompt-BoldItalic", size: 22)!,
+                .font : UIFont(name: "Prompt-BoldItalic", size: 25)!,
                 .foregroundColor : UIColor(red: 1, green: 1, blue: 1, alpha: 1),
                 .kern : -0.35,
                 .paragraphStyle : NSMutableParagraphStyle(alignment: .left, lineHeight: nil, paragraphSpacing: 0)
             ])
             
            let inThe = NSMutableAttributedString(string: " in the same", attributes: [
-            .font : UIFont(name: "Prompt-Regular", size: 22)!,
+            .font : UIFont(name: "Prompt-Regular", size: 25)!,
             .foregroundColor : UIColor(red: 1, green: 1, blue: 1, alpha: 1),
             .kern : -0.35,
             .paragraphStyle : NSMutableParagraphStyle(alignment: .left, lineHeight: nil, paragraphSpacing: 0)
         ])
             
                let spirit = NSMutableAttributedString(string: " Spirit", attributes: [
-                .font : UIFont(name: "Prompt-Black", size: 22)!,
+                .font : UIFont(name: "Prompt-Black", size: 25)!,
                 .foregroundColor : UIColor(red: 1, green: 1, blue: 1, alpha: 1),
                 .kern : -0.35,
                 .paragraphStyle : NSMutableParagraphStyle(alignment: .left, lineHeight: nil, paragraphSpacing: 0)
@@ -327,7 +327,7 @@ class WelcomeViewController: UIViewController {
         altarLaber.anchor(top: view.topAnchor, left: nil, bottom: nil, right: nil, paddingTop: 258, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 300, height: 0)
         altarLaber.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         
-        logo.anchor(top: nil, left: nil, bottom: altarLaber.topAnchor, right: nil, paddingTop: 0, paddingLeft: 0, paddingBottom: 5, paddingRight: 0, width: 33, height: 44)
+        logo.anchor(top: nil, left: nil, bottom: altarLaber.topAnchor, right: nil, paddingTop: 0, paddingLeft: 0, paddingBottom: -10, paddingRight: 0, width: 23, height: 34)
          logo.centerXAnchor.constraint(equalTo: altarLaber.centerXAnchor).isActive = true
         
         view.addSubview(togetherInTheSameLabel)

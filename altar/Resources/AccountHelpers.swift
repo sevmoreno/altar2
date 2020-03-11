@@ -23,7 +23,42 @@ class AccountHelpers  {
     
     
     
-    func loadFirstContent () {
+    func loadFirstContent (uidUsers: String, uidChurch: String) {
+        
+        
+        
+        
+        let devocional = [
+            "author": "uC3jMeO6QxgK8oEh5X82IMeIesC3",
+            "church" : uidChurch,
+            "creationDate" : Date().millisecondsSince1970,
+            "devoUID": "71231A30-E786-413E-8127-D743FE1FBF2B",
+            "message": "The God we serve is a God of unity who desires that His church live in unity and harmony built on the foundation that is Jesus Christ. It is Jesus who draws us together and the power of the Holy Spirit that make our bond stronger.\nChurches today have a lot of values. Some churches value doctrine, political correctness, events, programmes, social responsibility or discipleship. And it's not that these things are not important, but God declares that in His kingdom, nothing is as important as being united in love.\n\nGod calls the church to be a vibrant and powerful one that bears much fruit and the way we do that is by working together in perfect unity, not in perfect doctrine, perfect systems, perfect worship services or perfect leadership. That's why we are likened to a body - because what gets things done is unity in diversity. 1 Corinthians 12:12 says, \"For just as the body is one and has many members, and all the members of the body, though many, are one body, so it is with Christ.\"\n\nGod stands and affirms the power of unity in getting things done. In Genesis 11:6 the Lord spoke of the power of the people of Babel saying, \"Behold, they are one people, and they have all one language, and this is only the beginning of what they will do. And nothing that they propose to do will now be impossible for them.\"\n\nThese people were united for the wrong reasons, and yet God acknowledged what ability they had. Imagine what we can do if we are united for the right reasons. That's why the first thing that God did upon the establishment of the early church was give people a united language. In Acts 2:8-11, the Holy Spirit empowered the believers to once again speak the same language:\n\n\"And how is it that we hear, each of us in his own native language? Parthians and Medes and Elamites and residents of Mesopotamia, Judea and Cappadocia, Pontus and Asia, Phrygia and Pamphylia, Egypt and the parts of Libya belonging to Cyrene, and visitors from Rome, both Jews and proselytes, Cretans and Arabians—we hear them telling in our own tongues the mighty works of God.\"\nUnity is vital to building strong and vibrant churches. Today, the body of Christ is plagued by church splits and denomination splits all in the name of truth. But is the truth something that is to bring division within the body of believers? I believe that the truth, once centralised on the person of Jesus Christ, will bring unity and not division. The truth of God's Word should bring oneness and not categorisation amongst us.\n\nThe enemy we fight finds no initimidation in a church that is fighting with one another. What threatens Satan is a force built on one foundation and brought closer together by the love of God. That's why God calls us to love one another over and over again in scripture. He values unity and He values relationships built within the parameters of His church.\n\nGod is looking to build a church where everyone values relational unity, and the way we achieve that unity is by being united under one banner. There is no other banner that must be lifted high in God's house than the banner of Jesus' name. There is power in being brought together in Jesus' name, and when we are united in Jesus, nothing that we propose to do will be impossible for us.",
+            "photoURL" :"https://firebasestorage.googleapis.com/v0/b/altar-92d12.appspot.com/o/backgroundsDevSR%2F-M-qdkd9WWOHCrEXBWLJ?alt=media&token=10af4f8f-7403-4060-a57c-4a2838e85e77",
+            "title":"Power of Unity",
+            "urltexto":"https://firebasestorage.googleapis.com/v0/b/altar-92d12.appspot.com/o/Devotionals%2FC18CF123-6F7A-406D-B62D-5F780CFEFFA8%2F9FB5B46C-F129-49DE-AC6D-AC615BB0E7F7?alt=media&token=dd4c3e75-b611-4792-a1f6-b9dcf01b24d7"
+
+            ] as [String:Any]
+        
+        let post = [
+            
+            "author" : "Juan Moreno",
+            "creationDate" : Date().millisecondsSince1970,
+            "imagH:":1140,
+            "imagW:":1152,
+            "message":"May the Lord answer you in the day of trouble;\nMay the name of the God of Jacob defend you;\nMay He send you help from the sanctuary,\nAnd strengthen you out of Zion;\nMay He remember all your offerings,\nAnd accept your burnt sacrifice. Selah\n\nMay He grant you according to your heart’s desire,\nAnd fulfill all your purpose.\n\nPsalm 20: 1-4",
+            "postID":"-M2-nV91IP0Qz1hlo9Rk",
+            "postType":"imageOnly",
+        "pathtoPost":"https://firebasestorage.googleapis.com/v0/b/altar-92d12.appspot.com/o/post_pray_feed%2FuC3jMeO6QxgK8oEh5X82IMeIesC3%2F-M2-nV91IP0Qz1hlo9Rk.jpg?alt=media&token=15be18c5-e89c-4773-9557-ad0a0ea47fd8",
+            "prays":0,
+            "userPhoto": "https://firebasestorage.googleapis.com/v0/b/altar-92d12.appspot.com/o/users%2Fpicture%2FuC3jMeO6QxgK8oEh5X82IMeIesC3?alt=media&token=a9dcf356-7145-436a-a08c-e8675e5a84d8",
+            "userid":"uC3jMeO6QxgK8oEh5X82IMeIesC3"
+            
+            ] as [String : Any]
+        
+        advengers.shared.postPrayFeed.child(uidChurch).child("-M2-nV91IP0Qz1hlo9Rk").updateChildValues(post)
+        
+        Database.database().reference().child("Devotionals").child(uidChurch).child("71231A30-E786-413E-8127-D743FE1FBF2B").updateChildValues(devocional)
         
         
     }

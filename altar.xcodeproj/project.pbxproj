@@ -28,7 +28,6 @@
 		653C0FC823FCB17B00700ACE /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653C0FC723FCB17B00700ACE /* Event.swift */; };
 		653C0FCA23FCB9DC00700ACE /* EventoSeleccionado.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653C0FC923FCB9DC00700ACE /* EventoSeleccionado.swift */; };
 		653C0FCC23FD963D00700ACE /* UsuariosUITableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653C0FCB23FD963D00700ACE /* UsuariosUITableTableViewCell.swift */; };
-		653C0FCE23FE002E00700ACE /* Here I Am to Worship.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 653C0FCD23FE002E00700ACE /* Here I Am to Worship.mp3 */; };
 		653C0FD023FE0D7500700ACE /* songinprocess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653C0FCF23FE0D7500700ACE /* songinprocess.swift */; };
 		653C0FD323FEFF0F00700ACE /* ChannelSeleccionadoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653C0FD223FEFF0F00700ACE /* ChannelSeleccionadoViewController.swift */; };
 		65421CCE23AAABFE000B0437 /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65421CCD23AAABFE000B0437 /* extensions.swift */; };
@@ -48,7 +47,6 @@
 		6561CA0C23F46C8900AA8C15 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6561CA0B23F46C8900AA8C15 /* Channel.swift */; };
 		6561CA0E23F46E3700AA8C15 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6561CA0D23F46E3700AA8C15 /* Song.swift */; };
 		6561CA1023F46FD400AA8C15 /* bulidDummyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6561CA0F23F46FD400AA8C15 /* bulidDummyViewController.swift */; };
-		6561CA1223F4785900AA8C15 /* AsolasconDios.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6561CA1123F4785900AA8C15 /* AsolasconDios.mp3 */; };
 		6561CA1423F49CD100AA8C15 /* ChannelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6561CA1323F49CD100AA8C15 /* ChannelCollectionViewCell.swift */; };
 		6561CA1623F4E1C500AA8C15 /* Church.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6561CA1523F4E1C500AA8C15 /* Church.swift */; };
 		6561CA1923F510C000AA8C15 /* NSMutableParagraphStyle+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6561CA1823F510C000AA8C15 /* NSMutableParagraphStyle+Utility.swift */; };
@@ -141,7 +139,6 @@
 		653C0FC723FCB17B00700ACE /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		653C0FC923FCB9DC00700ACE /* EventoSeleccionado.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventoSeleccionado.swift; sourceTree = "<group>"; };
 		653C0FCB23FD963D00700ACE /* UsuariosUITableTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsuariosUITableTableViewCell.swift; sourceTree = "<group>"; };
-		653C0FCD23FE002E00700ACE /* Here I Am to Worship.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Here I Am to Worship.mp3"; sourceTree = "<group>"; };
 		653C0FCF23FE0D7500700ACE /* songinprocess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = songinprocess.swift; sourceTree = "<group>"; };
 		653C0FD223FEFF0F00700ACE /* ChannelSeleccionadoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelSeleccionadoViewController.swift; sourceTree = "<group>"; };
 		6541434123E4ED2300EB8BA8 /* league-gothic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "league-gothic.ttf"; sourceTree = "<group>"; };
@@ -162,7 +159,6 @@
 		6561CA0B23F46C8900AA8C15 /* Channel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
 		6561CA0D23F46E3700AA8C15 /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 		6561CA0F23F46FD400AA8C15 /* bulidDummyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bulidDummyViewController.swift; sourceTree = "<group>"; };
-		6561CA1123F4785900AA8C15 /* AsolasconDios.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = AsolasconDios.mp3; sourceTree = "<group>"; };
 		6561CA1323F49CD100AA8C15 /* ChannelCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelCollectionViewCell.swift; sourceTree = "<group>"; };
 		6561CA1523F4E1C500AA8C15 /* Church.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Church.swift; sourceTree = "<group>"; };
 		6561CA1723F505C200AA8C15 /* altar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = altar.entitlements; sourceTree = "<group>"; };
@@ -463,8 +459,6 @@
 				650B1E9423E207A7000C0E32 /* TabBarCambios.swift */,
 				65421CCD23AAABFE000B0437 /* extensions.swift */,
 				6561CA1823F510C000AA8C15 /* NSMutableParagraphStyle+Utility.swift */,
-				6561CA1123F4785900AA8C15 /* AsolasconDios.mp3 */,
-				653C0FCD23FE002E00700ACE /* Here I Am to Worship.mp3 */,
 				65C7FE07237CF5B0000D6D80 /* OnlyVideoPostViewController.swift */,
 				65D42424232576AA00DB286E /* LaunchScreen.storyboard */,
 				65D42427232576AA00DB286E /* Info.plist */,
@@ -608,12 +602,10 @@
 				65A7AFD22405FD7000A233C0 /* IAP_ProductIDs.plist in Resources */,
 				658303E023DA83DA00D48ED0 /* Prompt-ExtraLightItalic.ttf in Resources */,
 				65D42423232576AA00DB286E /* Assets.xcassets in Resources */,
-				653C0FCE23FE002E00700ACE /* Here I Am to Worship.mp3 in Resources */,
 				658303EC23DA83E000D48ED0 /* Avenir.ttc in Resources */,
 				658303E523DA83DA00D48ED0 /* Prompt-MediumItalic.ttf in Resources */,
 				65D4241E232576A800DB286E /* Main.storyboard in Resources */,
 				658303DB23DA83DA00D48ED0 /* Prompt-Bold.ttf in Resources */,
-				6561CA1223F4785900AA8C15 /* AsolasconDios.mp3 in Resources */,
 				658303E923DA83DA00D48ED0 /* Prompt-Thin.ttf in Resources */,
 				658303E823DA83DA00D48ED0 /* Prompt-SemiBoldItalic.ttf in Resources */,
 			);

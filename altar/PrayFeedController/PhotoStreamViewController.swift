@@ -154,14 +154,12 @@ class PhotoStreamViewController: UICollectionViewController, UICollectionViewDel
     
     func textImageDelegate_didLike(for cell: PhotoTextoCollectionViewCell) {
         
-        
-        print("llego al protocolo")
+
         
         guard let indexPath = collectionView?.indexPath(for: cell) else { return }
         
         var post =  self.photos[indexPath.item]
-        print("Cuantos Likes tiene antes")
-        print(post.likes)
+
         
         
         guard let postId = post.postID else { return }
@@ -232,15 +230,12 @@ class PhotoStreamViewController: UICollectionViewController, UICollectionViewDel
     }
     
     func textOnlyDelegate_didLike(for cell: textOnlyCell) {
-        
-        print("llego al protocolo")
+
         
         guard let indexPath = collectionView?.indexPath(for: cell) else { return }
         
         var post =  self.photos[indexPath.item]
-        print("Cuantos Likes tiene antes")
-        print(post.likes)
-        
+
         
         guard let postId = post.postID else { return }
         
@@ -304,15 +299,12 @@ class PhotoStreamViewController: UICollectionViewController, UICollectionViewDel
     //------------------------ ImageOnlyDelegate
     
     func ImageOnlyDelegate_didLike(for cell: AnnotatedPhotoCell) {
-        print("llego al protocolo")
+
         
         guard let indexPath = collectionView?.indexPath(for: cell) else { return }
         
         var post =  self.photos[indexPath.item]
-        print("Cuantos Likes tiene antes")
-        print(post.likes)
-        
-        
+
         guard let postId = post.postID else { return }
         
         guard let uid = Auth.auth().currentUser?.uid else { return }
@@ -321,10 +313,6 @@ class PhotoStreamViewController: UICollectionViewController, UICollectionViewDel
         post.hasLiked = true
         let values = [uid: post.hasLiked]
         
-        
-        
-        
-        //      let values = [uid: post.hasLiked == true ? 0 : 1]
         Database.database().reference().child("likes").child(postId).updateChildValues(values) { (err, _) in
             
             if let err = err {
@@ -843,7 +831,7 @@ class PhotoStreamViewController: UICollectionViewController, UICollectionViewDel
         default:
             
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "textOnlyCelll", for: indexPath as IndexPath) as! textOnlyCell
-            cell.contentView.backgroundColor = .red
+            cell.contentView.backgroundColor = .white
             cell.post = photos[indexPath.item]
             cell.delegate = self
             return cell
