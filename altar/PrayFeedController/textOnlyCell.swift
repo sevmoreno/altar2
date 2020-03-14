@@ -68,7 +68,7 @@ class textOnlyCell: UICollectionViewCell, UIGestureRecognizerDelegate {
     fileprivate func setupAttributedCaption() {
         guard let post = self.post else { return }
         
-        let attributedText = NSMutableAttributedString(string: " \(post.message ?? "Defaul Value")", attributes: [NSAttributedString.Key.font: UIFont(name: "Avenir-Medium", size: 15)])
+        let attributedText = NSMutableAttributedString(string: "\(post.message ?? "Defaul Value")", attributes: [NSAttributedString.Key.font: UIFont(name: "Avenir-Medium", size: 15)])
         
      //   attributedText.append(NSAttributedString(string: " \(post.message ?? "Defaul Value")", attributes: [NSAttributedString.Key.font: UIFont(name: "Avenir-Medium", size: 15)]))
         
@@ -149,6 +149,8 @@ class textOnlyCell: UICollectionViewCell, UIGestureRecognizerDelegate {
     
     @objc func handleLike() {
         print("Handling like from within cell...text only")
+        
+        contenedor.isHidden = true
         delegate?.textOnlyDelegate_didLike(for: self)
     }
     
@@ -166,6 +168,7 @@ class textOnlyCell: UICollectionViewCell, UIGestureRecognizerDelegate {
     @objc func handleComment() {
         print("Trying to show comments...on only text")
         guard let post = post else { return }
+        contenedor.isHidden = true
         
         delegate?.textOnlyDelegate_didTapComment(post: post)
         
@@ -202,7 +205,7 @@ class textOnlyCell: UICollectionViewCell, UIGestureRecognizerDelegate {
  //   }()
     
     
-    
+     let contenedor = UIView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -222,7 +225,7 @@ class textOnlyCell: UICollectionViewCell, UIGestureRecognizerDelegate {
              userProfileImageView.anchor(top: topAnchor, left: leftAnchor, bottom: nil, right: nil, paddingTop: 15, paddingLeft: 15, paddingBottom: 0, paddingRight: 0, width: 50, height: 50)
              userProfileImageView.layer.cornerRadius = 50 / 2
              
-             usernameLabel.anchor(top: userProfileImageView.topAnchor, left: userProfileImageView.rightAnchor, bottom: nil, right: nil, paddingTop: 10, paddingLeft: 8, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
+        usernameLabel.anchor(top: userProfileImageView.topAnchor, left: userProfileImageView.rightAnchor, bottom: nil, right: rightAnchor, paddingTop: 10, paddingLeft: 8, paddingBottom: 0, paddingRight: 20, width: 0, height: 0)
              
          addSubview(praysDate)
         praysDate.anchor(top: nil, left: nil, bottom: nil, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 30, width: 0, height: 0)
@@ -234,7 +237,7 @@ class textOnlyCell: UICollectionViewCell, UIGestureRecognizerDelegate {
           
              
              addSubview(captionLabel)
-             captionLabel.anchor(top: userProfileImageView.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 10, paddingLeft: 8, paddingBottom: 0, paddingRight: 8, width: 0, height: 0)
+             captionLabel.anchor(top: userProfileImageView.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 10, paddingLeft: 15, paddingBottom: 0, paddingRight: 8, width: 0, height: 0)
              
              let stackView = UIStackView(arrangedSubviews: [likeButton,likeCount,commentButton,commentCount])
             stackView.distribution = .fillProportionally
@@ -287,7 +290,8 @@ class textOnlyCell: UICollectionViewCell, UIGestureRecognizerDelegate {
 
         print("Swiper no Swiper !!!!")
         
-        let contenedor = UIView()
+       contenedor.isHidden = false
+            
 
         addSubview(contenedor)
         
@@ -314,7 +318,7 @@ class textOnlyCell: UICollectionViewCell, UIGestureRecognizerDelegate {
     @objc func borrar() {
 //        let imageDataDict = ["index": self.]
 //        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "DeleteCell"), object: nil,userInfo: imageDataDict)
-        
+        contenedor.isHidden = true
         delegate?.deletCellD(for: self)
     }
     

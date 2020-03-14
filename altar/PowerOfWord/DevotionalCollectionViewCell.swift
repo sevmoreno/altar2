@@ -129,7 +129,8 @@ class DevotionalCollectionViewCell: UICollectionViewCell, UIGestureRecognizerDel
         
         
         addSubview(praysDate)
-        praysDate.anchor(top: nil, left: titulo.leftAnchor, bottom: titulo.topAnchor, right: nil, paddingTop: 0, paddingLeft: 0, paddingBottom: 10, paddingRight: 0, width: 0, height: 0)
+        praysDate.textAlignment = .center
+        praysDate.anchor(top: nil, left: titulo.leftAnchor, bottom: titulo.topAnchor, right: nil, paddingTop: 0, paddingLeft: 0, paddingBottom: 10, paddingRight: 0, width: 80, height: 0)
         
         //titulo.heightAnchor.constraint(equalToConstant: 140).isActive = true
        // titulo.widthAnchor.constraint(equalToConstant: 140).isActive = true

@@ -31,6 +31,7 @@
 		653C0FD023FE0D7500700ACE /* songinprocess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653C0FCF23FE0D7500700ACE /* songinprocess.swift */; };
 		653C0FD323FEFF0F00700ACE /* ChannelSeleccionadoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653C0FD223FEFF0F00700ACE /* ChannelSeleccionadoViewController.swift */; };
 		65421CCE23AAABFE000B0437 /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65421CCD23AAABFE000B0437 /* extensions.swift */; };
+		654C4015241AA1DD001690B8 /* MyChurchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654C4014241AA1DC001690B8 /* MyChurchViewController.swift */; };
 		654F95D923306ABC00175A7E /* PrayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654F95D823306ABC00175A7E /* PrayViewController.swift */; };
 		654F95DB23306E7F00175A7E /* PrayPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654F95DA23306E7F00175A7E /* PrayPostViewController.swift */; };
 		654F95DD2331B93B00175A7E /* FeedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654F95DC2331B93B00175A7E /* FeedCollectionViewCell.swift */; };
@@ -143,6 +144,7 @@
 		653C0FD223FEFF0F00700ACE /* ChannelSeleccionadoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelSeleccionadoViewController.swift; sourceTree = "<group>"; };
 		6541434123E4ED2300EB8BA8 /* league-gothic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "league-gothic.ttf"; sourceTree = "<group>"; };
 		65421CCD23AAABFE000B0437 /* extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
+		654C4014241AA1DC001690B8 /* MyChurchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyChurchViewController.swift; sourceTree = "<group>"; };
 		654F95D823306ABC00175A7E /* PrayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayViewController.swift; sourceTree = "<group>"; };
 		654F95DA23306E7F00175A7E /* PrayPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayPostViewController.swift; sourceTree = "<group>"; };
 		654F95DC2331B93B00175A7E /* FeedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 				65372DD723ECFEF30078778A /* SettingsViewController.swift */,
 				659E3BF6240EDCF500B71ECB /* editUserProfile.swift */,
 				659FAF012413346F00BCAD30 /* EditChurchProfileViewController.swift */,
+				654C4014241AA1DC001690B8 /* MyChurchViewController.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -686,6 +689,7 @@
 				65ABFC89232C170200729B57 /* Advengers.swift in Sources */,
 				659595C423D0EFC1007FB09C /* searchSongViewController.swift in Sources */,
 				653C0FC623FC837200700ACE /* Slide3Type.swift in Sources */,
+				654C4015241AA1DD001690B8 /* MyChurchViewController.swift in Sources */,
 				65A7AFDB2406DC2600A233C0 /* SubscribeViewController.swift in Sources */,
 				654F95E52339307F00175A7E /* FeedOnlyTextCollectionViewCell.swift in Sources */,
 				65CB7E8B23C3CBAD0018526D /* DevotionalCollectionViewCell.swift in Sources */,

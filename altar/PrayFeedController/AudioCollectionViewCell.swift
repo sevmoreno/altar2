@@ -210,6 +210,8 @@ class AudioCollectionViewCell: UICollectionViewCell, UIGestureRecognizerDelegate
     
     @objc func handleLike() {
         print("Handling like from within cell...")
+        contenedor.isHidden = true
+        
        delegate?.AudibleDelegate_didLike(for: self)
     }
     
@@ -226,6 +228,9 @@ class AudioCollectionViewCell: UICollectionViewCell, UIGestureRecognizerDelegate
     
     @objc func handleComment() {
         print("Trying to show comments...")
+        
+        contenedor.isHidden = true
+        
         guard let post = post else { return }
         
          delegate?.AudibleDelegate_didTapComment(post: post)
@@ -418,14 +423,20 @@ class AudioCollectionViewCell: UICollectionViewCell, UIGestureRecognizerDelegate
 
             }
             
-            
+            let contenedor = UIView()
+    
             @objc func hiddenContainerViewTapped () {
 
+                
+                
              if post?.userID == Auth.auth().currentUser?.uid || advengers.shared.isPastor == true {
 
                        print("Swiper no Swiper !!!!")
                        
-                       let contenedor = UIView()
+                
+                        contenedor.isHidden = false
+                
+                       
 
                        addSubview(contenedor)
                        
@@ -452,7 +463,7 @@ class AudioCollectionViewCell: UICollectionViewCell, UIGestureRecognizerDelegate
             @objc func borrar() {
         //        let imageDataDict = ["index": self.]
         //        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "DeleteCell"), object: nil,userInfo: imageDataDict)
-                
+                contenedor.isHidden = true
                 delegate?.deletCellD(for: self)
             }
         

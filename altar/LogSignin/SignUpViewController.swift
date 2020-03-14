@@ -255,9 +255,9 @@ textbackbroundpassword.layer.cornerRadius = 22
                         stringdeToken.append(fcmToken)
                     }
                        
-                       
+                    let mailboxA = ["fsdfdsfsdfsdfsd": 0] as [String:Int]
                     
-                    let userinfo: [String:Any] = ["userid" : (user?.user.uid), "name" : self.name?.text!, "email" : self.email.text!,"fcmToken": stringdeToken, "church": advengers.shared.currentChurch,"isPastor" : 0, "photoURL" : modoString ?? "","churchID": advengers.shared.currentChurchInfo.uidChurch]
+                    let userinfo: [String:Any] = ["userid" : (user?.user.uid), "name" : self.name?.text!, "email" : self.email.text!,"fcmToken": stringdeToken, "church": advengers.shared.currentChurch,"isPastor" : 0, "photoURL" : modoString ?? "","churchID": advengers.shared.currentChurchInfo.uidChurch, "inbox" : mailboxA]
                     
                         let userID = String ((user?.user.uid)!) ?? "NoTiene"
                         //   self.databaseReference.child("users").child("\(user!.user.uid)").setValue(user?.user.uid, forKeyPath: "userid")

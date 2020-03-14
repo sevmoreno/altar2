@@ -189,6 +189,28 @@ class SettingsViewController: UIViewController, UIActivityItemSource {
                           
                    return button
                }()
+    
+    
+    let myChurch: UIButton = {
+                      
+                      /*
+                      let button = UIButton(type: .system)
+                      button.setTitle("Log Out", for: .normal)
+                     // button.backgroundColor = UIColor(red: 149/255, green: 204/255, blue: 244/255, alpha: 1)
+                     // button.layer.cornerRadius = 5
+                      button.titleLabel?.font = UIFont(name: "Avenir-Book", size: 20)
+                      button.setTitleColor(.white, for: .normal)
+                      button.addTarget(self, action: #selector (logout), for: .touchUpInside)
+               */
+                      let button = UIButton(type: .system)
+                      button.titleLabel?.font = UIFont(name: "Avenir-Book", size: 20)
+                      button.setTitle("My Church", for: .normal)
+                      button.setTitleColor(.white, for: .normal)
+                    
+                      button.addTarget(self, action: #selector(myChurchInfo), for: .touchUpInside)
+                             
+                      return button
+                  }()
        
     let pastorMode: UIButton = {
            
@@ -239,24 +261,34 @@ class SettingsViewController: UIViewController, UIActivityItemSource {
         editProfile.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
 
         
-        if advengers.shared.isPastor {
-            
-            view.addSubview(editChurchProfile)
-            editChurchProfile.anchor(top: editProfile.bottomAnchor, left: nil, bottom: nil, right: nil, paddingTop: 10, paddingLeft: 0, paddingBottom: 0, paddingRight: 30, width: 0, height: 0)
-            editChurchProfile.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-
-            
-        }
+        view.addSubview(myChurch)
         
+        myChurch.anchor(top: editProfile.bottomAnchor, left: nil, bottom: nil, right: nil, paddingTop: 10, paddingLeft: 0, paddingBottom: 0, paddingRight: 30, width: 0, height: 0)
+        myChurch.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+       
         
         view.addSubview(developerButton)
-               developerButton.anchor(top: editProfile.bottomAnchor, left: nil, bottom: nil, right: nil, paddingTop: 60, paddingLeft: 0, paddingBottom: 0, paddingRight: 30, width: 0, height: 0)
+               developerButton.anchor(top: myChurch.bottomAnchor, left: nil, bottom: nil, right: nil, paddingTop: 30, paddingLeft: 0, paddingBottom: 0, paddingRight: 30, width: 0, height: 0)
                developerButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         
         
         view.addSubview(shareApp)
                       shareApp.anchor(top: developerButton.bottomAnchor, left: nil, bottom: nil, right: nil, paddingTop: 10, paddingLeft: 0, paddingBottom: 0, paddingRight: 30, width: 0, height: 0)
                       shareApp.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        
+        
+        
+        if advengers.shared.isPastor {
+                   
+                   view.addSubview(editChurchProfile)
+                   editChurchProfile.anchor(top: shareApp.bottomAnchor, left: nil, bottom: nil, right: nil, paddingTop: 10, paddingLeft: 0, paddingBottom: 0, paddingRight: 30, width: 0, height: 0)
+                   editChurchProfile.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+
+                   
+               }
+               
+        
+        
         
         
         view.addSubview(pastorMode)
@@ -282,8 +314,17 @@ class SettingsViewController: UIViewController, UIActivityItemSource {
         self.view.window?.rootViewController?.dismiss(animated: true, completion: nil) 
     }
     
-    
-    
+    @objc func myChurchInfo () {
+        
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "MyChurh") as! UIViewController
+        // nextViewController.referalDetailsFromDB()
+         self.navigationController?.pushViewController(nextViewController, animated: true)
+        
+        
+        
+        
+    }
     @objc func editUserProfile () {
         
         
@@ -342,7 +383,11 @@ class SettingsViewController: UIViewController, UIActivityItemSource {
     
     @objc func goBackAction () {
         
-         _ = navigationController?.popViewController(animated: true)
+        
+        print("llego a back")
+        navigationController?.dismiss(animated: true, completion: {
+            
+        })
     }
     /*
      

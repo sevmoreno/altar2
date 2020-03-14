@@ -31,7 +31,7 @@ class PhotoVideoPostViewController: UIViewController, UIImagePickerControllerDel
     let  textoIngresado: UITextView = {
         
         let a = UITextView ()
-        
+        a.font = UIFont(name: "Avenir", size: 18)
         
         return a
         
@@ -110,7 +110,7 @@ class PhotoVideoPostViewController: UIViewController, UIImagePickerControllerDel
          userProfileImageView.layer.borderColor = advengers.shared.colorOrange.cgColor
          
          userProfileImageView.layer.cornerRadius = 50 / 2
-        userProfileImageView.topAnchor.constraint(equalTo: view.topAnchor, constant:120).isActive = true
+        userProfileImageView.topAnchor.constraint(equalTo: view.topAnchor, constant:100).isActive = true
         userProfileImageView.leftAnchor.constraint(equalTo: view.leftAnchor, constant:15).isActive = true
          userProfileImageView.widthAnchor.constraint(equalToConstant: 50).isActive = true
          userProfileImageView.heightAnchor.constraint(equalToConstant: 50).isActive = true
@@ -144,7 +144,7 @@ class PhotoVideoPostViewController: UIViewController, UIImagePickerControllerDel
         
         view.addSubview(imageToDisplay)
         let ratio: CGFloat = isImage!.size.width / isImage!.size.height
-        imageToDisplay.anchor(top: userProfileImageView.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 20, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: view.frame.width , height: view.frame.width / ratio)
+        imageToDisplay.anchor(top: userProfileImageView.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 15, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: view.frame.width , height: view.frame.width / ratio)
       
  
    //     imageToDisplay.anchor(top: view.topAnchor, left: nil, bottom: nil, right: nil, paddingTop: 10, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 400, height: 400)
@@ -199,6 +199,12 @@ class PhotoVideoPostViewController: UIViewController, UIImagePickerControllerDel
             
             imageRef.downloadURL(completion: { (url, error) in
                 if let url = url {
+                    
+                    if self.textoIngresado.text == "Say something about this photo ..."
+                    {
+                        self.textoIngresado.text = ""
+                    }
+                    
                     
                     let feed = ["userid": uid,
                                 "pathtoPost":url.absoluteString,
@@ -266,7 +272,7 @@ class PhotoVideoPostViewController: UIViewController, UIImagePickerControllerDel
     guard let keyboardSize = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else {return}
     let keyboardFrame = keyboardSize.cgRectValue
     if self.view.frame.origin.y == 0{
-        self.view.frame.origin.y -= (keyboardFrame.height - 100)
+        self.view.frame.origin.y -= (keyboardFrame.height - 140)
     }
     
     }
@@ -277,7 +283,7 @@ class PhotoVideoPostViewController: UIViewController, UIImagePickerControllerDel
     guard let keyboardSize = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else {return}
     let keyboardFrame = keyboardSize.cgRectValue
     if self.view.frame.origin.y != 0{
-        self.view.frame.origin.y += (keyboardFrame.height - 100)
+        self.view.frame.origin.y += (keyboardFrame.height - 140)
     }
     }
     

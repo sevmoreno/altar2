@@ -139,7 +139,7 @@ class AnnotatedPhotoCell: UICollectionViewCell, UIGestureRecognizerDelegate {
         print("Handling like from within cell...")
          
      
-        
+            contenedor.isHidden = true
         
          delegate?.ImageOnlyDelegate_didLike(for: self)
     }
@@ -167,7 +167,7 @@ class AnnotatedPhotoCell: UICollectionViewCell, UIGestureRecognizerDelegate {
         print("Trying to show comments...")
         guard let post = post else { return }
         
-        
+        contenedor.isHidden = true
         delegate?.ImageOnlyDelegate_didTapComment(post: post)
         
     }
@@ -193,6 +193,8 @@ class AnnotatedPhotoCell: UICollectionViewCell, UIGestureRecognizerDelegate {
         return textView
     }()
     
+    
+     let contenedor = UIView()
     
     
     override init(frame: CGRect) {
@@ -221,12 +223,14 @@ class AnnotatedPhotoCell: UICollectionViewCell, UIGestureRecognizerDelegate {
             
             
             @objc func hiddenContainerViewTapped () {
+                
+                
 
       if post?.userID == Auth.auth().currentUser?.uid || advengers.shared.isPastor == true {
 
                        print("Swiper no Swiper !!!!")
                        
-                       let contenedor = UIView()
+                      contenedor.isHidden = false
                         
                         contenedor.tag = 300
 
@@ -255,7 +259,7 @@ class AnnotatedPhotoCell: UICollectionViewCell, UIGestureRecognizerDelegate {
             @objc func borrar() {
         //        let imageDataDict = ["index": self.]
         //        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "DeleteCell"), object: nil,userInfo: imageDataDict)
-                
+                contenedor.isHidden = true
                 delegate?.deletCellD(for: self)
             }
     

@@ -110,30 +110,57 @@ class UsersViewController: UIViewController, UIScrollViewDelegate {
  //   }
     
 
-    
+   // let accounthelper = AccountHelpers ()
     
     override func viewDidLoad() {
       
        // mewMessageSearch ()
         super.viewDidLoad()
         
+        accountHelper.loadCurrentUserInfo { (true) in
+        
+            if let hayChurch = advengers.shared.currenUSer["churchID"] as? String {
+                     
+                self.accountHelper.loadCurrentChurch(codigo: hayChurch) { (true) in
+                        
+                        
+                         
+                         
+                         
+                     }
+                     
+                 }
+                 
+            
+            
+        }
+        
+        
+     self.retriveUsers(completionHandler: { (success) -> Void in
+                                 
+                                 
+                                 print("************************ CANTIDAD DE USUARIOS ****************************")//
+                                 print(self.users.count)
+                                 
+                               //  self.tablaUsuarios.reloadData()
+                                                      
+                                                  })
       //  recive.delegate = self
        
     //    NotificationCenter.default.addObserver(self, selector: #selector(self.updateMSG(_:)), name: NSNotification.Name(rawValue: "UpdateMSG"), object: nil)
        // NotificationCenter.default.addObserver(self, selector: #selector(updateMSG), name: NSNotification.Name(rawValue: "UpdateMSG"), object: nil)
         
-        retriveUsers(completionHandler: { (success) -> Void in
-                     
-                          if success {
-                              
-                              
-                          }
-                          
-                      })
+       
         
         
         
         generateEvents ()
+        
+        
+        //REloadEvent
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadData), name: NSNotification.Name(rawValue: "REloadEvent"), object: nil)
+        
         
         NotificationCenter.default.addObserver(self, selector: #selector(reloadData), name: NSNotification.Name(rawValue: "loadEvent"), object: nil)
         
@@ -152,8 +179,7 @@ class UsersViewController: UIViewController, UIScrollViewDelegate {
         scrollView.delegate = self
         
         
-    
-       
+        
         
         newSearchForMessage ()
         
@@ -370,13 +396,16 @@ class UsersViewController: UIViewController, UIScrollViewDelegate {
     @objc func doubleTapped () {
         print ("Double tap")
         print (pageController.currentPage)
+        if eventos.count > 0 {
+            
+       
         advengers.shared.eventolSeleccinado = eventos[pageController.currentPage]
         advengers.shared.eventolSeleccinadoIndex = pageController.currentPage
         
         let devocionalSeleccionado = EventoSeleccionado ()
         // performSegue(withIdentifier: "aEvent", sender: self)
         navigationController?.pushViewController(devocionalSeleccionado, animated: true)
-        
+        }
     }
     
 
@@ -387,12 +416,17 @@ class UsersViewController: UIViewController, UIScrollViewDelegate {
     
     func retriveUsers (completionHandler: @escaping (_ success:Bool) -> Void) -> Void {
         
-      //  self.users.removeAll()
+        //  self.users.removeAll()
         // advengers.shared.postPrayFeed.child(currentChurchID).observeSingleEvent(of: .value, with: { (data) in
         advengers.shared.usersStatusRef.queryOrderedByKey().observeSingleEvent(of: .value) { (datasnap) in
             let usersRead = datasnap.value as! [ String : NSDictionary]
             //self.users.removeAll()
             print("----------------------------------------RETRIVE DATA ES LLAMADO --------------------------------------")
+            print(advengers.shared.currenUSer["churchID"])
+            print(advengers.shared.currentChurchInfo.uidChurch)
+            
+            print(usersRead)
+            
             for (_,value) in usersRead {
                 
                 
@@ -402,32 +436,36 @@ class UsersViewController: UIViewController, UIScrollViewDelegate {
                     
                     if userid != Auth.auth().currentUser?.uid
                     {
-                        if advengers.shared.currentChurch == value["church"] as? String {
+                        if advengers.shared.currentChurchInfo.uidChurch == value["churchID"] as? String {
+                            
+                            print("Entro usuario")
+                            print(value["name"])
                             
                             let userToShow = User()
                             userToShow.setup(uid: value["userid"] as? String ?? "", dictionary:  value as! [String : Any])
-
+                            
                             
                             let usuario2Uid = userToShow.userID
-                                    
-                                    guard let mydictionary = advengers.shared.currenUSer["inbox"] as? [String:Int] else  {return}
-                                    
-    
-                                    
-                                    if let cantindadDeMensajes = mydictionary[usuario2Uid] {
-                                        if cantindadDeMensajes > 0 {
-                                        self.users.insert(userToShow, at: 0)
-                                        } else {
-                                           self.users.append(userToShow)
-                                        }
-                                    } else {
-                                    
-                                    
-                                      self.users.append(userToShow)
-                                    
-                                    }
                             
-        
+                            guard let mydictionary = advengers.shared.currenUSer["inbox"] as? [String:Int] else  {return}
+                            
+                            print("Passa el guard ????")
+                            
+                            if let cantindadDeMensajes = mydictionary[usuario2Uid] {
+                                if cantindadDeMensajes > 0 {
+                                    self.users.insert(userToShow, at: 0)
+                                } else {
+                                    print("Append lapimera vez")
+                                    self.users.append(userToShow)
+                                }
+                            } else {
+                                
+                                 print("Append la segunda vez")
+                                self.users.append(userToShow)
+                                
+                            }
+                            
+                            
                             self.tablaUsuarios.reloadData()
                             
                         }
@@ -638,9 +676,7 @@ extension UsersViewController: UITableViewDelegate, UITableViewDataSource {
         chat.user2UID = users[indexPath.row].uid
         chat.user2ImgUrl = users[indexPath.row].photoUser
         
-        
-        
-    
+
         var diction2 = advengers.shared.currenUSer["inbox"] as! [String:Int]
             diction2.updateValue(0, forKey: users[indexPath.row].uid)
          //   let diction = [chat.user2UID: 0]

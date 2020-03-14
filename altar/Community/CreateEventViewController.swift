@@ -475,7 +475,7 @@ class CreateEventViewController: UIViewController {
             
             //  NSAttributedString.Key.underlineStyle : 1,
             NSAttributedString.Key.foregroundColor : advengers.shared.colorOrange,
-            NSAttributedString.Key.font: UIFont(name: "Avenir", size: 15)
+            NSAttributedString.Key.font: UIFont(name: "Avenir-Black", size: 15)
             //  NSAttributedString.Key.strokeWidth : 3.0
             
             ] as [NSAttributedString.Key : Any]
@@ -505,7 +505,7 @@ class CreateEventViewController: UIViewController {
         
         if devocionalRichText.isEmpty {
             
-            devText.attributedText = NSAttributedString(string: "Add your event here..", attributes: attributes)
+            devText.attributedText = NSAttributedString(string: "Add your event here...", attributes: attributes)
             
         }
         //  devText.selectedRange
@@ -624,6 +624,11 @@ class CreateEventViewController: UIViewController {
             fondo = advengers.shared.fondoSeleccionado
         }
         
+        if self.devText.attributedText.string == "Add your event here..." {
+                                   let emptyString = NSAttributedString(string: "")
+                                    self.devText.attributedText = emptyString
+                                   
+        }
         
         let attrString = devText.attributedText
         guard let x = attrString else {return}
@@ -672,6 +677,10 @@ class CreateEventViewController: UIViewController {
                         //                               let secondsFrom1970 = dictionary["creationDate"] as? Int64 ?? 0
                         //   let devfondo = devocionalFondo ()
                         
+                       
+                        
+                        
+                        
                         let devo = ["urltexto": htmlfileURL,
                                     "church" : currentChurchID,
                                     "author": Auth.auth().currentUser?.uid,
@@ -688,7 +697,7 @@ class CreateEventViewController: UIViewController {
                                 print("Failed to save post to DB", err)
                                 return
                             }
-                            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadEvent"), object: nil)
+                            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "REloadEvent"), object: nil)
                             print("Successfully saved post to DB")
                             
                         }
@@ -797,7 +806,7 @@ extension CreateEventViewController: UITextViewDelegate {
         print(textView.tag)
         if textView.tag == 200 {
             print(textView.attributedText.string)
-            if textView.attributedText.string == "Add your event here.." {
+            if textView.attributedText.string == "Add your event here..." {
                 print ("Llego a add your event")
                 devText.text = ""
                 let attributes = [

@@ -196,6 +196,8 @@ class PowerOfWorshipViewController:  UIViewController, AVAudioPlayerDelegate{
                navigationItem.rightBarButtonItem?.tintColor = advengers.shared.colorOrange
                
                navigationItem.title = advengers.shared.currentChurch
+        
+        
     }
     
     override func viewDidLoad() {

@@ -66,6 +66,9 @@ class EditUserViewController: UIViewController, UIImagePickerControllerDelegate,
     var nuevaImagen = false
     
     let scrollview = UIScrollView()
+    
+    let accounthelper = AccountHelpers ()
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -77,12 +80,15 @@ class EditUserViewController: UIViewController, UIImagePickerControllerDelegate,
             profileImage.layer.borderWidth = 1
         
         
-        let altarChurch = ["uidChurch": "37E98093-7B60-4029-8DE2-7BD7C15840BE",
-] as? [String:Any]
+//        let altarChurch = ["uidChurch": "C18CF123-6F7A-406D-B62D-5F780CFEFFA8",
+//] as? [String:Any]
+//
+//
+//        let churchDefautl = Church(dictionary: altarChurch!)
+//        advengers.shared.currentChurchInfo = churchDefautl
         
         
-        let churchDefautl = Church(dictionary: altarChurch!)
-        advengers.shared.currentChurchInfo = churchDefautl
+        
         
         NotificationCenter.default.addObserver(self, selector: #selector(churchSelection), name: NSNotification.Name(rawValue: "ChurchSelection"), object: nil)
         
@@ -136,32 +142,42 @@ textbackbroundpassword.layer.cornerRadius = 22
         
         
         
-        let accounthelper = AccountHelpers ()
+        
         
         accounthelper.loadCurrentUserInfo( completionHandler: { (success) -> Void in
-
-             var userProfileImageView = CustomImageView ()
+            
+            var userProfileImageView = CustomImageView ()
             if success {
                 
-               
-                           self.name.text = advengers.shared.currenUSer["name"] as? String
-                           self.email.text = advengers.shared.currenUSer["email"] as? String
-               // self.selectChurchButton.titleLabel?.textAlignment = .center
-                self.selectChurchButton.setTitle(advengers.shared.currenUSer["church"] as? String, for: .normal)
-                        //   self.selectChurchButton.titleLabel?.text = advengers.shared.currenUSer["church"] as? String
-                          // self.selectChurchButton.titleLabel?.textAlignment = .center
-                           guard let profileuserURL = advengers.shared.currenUSer["photoURL"] else {return}
-                          
-                       
-             
-                     DispatchQueue.main.async {
-                      
-                           self.profileImage.loadImage(urlString: profileuserURL as! String)
-                      
+                let currentChurchID = advengers.shared.currenUSer["churchID"] as! String
+                
+                self.accounthelper.loadCurrentChurch(codigo: currentChurchID) { (true) in
+                    
+                    
+                    self.name.text = advengers.shared.currenUSer["name"] as? String
+                    self.email.text = advengers.shared.currenUSer["email"] as? String
+                    // self.selectChurchButton.titleLabel?.textAlignment = .center
+                    self.selectChurchButton.setTitle(advengers.shared.currenUSer["church"] as? String, for: .normal)
+                    //   self.selectChurchButton.titleLabel?.text = advengers.shared.currenUSer["church"] as? String
+                    // self.selectChurchButton.titleLabel?.textAlignment = .center
+                    guard let profileuserURL = advengers.shared.currenUSer["photoURL"] else {return}
+                    
+                    
+                    
+                    DispatchQueue.main.async {
+                        
+                        self.profileImage.loadImage(urlString: profileuserURL as! String)
+                        
                         
                         self.view.reloadInputViews()
-                       }
-                      
+                    }
+                    
+                    
+                    
+                    
+                }
+                
+                
                 
             }
             

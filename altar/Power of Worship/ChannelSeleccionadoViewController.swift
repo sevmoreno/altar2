@@ -90,6 +90,8 @@ class ChannelSeleccionadoViewController: UIViewController {
                    return iv
                }()
 
+    var selectedSong: Int = 0
+    
     @objc func actiononPlay () {
                
         if isPlaying {
@@ -97,8 +99,41 @@ class ChannelSeleccionadoViewController: UIViewController {
             audioView.setImage(#imageLiteral(resourceName: "payAudio").withRenderingMode(.alwaysOriginal), for: .normal)
             audioPlayer?.stop()
             status.text = "               "
+            
+            
+        } else {
+    
+        
+            isPlaying = true
+            audioView.setImage(#imageLiteral(resourceName: "pausebutton").withRenderingMode(.alwaysOriginal), for: .normal)
+            
+            self.status.text = "Loading ...."
+            let storage = Storage.storage()
+           
+            if canciones.count >= 0{
+            
+                
+                let httpsReference = storage.reference(forURL: canciones[selectedSong].songURL)
+                  
+                  httpsReference.getData(maxSize: 100 * 1024 * 1024) { data, error in
+                      
+                      if let error = error {
+                          print("Error Playing")
+                          print(error.localizedDescription)
+                      } else {
+                          
+                          self.playContent(data: data!)
+                          // self.statusAudio.isHidden = true
+                          
+                      }
+                      
+                  }
+                  
+            }
+  
+            
+            
         }
-               
            }
     
            
@@ -257,6 +292,9 @@ class ChannelSeleccionadoViewController: UIViewController {
   
       var isPlaying = false
     
+    
+ 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -282,8 +320,8 @@ class ChannelSeleccionadoViewController: UIViewController {
         
         view.addSubview(imagenDevocional)
                      
-                     imagenDevocional.contentMode = .scaleAspectFill
-        imagenDevocional.anchor(top: view.topAnchor, left: nil, bottom: nil, right: nil, paddingTop: 100, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 300,height: 300)
+        imagenDevocional.contentMode = .scaleAspectFill
+        imagenDevocional.anchor(top: view.topAnchor, left: nil, bottom: nil, right: nil, paddingTop: 130, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 300,height: 300)
                    imagenDevocional.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         
         view.addSubview(status)
@@ -291,9 +329,11 @@ class ChannelSeleccionadoViewController: UIViewController {
         status.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         
         view.addSubview(audioView)
-        audioView.anchor(top: view.topAnchor, left: nil, bottom: nil, right: nil, paddingTop: 250, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 50,height: 50)
-        audioView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-    //    audioView.centerYAnchor.constraint(equalTo: imagenDevocional.centerYAnchor).isActive = true
+       // audioView.anchor(top: view.topAnchor, left: nil, bottom: nil, right: nil, paddingTop: 250, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 50,height: 50)
+        
+         audioView.anchor(top: nil, left: nil, bottom: nil, right: nil, paddingTop: 250, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 50,height: 50)
+        audioView.centerXAnchor.constraint(equalTo: imagenDevocional.centerXAnchor).isActive = true
+        audioView.centerYAnchor.constraint(equalTo: imagenDevocional.centerYAnchor).isActive = true
         
                      view.addSubview(titulo)
                      
@@ -309,11 +349,17 @@ class ChannelSeleccionadoViewController: UIViewController {
         
         
         view.addSubview(tabladeCanciones)
-        tabladeCanciones.anchor(top: subTitulo.bottomAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 4, paddingLeft: 0, paddingBottom: 150, paddingRight: 0, width: 0, height: 0)
+        
+         view.addSubview(selectChannel)
         
         
-        view.addSubview(selectChannel)
-       selectChannel.anchor(top: tabladeCanciones.bottomAnchor, left: nil, bottom: nil, right: nil, paddingTop: 4, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 200, height: 40)
+        tabladeCanciones.anchor(top: subTitulo.bottomAnchor, left: view.leftAnchor, bottom: selectChannel.topAnchor, right: view.rightAnchor, paddingTop: 4, paddingLeft: 0, paddingBottom: 10, paddingRight: 0, width: 0, height: 0)
+        
+        
+       
+        selectChannel.anchor(top: nil, left: nil, bottom: view.bottomAnchor, right: nil, paddingTop: 4, paddingLeft: 0, paddingBottom: 50, paddingRight: 0, width: 200, height: 40)
+        
+    //     selectChannel.anchor(top: tabladeCanciones.bottomAnchor, left: nil, bottom: nil, right: nil, paddingTop: 4, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 200, height: 40)
         selectChannel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
 //
         selectChannel.backgroundColor = UIColor.rgb(red: 247, green: 131, blue: 97)
@@ -419,6 +465,8 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        
+        selectedSong = indexPath.row
         
         isPlaying = true
         audioView.setImage(#imageLiteral(resourceName: "pausebutton").withRenderingMode(.alwaysOriginal), for: .normal)

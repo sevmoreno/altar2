@@ -51,7 +51,7 @@ class AccountHelpers  {
             "postType":"imageOnly",
         "pathtoPost":"https://firebasestorage.googleapis.com/v0/b/altar-92d12.appspot.com/o/post_pray_feed%2FuC3jMeO6QxgK8oEh5X82IMeIesC3%2F-M2-nV91IP0Qz1hlo9Rk.jpg?alt=media&token=15be18c5-e89c-4773-9557-ad0a0ea47fd8",
             "prays":0,
-            "userPhoto": "https://firebasestorage.googleapis.com/v0/b/altar-92d12.appspot.com/o/users%2Fpicture%2FuC3jMeO6QxgK8oEh5X82IMeIesC3?alt=media&token=a9dcf356-7145-436a-a08c-e8675e5a84d8",
+            "userPhoto": "https://firebasestorage.googleapis.com/v0/b/altar-92d12.appspot.com/o/users%2Fpicture%2FuC3jMeO6QxgK8oEh5X82IMeIesC3?alt=media&token=ade3a0eb-9497-4d89-8d21-f16f1c30b1c7",
             "userid":"uC3jMeO6QxgK8oEh5X82IMeIesC3"
             
             ] as [String : Any]
@@ -68,6 +68,7 @@ class AccountHelpers  {
     
     func loadCurrentUserInfo (completionHandler: @escaping (_ success:Bool) -> Void)  {
                  
+        
                  advengers.shared.usersStatusRef.queryOrderedByKey().observe(.value) { (datasnap) in
                   
                    

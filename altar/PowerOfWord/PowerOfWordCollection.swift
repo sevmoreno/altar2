@@ -43,7 +43,8 @@ class PowerOfWordCollectionView: UICollectionViewController,  UICollectionViewDe
     
        let cellId = "cellId"
        var devos = [Devo] ()
-       
+       let refreshControl = UIRefreshControl()
+    
        override func viewDidLoad() {
             NotificationCenter.default.addObserver(self, selector: #selector(reloadData), name: NSNotification.Name("loadDevotional"), object: nil)
         
@@ -277,9 +278,30 @@ class PowerOfWordCollectionView: UICollectionViewController,  UICollectionViewDe
                navigationItem.rightBarButtonItem?.tintColor = advengers.shared.colorOrange
                
                navigationItem.title = advengers.shared.currentChurch
+        
+                refreshControl.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
+               collectionView?.refreshControl = refreshControl
+               
                
     }
     
+    
+    @objc func handleRefresh() {
+        
+        devos.removeAll()
+        
+          
+        loadDevocionales { (true) in
+            
+            
+            DispatchQueue.main.async {
+                self.refreshControl.endRefreshing()
+            }
+            
+            
+        }
+           
+       }
     
        
        @objc func addDevotional () {

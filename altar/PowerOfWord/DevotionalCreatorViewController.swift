@@ -243,7 +243,9 @@ class DevotionalCreatorViewController: UIViewController {
         
         print("Index Button")
         print(devText.selectedRange)
-               
+               let arbitraryValue: Int = devText.selectedRange.location
+                           let contentFirstPosition = devText.contentOffset
+                        
                //devText.attributedText!
                
               // attributedString.append(secondString)
@@ -257,6 +259,15 @@ class DevotionalCreatorViewController: UIViewController {
         creatMutable.addAttribute(.foregroundColor, value: UIColor.red, range: devText.selectedRange)
         devText.attributedText = creatMutable
         
+        
+        if let newPosition = devText.position(from: devText.beginningOfDocument, offset: arbitraryValue) {
+
+                          devText.selectedTextRange = devText.textRange(from: newPosition, to: newPosition)
+                     
+                      }
+                      
+                      devText.setContentOffset(contentFirstPosition, animated: true)
+        
     }
     
     @objc func capitalButtonAction () {
@@ -265,7 +276,9 @@ class DevotionalCreatorViewController: UIViewController {
     }
     
     @objc func boldlButtonAction () {
-        
+        let arbitraryValue: Int = devText.selectedRange.location
+                    let contentFirstPosition = devText.contentOffset
+                 
         if devText.selectedRange.length == 0 {
             
             if boldActive {
@@ -327,6 +340,13 @@ class DevotionalCreatorViewController: UIViewController {
             }
         }
         
+    if let newPosition = devText.position(from: devText.beginningOfDocument, offset: arbitraryValue) {
+
+                       devText.selectedTextRange = devText.textRange(from: newPosition, to: newPosition)
+                  
+                   }
+                   
+                   devText.setContentOffset(contentFirstPosition, animated: true)
      
         
     }
@@ -334,7 +354,8 @@ class DevotionalCreatorViewController: UIViewController {
 
     @objc func italicButtonAction () {
         
-        
+        let arbitraryValue: Int = devText.selectedRange.location
+                         let contentFirstPosition = devText.contentOffset
         
         if devText.selectedRange.length == 0 {
             
@@ -398,13 +419,23 @@ class DevotionalCreatorViewController: UIViewController {
                       
                   }
               }
+        
+        if let newPosition = devText.position(from: devText.beginningOfDocument, offset: arbitraryValue) {
+
+                                devText.selectedTextRange = devText.textRange(from: newPosition, to: newPosition)
+                           
+                            }
+                            
+                            devText.setContentOffset(contentFirstPosition, animated: true)
               
-           
               
         
     }
     
     @objc func biggerButtonAction () {
+        
+        let arbitraryValue: Int = devText.selectedRange.location
+                         let contentFirstPosition = devText.contentOffset
         
         let creatMutable = NSMutableAttributedString(attributedString: devText.attributedText)
               
@@ -420,12 +451,21 @@ class DevotionalCreatorViewController: UIViewController {
                 }
                       
             devText.attributedText = creatMutable
+           if let newPosition = devText.position(from: devText.beginningOfDocument, offset: arbitraryValue) {
+
+                                        devText.selectedTextRange = devText.textRange(from: newPosition, to: newPosition)
+                                   
+                                    }
+                                    
+                                    devText.setContentOffset(contentFirstPosition, animated: true)
                       
-                  
         
     }
     
     @objc func smallButtonAction () {
+        
+        let arbitraryValue: Int = devText.selectedRange.location
+                         let contentFirstPosition = devText.contentOffset
         
         let creatMutable = NSMutableAttributedString(attributedString: devText.attributedText)
                  
@@ -441,6 +481,13 @@ class DevotionalCreatorViewController: UIViewController {
                          
                devText.attributedText = creatMutable
                          
+      if let newPosition = devText.position(from: devText.beginningOfDocument, offset: arbitraryValue) {
+
+                          devText.selectedTextRange = devText.textRange(from: newPosition, to: newPosition)
+                     
+                      }
+                      
+                      devText.setContentOffset(contentFirstPosition, animated: true)
         
     }
     
@@ -742,7 +789,6 @@ class DevotionalCreatorViewController: UIViewController {
         _ = navigationController?.popViewController(animated: true)
 
         
-        print("editing")
     }
 
 

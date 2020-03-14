@@ -45,7 +45,7 @@ class Slide3Type: UIView {
        
         a.text = "texto"
       
-        a.font = UIFont(name: "Avenir-Heavy", size: 20)
+        a.font = UIFont(name: "Avenir-Black", size: 20)
         a.textColor = .white
         a.numberOfLines = 0
         return a
@@ -65,7 +65,7 @@ class Slide3Type: UIView {
 
         photoImageView.contentMode = .scaleAspectFill
         usernameLabel.textAlignment = .center
-        usernameLabel.font = UIFont(name: "Avenir-Heavy", size: 20)
+        usernameLabel.font = UIFont(name: "Avenir-Black", size: 20)
         
     }
     

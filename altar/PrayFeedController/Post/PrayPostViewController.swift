@@ -163,7 +163,7 @@ class PrayPostViewController: UIViewController, UIImagePickerControllerDelegate,
         usuarioFoto.layer.borderColor = advengers.shared.colorOrange.cgColor
                        
         usuarioFoto.layer.cornerRadius = 50 / 2
-        usuarioFoto.topAnchor.constraint(equalTo: view.topAnchor, constant:90).isActive = true
+        usuarioFoto.topAnchor.constraint(equalTo: view.topAnchor, constant:100).isActive = true
         usuarioFoto.leftAnchor.constraint(equalTo: view.leftAnchor, constant:15).isActive = true
         usuarioFoto.widthAnchor.constraint(equalToConstant: 50).isActive = true
         usuarioFoto.heightAnchor.constraint(equalToConstant: 50).isActive = true

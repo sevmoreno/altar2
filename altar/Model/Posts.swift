@@ -19,8 +19,8 @@ class Posts {
     var userPhoto: String!
     var postType: String!
     var message: String!
-    var photoW: CGFloat?
-    var photoH: CGFloat?
+    var photoW: Double?
+    var photoH: Double?
     var comments: Int!
     var hasLiked = false
     var whoLikes: [String] = [String] ()
@@ -38,8 +38,8 @@ class Posts {
         self.userPhoto = dictionary["userPhoto"] as? String ?? ""
         self.postType = dictionary["postType"] as? String ?? ""
         self.message = dictionary["message"] as? String ?? ""
-        self.photoH = dictionary["photoW"] as? CGFloat ?? 764.0
-        self.photoW = dictionary["photoH"] as? CGFloat ?? 694.0
+        self.photoH = dictionary["imagW:"] as? Double ?? 764.0
+        self.photoW = dictionary["imagH:"] as? Double ?? 694.0
        // self.creationDate = dictionary["creationDate"] as? Double ?? 0
         let secondsFrom1970 = dictionary["creationDate"] as? Int64 ?? 0
          self.creationDate = Date(milliseconds: secondsFrom1970)

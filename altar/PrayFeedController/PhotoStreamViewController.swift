@@ -204,7 +204,8 @@ class PhotoStreamViewController: UICollectionViewController, UICollectionViewDel
                 
                 self.photos[indexPath.item] = post
                 
-                self.collectionView?.reloadItems(at: [indexPath])
+                self.collectionView.reloadData()
+              //  self.collectionView?.reloadItems(at: [indexPath])
                 
             }
             
@@ -617,11 +618,11 @@ class PhotoStreamViewController: UICollectionViewController, UICollectionViewDel
         let settingsController = SettingsViewController()
 //
 //
-//        navigationController?.pushViewController(settingsController, animated: true)
+      //    navigationController?.pushViewController(settingsController, animated: true)
         
-        let navController = UINavigationController(rootViewController: settingsController)
+     let navController = UINavigationController(rootViewController: settingsController)
         
-        present(navController, animated: true, completion: nil)
+       present(navController, animated: true, completion: nil)
     
     }
     
@@ -650,6 +651,13 @@ class PhotoStreamViewController: UICollectionViewController, UICollectionViewDel
                     
                     
                     let temporarioPost = Posts (dictionary: value as! [String : Any])
+                    print("Esta lleyendo la altura ???")
+                    print(temporarioPost.photoW)
+                    print(temporarioPost.photoH)
+                    print("---------------------")
+                    print(self.view.frame.width)
+                    print(self.view.frame.height)
+                    
                     
                     
                     self.photos.append(temporarioPost)
@@ -723,7 +731,7 @@ class PhotoStreamViewController: UICollectionViewController, UICollectionViewDel
             let texto = dummycell.captionLabel.sizeThatFits(size)
             
             
-            return CGSize(width: view.frame.width, height:  usuarioInfo + botones + texto.height + 30 )
+            return CGSize(width: view.frame.width, height:  usuarioInfo + botones + texto.height + 50 )
             
         }
         
@@ -745,7 +753,7 @@ class PhotoStreamViewController: UICollectionViewController, UICollectionViewDel
             let imageRatio = CGFloat(photos[indexPath.row].photoW! / photos[indexPath.row].photoH!)
             
             
-            return CGSize(width: view.frame.width, height:  usuarioInfo + botones + texto.height + 10 + (view.frame.width /  imageRatio) )
+            return CGSize(width: view.frame.width, height:  usuarioInfo + botones + texto.height  + (view.frame.width /  imageRatio)  ) 
             
             
         }

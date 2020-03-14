@@ -26,7 +26,7 @@ class PhotoTextoCollectionViewCell: UICollectionViewCell, UIGestureRecognizerDel
             didSet {
                
                 
-                
+             
                 
                 guard let postImageUrl = post?.photoImage else { return }
               //  likeButton.setImage(post?.hasLiked == true ? #imageLiteral(resourceName: "like_selected").withRenderingMode(.alwaysOriginal) : #imageLiteral(resourceName: "like_unselected").withRenderingMode(.alwaysOriginal), for: .normal)
@@ -145,6 +145,7 @@ class PhotoTextoCollectionViewCell: UICollectionViewCell, UIGestureRecognizerDel
         
         @objc func handleLike() {
             print("Handling like from within cell...")
+                contenedor.isHidden = true
            delegate?.textImageDelegate_didLike(for: self)
         }
         
@@ -172,6 +173,7 @@ class PhotoTextoCollectionViewCell: UICollectionViewCell, UIGestureRecognizerDel
             print("Trying to show comments...")
             guard let post = post else { return }
             
+            contenedor.isHidden = true
             
             delegate?.textImageDelegate_didTapComment(post: post)
             
@@ -191,7 +193,7 @@ class PhotoTextoCollectionViewCell: UICollectionViewCell, UIGestureRecognizerDel
         
         let captionLabel: UITextView = {
             let textView = UITextView()
-            textView.font = UIFont.systemFont(ofSize: 14)
+            textView.font =  UIFont(name: "Avenir-Book", size: 15)
             textView.isEditable = false
             textView.backgroundColor = .white
             textView.isScrollEnabled = false
@@ -209,6 +211,8 @@ class PhotoTextoCollectionViewCell: UICollectionViewCell, UIGestureRecognizerDel
         
     } ()
         
+    let contenedor = UIView()
+    
         override init(frame: CGRect) {
             super.init(frame: frame)
             
@@ -233,12 +237,14 @@ class PhotoTextoCollectionViewCell: UICollectionViewCell, UIGestureRecognizerDel
                 
                 
                 @objc func hiddenContainerViewTapped () {
+                    
+                        contenedor.isHidden = false
 
             if post?.userID == Auth.auth().currentUser?.uid || advengers.shared.isPastor == true {
 
                            print("Swiper no Swiper !!!!")
                            
-                           let contenedor = UIView()
+                           
 
                            addSubview(contenedor)
                            
@@ -265,7 +271,7 @@ class PhotoTextoCollectionViewCell: UICollectionViewCell, UIGestureRecognizerDel
                 @objc func borrar() {
             //        let imageDataDict = ["index": self.]
             //        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "DeleteCell"), object: nil,userInfo: imageDataDict)
-                    
+                    contenedor.isHidden = true
                     delegate?.deletCellD(for: self)
                 }
         
@@ -328,9 +334,15 @@ class PhotoTextoCollectionViewCell: UICollectionViewCell, UIGestureRecognizerDel
             photoImageView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
             photoImageView.bottomAnchor.constraint(equalTo: captionLabel.topAnchor ).isActive = true
             photoImageView.widthAnchor.constraint(equalToConstant: frame.width).isActive = true
+            
            
             
-            captionLabel.anchor(top: photoImageView.bottomAnchor, left: leftAnchor, bottom: stackView.topAnchor, right: rightAnchor, paddingTop: 0, paddingLeft: 8, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
+          
+            
+            
+          //  photoImageView.heightAnchor.constraint(equalToConstant: CGFloat(altura)).isActive = true
+            
+            captionLabel.anchor(top: photoImageView.bottomAnchor, left: leftAnchor, bottom: stackView.topAnchor, right: rightAnchor, paddingTop: 15, paddingLeft: 15, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
             
             addSubview(praysDate)
             praysDate.anchor(top: nil, left: nil, bottom: nil, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 30, width: 0, height: 0)

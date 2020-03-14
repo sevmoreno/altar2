@@ -84,7 +84,7 @@ class WelcomeViewController: UIViewController {
                
                // do some tasks..
      
-       //  try! Auth.auth().signOut()
+      // try! Auth.auth().signOut()
         
         navigationController?.navigationBar.isHidden = true
 //        Auth.auth().addStateDidChangeListener() { auth, user in
@@ -251,7 +251,7 @@ class WelcomeViewController: UIViewController {
             
         {
             
-            let weGive = NSMutableAttributedString(string: "We gives you the ability to connect with", attributes: [
+            let weGive = NSMutableAttributedString(string: "We give you the ability to connect with", attributes: [
             .font : UIFont(name: "Prompt-Regular", size: 17)!,
             .foregroundColor : UIColor(red: 1, green: 1, blue: 1, alpha: 1),
             .kern : -0.41,
