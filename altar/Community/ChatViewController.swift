@@ -253,10 +253,20 @@ class ChatViewController: MessagesViewController,InputBarAccessoryViewDelegate, 
         messagesCollectionView.scrollToBottom(animated: true)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        
+        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+        
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.title = user2Name ?? "Chat"
+        
+        
         navigationItem.largeTitleDisplayMode = .never
         maintainPositionOnKeyboardFrameChanged = true
         messageInputBar.inputTextView.tintColor = .blue

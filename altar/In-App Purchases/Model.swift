@@ -45,6 +45,7 @@ class Model {
                     if success {
                        // self.restoreUnlockedMaps()
                       //  self.delegate?.didFinishRestoringPurchasedProducts()
+                        advengers.shared.isPastor = true
                         self.delegate?.shouldUpdateUI()
                     } else {
                         //self.delegate?.didFinishRestoringPurchasesWithZeroProducts()

@@ -16,7 +16,8 @@ class advengers {
     
     // --- The Singleton tharaaaaaaaaa
     
-    var isPastor = true
+    var isPastor = false
+    
     
     static let shared = advengers ()
     

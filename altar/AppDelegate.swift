@@ -53,6 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,MessagingDelegate, UNUserN
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
+        UIApplication.shared.statusBarStyle = .lightContent
         
         attemptRegisterForNotifications(application: application)
         
