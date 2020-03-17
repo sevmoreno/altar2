@@ -15,6 +15,7 @@ protocol devotionalDelegate {
 
 class DevotionalCollectionViewCell: UICollectionViewCell, UIGestureRecognizerDelegate {
     
+    let contenedor = UIView()
     
      var delegate: devotionalDelegate?
     
@@ -114,6 +115,7 @@ class DevotionalCollectionViewCell: UICollectionViewCell, UIGestureRecognizerDel
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+  contenedor.isHidden = true
         
     addSubview(imagenDevocional)
         
@@ -161,18 +163,35 @@ class DevotionalCollectionViewCell: UICollectionViewCell, UIGestureRecognizerDel
                 swipeCell.delegate = self
                 
                 addGestureRecognizer(swipeCell)
+        
+        
+        
+        let swipeCell2 = UISwipeGestureRecognizer(target: self, action: #selector(changeMyMind))
+                swipeCell2.direction = .right
+                swipeCell2.delegate = self
+                
+                addGestureRecognizer(swipeCell2)
 
             }
             
+    
+    @objc func changeMyMind () {
+        
+        contenedor.isHidden = true
+        
+    }
+    
+    
             
             @objc func hiddenContainerViewTapped () {
                 
+                contenedor.isHidden = false
                 
                 if advengers.shared.isPastor == true {
 
                 print("Swiper no Swiper !!!!")
                 
-                let contenedor = UIView()
+                
 
                 addSubview(contenedor)
                 
@@ -199,7 +218,7 @@ class DevotionalCollectionViewCell: UICollectionViewCell, UIGestureRecognizerDel
             @objc func borrar() {
         //        let imageDataDict = ["index": self.]
         //        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "DeleteCell"), object: nil,userInfo: imageDataDict)
-                
+                contenedor.isHidden = true
                 delegate?.deletCellD(for: self)
             }
     

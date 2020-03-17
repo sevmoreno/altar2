@@ -421,7 +421,20 @@ class AudioCollectionViewCell: UICollectionViewCell, UIGestureRecognizerDelegate
                 
                 addGestureRecognizer(swipeCell)
 
-            }
+             let swipeCell2 = UISwipeGestureRecognizer(target: self, action: #selector(changeMyMind))
+                              swipeCell2.direction = .right
+                              swipeCell2.delegate = self
+                              
+                              addGestureRecognizer(swipeCell2)
+
+                          }
+                          
+                  
+                  @objc func changeMyMind () {
+                      
+                      contenedor.isHidden = true
+                      
+                  }
             
             let contenedor = UIView()
     

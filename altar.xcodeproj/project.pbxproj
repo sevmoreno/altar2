@@ -13,6 +13,7 @@
 		6501259223CE3000009FAD55 /* Comments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6501259123CE3000009FAD55 /* Comments.swift */; };
 		6501259423CE3117009FAD55 /* CommentsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6501259323CE3117009FAD55 /* CommentsCollectionViewCell.swift */; };
 		6501259623CE320E009FAD55 /* CommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6501259523CE320E009FAD55 /* CommentsViewController.swift */; };
+		6504355B241EDE100027AA6E /* NewChurchAllCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6504355A241EDE100027AA6E /* NewChurchAllCode.swift */; };
 		650B1E8D23DB97B0000C0E32 /* ForgottViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650B1E8C23DB97B0000C0E32 /* ForgottViewController.swift */; };
 		650B1E8F23DFC77C000C0E32 /* AreUaMinisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650B1E8E23DFC77C000C0E32 /* AreUaMinisterViewController.swift */; };
 		650B1E9123E0D011000C0E32 /* ChurchSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650B1E9023E0D011000C0E32 /* ChurchSelectionViewController.swift */; };
@@ -37,6 +38,7 @@
 		654F95DD2331B93B00175A7E /* FeedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654F95DC2331B93B00175A7E /* FeedCollectionViewCell.swift */; };
 		654F95DF2332AD8700175A7E /* Posts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654F95DE2332AD8700175A7E /* Posts.swift */; };
 		654F95E52339307F00175A7E /* FeedOnlyTextCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654F95E42339307F00175A7E /* FeedOnlyTextCollectionViewCell.swift */; };
+		65555936242002780021CD1E /* EditChurchProfileAllCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65555935242002780021CD1E /* EditChurchProfileAllCode.swift */; };
 		655BF70123847B4A002F0C7C /* NewsfeedCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655BF70023847B4A002F0C7C /* NewsfeedCollectionViewController.swift */; };
 		655BF70323847C11002F0C7C /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655BF70223847C11002F0C7C /* PostCell.swift */; };
 		655BF7052385DA1A002F0C7C /* PrayCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655BF7042385DA1A002F0C7C /* PrayCollectionViewLayout.swift */; };
@@ -126,6 +128,7 @@
 		6501259123CE3000009FAD55 /* Comments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comments.swift; sourceTree = "<group>"; };
 		6501259323CE3117009FAD55 /* CommentsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsCollectionViewCell.swift; sourceTree = "<group>"; };
 		6501259523CE320E009FAD55 /* CommentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsViewController.swift; sourceTree = "<group>"; };
+		6504355A241EDE100027AA6E /* NewChurchAllCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewChurchAllCode.swift; sourceTree = "<group>"; };
 		650B1E8C23DB97B0000C0E32 /* ForgottViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgottViewController.swift; sourceTree = "<group>"; };
 		650B1E8E23DFC77C000C0E32 /* AreUaMinisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreUaMinisterViewController.swift; sourceTree = "<group>"; };
 		650B1E9023E0D011000C0E32 /* ChurchSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChurchSelectionViewController.swift; sourceTree = "<group>"; };
@@ -150,6 +153,7 @@
 		654F95DC2331B93B00175A7E /* FeedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCollectionViewCell.swift; sourceTree = "<group>"; };
 		654F95DE2332AD8700175A7E /* Posts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Posts.swift; sourceTree = "<group>"; };
 		654F95E42339307F00175A7E /* FeedOnlyTextCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedOnlyTextCollectionViewCell.swift; sourceTree = "<group>"; };
+		65555935242002780021CD1E /* EditChurchProfileAllCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditChurchProfileAllCode.swift; sourceTree = "<group>"; };
 		655BF70023847B4A002F0C7C /* NewsfeedCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsfeedCollectionViewController.swift; sourceTree = "<group>"; };
 		655BF70223847C11002F0C7C /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		655BF7042385DA1A002F0C7C /* PrayCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayCollectionViewLayout.swift; sourceTree = "<group>"; };
@@ -263,6 +267,7 @@
 			isa = PBXGroup;
 			children = (
 				65372DD723ECFEF30078778A /* SettingsViewController.swift */,
+				65555935242002780021CD1E /* EditChurchProfileAllCode.swift */,
 				659E3BF6240EDCF500B71ECB /* editUserProfile.swift */,
 				659FAF012413346F00BCAD30 /* EditChurchProfileViewController.swift */,
 				654C4014241AA1DC001690B8 /* MyChurchViewController.swift */,
@@ -273,6 +278,7 @@
 		653C0FD123FEFE6400700ACE /* Tintero */ = {
 			isa = PBXGroup;
 			children = (
+				650B1E8E23DFC77C000C0E32 /* AreUaMinisterViewController.swift */,
 				659595C723D0F4F2007FB09C /* Model */,
 				659595C523D0F4B4007FB09C /* VideoResultcolCollectionViewCell.swift */,
 				659595CC23D21C3C007FB09C /* seleccionVideoViewController.swift */,
@@ -286,12 +292,12 @@
 		65421CCF23AAAC68000B0437 /* LogSignin */ = {
 			isa = PBXGroup;
 			children = (
+				6504355A241EDE100027AA6E /* NewChurchAllCode.swift */,
 				657F2B462325F5CA00187C9D /* SignUpViewController.swift */,
 				6561CA1C23F5D2A600AA8C15 /* AddYourCurchViewController.swift */,
 				65D4242F23258A2D00DB286E /* LogInViewController.swift */,
 				658303C423DA43BE00D48ED0 /* WelcomeViewController.swift */,
 				650B1E8C23DB97B0000C0E32 /* ForgottViewController.swift */,
-				650B1E8E23DFC77C000C0E32 /* AreUaMinisterViewController.swift */,
 				650B1E9023E0D011000C0E32 /* ChurchSelectionViewController.swift */,
 				6561CA1E23F5E0BB00AA8C15 /* NewPastorViewController.swift */,
 			);
@@ -694,6 +700,7 @@
 				654F95E52339307F00175A7E /* FeedOnlyTextCollectionViewCell.swift in Sources */,
 				65CB7E8B23C3CBAD0018526D /* DevotionalCollectionViewCell.swift in Sources */,
 				653C0FCC23FD963D00700ACE /* UsuariosUITableTableViewCell.swift in Sources */,
+				65555936242002780021CD1E /* EditChurchProfileAllCode.swift in Sources */,
 				659595CD23D21C3C007FB09C /* seleccionVideoViewController.swift in Sources */,
 				650102F323F1E56000FE84CC /* SeleccionFotoCollectionViewController.swift in Sources */,
 				65913B1923C653FA009B8537 /* PhotoTextoCollectionViewCell.swift in Sources */,
@@ -754,6 +761,7 @@
 				655BF70123847B4A002F0C7C /* NewsfeedCollectionViewController.swift in Sources */,
 				659595C923D0F521007FB09C /* YTResult.swift in Sources */,
 				6561CA1423F49CD100AA8C15 /* ChannelCollectionViewCell.swift in Sources */,
+				6504355B241EDE100027AA6E /* NewChurchAllCode.swift in Sources */,
 				6561CA0E23F46E3700AA8C15 /* Song.swift in Sources */,
 				65913B2023C8E245009B8537 /* VideoCell.swift in Sources */,
 				6526F5EF23836C7300DA2433 /* DynamicHeightCollectionView.swift in Sources */,

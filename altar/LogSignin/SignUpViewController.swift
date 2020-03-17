@@ -225,7 +225,7 @@ textbackbroundpassword.layer.cornerRadius = 22
                 changeRequest?.commitChanges(completion: { (no) in
                     
                 })
-                
+                self.errorLabel.text = "Creating account ... "
                 if user != nil {
                     
                     

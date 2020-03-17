@@ -45,6 +45,7 @@ class advengers {
     let colorBlue = UIColor.rgb(red: 32, green: 36, blue: 47)
     let colorOrange = UIColor.rgb(red: 245, green: 75, blue: 100)
     
+    var loginInProcess = false
     
     var currenUSer = ["church": "",
                       "email": "",

@@ -232,9 +232,20 @@ class PhotoTextoCollectionViewCell: UICollectionViewCell, UIGestureRecognizerDel
                     swipeCell.delegate = self
                     
                     addGestureRecognizer(swipeCell)
+            let swipeCell2 = UISwipeGestureRecognizer(target: self, action: #selector(changeMyMind))
+                          swipeCell2.direction = .right
+                          swipeCell2.delegate = self
+                          
+                          addGestureRecognizer(swipeCell2)
 
-                }
-                
+                      }
+                      
+              
+              @objc func changeMyMind () {
+                  
+                  contenedor.isHidden = true
+                  
+              }
                 
                 @objc func hiddenContainerViewTapped () {
                     

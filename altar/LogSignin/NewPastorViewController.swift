@@ -45,10 +45,66 @@ class NewPastorViewController: UIViewController, UIImagePickerControllerDelegate
     var imageToSave: UIImage?
     
     @IBOutlet var errorLabel: UILabel!
+    
+     func viewWillDisappear () {
+        
+        
+        
+        if (self.view.frame.origin.y < 0) {
+                        //  view.frame.origin.y += getKeyboardHeight(notification: notification)
+                        view.frame.origin.y = 0
+                          view.reloadInputViews()
+                      }
+        
+        unsubscribeFromKeyboardNotifications()
+        
+    }
+    
+    
+    
+    
     override func viewDidLoad() {
+        
+        
+        
+        if advengers.shared.updateToPastor {
+            
+            
+            
+                                   let userinfo: [String:Any] =
+                                       
+                                       ["church": "New Account",
+                                        "churchID" : "37E98093-7B60-4029-8DE2-7BD7C15840BE",
+                                        "isPastor" : 1,
+                                        "uid" : "37E98093-7B60-4029-8DE2-7BD7C15840BE"]
+                                   
+                                    let userID = Auth.auth().currentUser?.uid as? String
+                                   //   self.databaseReference.child("users").child("\(user!.user.uid)").setValue(user?.user.uid, forKeyPath: "userid")
+                                    self.ref.child("users").child(userID!).setValue(userinfo)
+                                   
+                                   self.accounthelper.loadCurrentUserInfo(completionHandler: { (success) -> Void in
+                                                  
+                                                  if success {
+                                                   
+                                                    
+                                                      self.performSegue(withIdentifier: "creatChurch", sender: self)
+                                                   
+                                                 //  self.performSegue(withIdentifier: "creatChurch", sender: self)
+                                                      // self.isUserLoaded = true
+                                                  }
+                                                      
+                                                  
+                                              })
+            
+            
+          
+            
+            
+        }
         
         super.viewDidLoad()
         
+        advengers.shared.loginInProcess = true
         
 //        NotificationCenter.default.addObserver(self, selector: #selector(churchSelection), name: NSNotification.Name(rawValue: "ChurchSelection"), object: nil)
         
@@ -164,6 +220,11 @@ textbackbroundpassword.layer.cornerRadius = 22
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
+        
+        
+        
+        
+        
         return false
     }
     
@@ -201,12 +262,14 @@ textbackbroundpassword.layer.cornerRadius = 22
                     self.errorLabel.text = error.localizedDescription
                 }
                 
+                
                 let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
                 changeRequest?.displayName = self.name?.text
                 changeRequest?.commitChanges(completion: { (no) in
                     
                 })
                 
+                self.errorLabel.text = "Creating account ... "
                 
                 if user != nil {
                 
@@ -269,6 +332,8 @@ textbackbroundpassword.layer.cornerRadius = 22
                         
                     })
                     
+                    self.view.endEditing(true)
+                    
                      self.performSegue(withIdentifier: "creatChurch", sender: self)
                     
                     })
@@ -293,6 +358,8 @@ textbackbroundpassword.layer.cornerRadius = 22
             self.present(alertController, animated: true, completion: nil)
         }
     }
+    
+
     
     @IBAction func changePicture(_ sender: Any) {
         

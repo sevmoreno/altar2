@@ -290,10 +290,10 @@ class SettingsViewController: UIViewController, UIActivityItemSource {
         
         
         
-        
-        view.addSubview(pastorMode)
-        pastorMode.anchor(top: nil, left: nil, bottom: view.bottomAnchor, right: nil, paddingTop: 0, paddingLeft: 0, paddingBottom: 50, paddingRight: 30, width: 0, height: 0)
-        pastorMode.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+//
+//        view.addSubview(pastorMode)
+//        pastorMode.anchor(top: nil, left: nil, bottom: view.bottomAnchor, right: nil, paddingTop: 0, paddingLeft: 0, paddingBottom: 50, paddingRight: 30, width: 0, height: 0)
+//        pastorMode.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         // Do any additional setup after loading the view.
     }
     
@@ -353,7 +353,7 @@ class SettingsViewController: UIViewController, UIActivityItemSource {
     
     @objc func developerPage () {
         
-        if let url = URL(string: "https://www.sevmoreno.com") {
+        if let url = URL(string: "http://www.altarapp.com/developer") {
             UIApplication.shared.open(url)
         }
         

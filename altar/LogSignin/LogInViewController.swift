@@ -106,9 +106,31 @@ class logInViewController: UIViewController, UITextFieldDelegate {
                     
                     if success {
                         
-                        self.performSegue(withIdentifier: "accesoOK", sender: nil)
+                        
+                        let accounthelper  = AccountHelpers ()
+                        
+                        if advengers.shared.loginInProcess == false {
+                            
+                        
+                            accounthelper.loadCurrentUserInfo { (true) in
+                            
+                                if advengers.shared.currenUSer["isPastor"] as? Int == 1 {
+                                    
+                                    advengers.shared.isPastor = true
+                                
+                                }
+                                
+                                self.performSegue(withIdentifier: "accesoOK", sender: nil)
+                                
+                            }
+                            
+                        //self.performSegue(withIdentifier: "accesoOK", sender: nil)
+                            
+                         
                         self.emailLogin.text = nil
                         self.passwordLogin.text = nil
+                            
+                        }
                         
                     }
                     

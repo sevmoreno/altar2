@@ -13,7 +13,9 @@
 
     class AddYourCurchViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
         
-      //  @IBOutlet var seleecionFoto: UIButton!
+        @IBOutlet var scrollview: UIScrollView!
+        
+        //  @IBOutlet var seleecionFoto: UIButton!
 //        @IBOutlet weak var churchChose: UIPickerView!
 //        @IBOutlet weak var image: UIImageView!
 //        @IBOutlet weak var name: UITextField!
@@ -63,6 +65,22 @@
         let accounthelper = AccountHelpers ()
         
         var isUserLoaded = false
+        
+        @IBOutlet var contentview: UIView!
+        
+        override func viewWillAppear(_ animated: Bool) {
+            
+            scrollview.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: view.frame.width, height: 500)
+            
+            scrollview.contentSize.height = 1000
+            scrollview.bounces = false
+            
+            
+            contentview.anchor(top: scrollview.topAnchor, left: scrollview.leftAnchor, bottom: scrollview.bottomAnchor, right: scrollview.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
+            
+            
+            
+        }
         
         override func viewDidLoad() {
             
@@ -268,6 +286,8 @@
                         
                         self.accounthelper.loadFirstContent(uidUsers: userID, uidChurch: advengers.shared.currentChurchInfo.uidChurch)
                          self.performSegue(withIdentifier: "welcome", sender: self)
+                        advengers.shared.loginInProcess = false
+                        
                         advengers.shared.isPastor =  true
                         advengers.shared.currentChurch = self.displayname.text!
                         
