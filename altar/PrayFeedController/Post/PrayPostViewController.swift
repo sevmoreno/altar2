@@ -386,7 +386,15 @@ class PrayPostViewController: UIViewController, UIImagePickerControllerDelegate,
     
     @objc func postAction(_ sender: Any) {
         
-        AppDelegate.instance().showActivityIndicatior()
+       // AppDelegate.instance().showActivityIndicatior()
+        
+        
+        let accounthelper = AccountHelpers ()
+        
+        accounthelper.showActivityIndicatior(window: view)
+        
+        
+        
         
         let uid = Auth.auth().currentUser?.uid
   
@@ -441,7 +449,8 @@ class PrayPostViewController: UIViewController, UIImagePickerControllerDelegate,
                         guard let currentChurchID = advengers.shared.currenUSer["churchID"] as? String else { return }
                         advengers.shared.postPrayFeed.child(currentChurchID).updateChildValues(postfeed)
                         
-                        AppDelegate.instance().dismissActivityIndicator()
+                        accounthelper.dismissActivityIndicator()
+                        
                         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "UpdateFeed"), object: nil)
                         _ = self.navigationController?.popViewController(animated: true)
                         
@@ -490,7 +499,7 @@ class PrayPostViewController: UIViewController, UIImagePickerControllerDelegate,
             advengers.shared.postPrayFeed.child(currentChurchID).updateChildValues(postfeed)
         //    advengers.shared.postPrayFeed.updateChildValues(postfeed)
             
-            AppDelegate.instance().dismissActivityIndicator()
+            accounthelper.dismissActivityIndicator()
             
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "UpdateFeed"), object: nil)
             _ = self.navigationController?.popViewController(animated: true)

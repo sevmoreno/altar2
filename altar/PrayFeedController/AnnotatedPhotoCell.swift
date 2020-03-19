@@ -194,6 +194,15 @@ class AnnotatedPhotoCell: UICollectionViewCell, UIGestureRecognizerDelegate {
     }()
     
     
+    let esPastor: UILabel = {
+        let label = UILabel()
+        label.text = "Pastor"
+        label.font = UIFont(name: "Avenir", size: 11)
+        label.textAlignment = .left
+        return label
+    }()
+    
+    
      let contenedor = UIView()
     
     
@@ -240,7 +249,14 @@ class AnnotatedPhotoCell: UICollectionViewCell, UIGestureRecognizerDelegate {
 
       if post?.userID == Auth.auth().currentUser?.uid || advengers.shared.isPastor == true {
 
-                       print("Swiper no Swiper !!!!")
+                    print("Swiper")
+        
+        
+                       print(post?.userID )
+                        print(Auth.auth().currentUser?.uid)
+        
+        
+                        
                        
                       contenedor.isHidden = false
                         
@@ -321,7 +337,13 @@ class AnnotatedPhotoCell: UICollectionViewCell, UIGestureRecognizerDelegate {
          usernameLabel.topAnchor.constraint(equalTo: userProfileImageView.topAnchor, constant:10).isActive = true
         usernameLabel.leftAnchor.constraint(equalTo: userProfileImageView.rightAnchor, constant: 8).isActive = true
         
- 
+    //    usernameLabel.widthAnchor.constraint(equalToConstant: 300).isActive = true
+        
+//        
+//        if post.p
+//        addSubview(esPastor)
+//        
+//        esPastor.anchor(top: usernameLabel.bottomAnchor, left: usernameLabel.leftAnchor, bottom: nil, right: nil, paddingTop: 2, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 50, height: 0)
 
         photoImageView.translatesAutoresizingMaskIntoConstraints = false
         photoImageView.topAnchor.constraint(equalTo: userProfileImageView.bottomAnchor, constant: 8).isActive = true
@@ -333,6 +355,9 @@ class AnnotatedPhotoCell: UICollectionViewCell, UIGestureRecognizerDelegate {
         addSubview(praysDate)
         praysDate.anchor(top: nil, left: nil, bottom: nil, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 30, width: 0, height: 0)
          praysDate.centerYAnchor.constraint(equalTo: usernameLabel.centerYAnchor).isActive = true
+        
+        
+         usernameLabel.rightAnchor.constraint(equalTo: praysDate.leftAnchor, constant: 8).isActive = true
         
         stackView.anchor(top: photoImageView.bottomAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil, paddingTop: 0, paddingLeft: 20, paddingBottom: -8, paddingRight: 0, width: 200, height: 50)
         

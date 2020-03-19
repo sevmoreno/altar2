@@ -403,7 +403,7 @@
                                     <constraint firstAttribute="width" constant="315" id="f9C-QP-hTv"/>
                                 </constraints>
                             </view>
-                            <textField opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="350" placeholderIntrinsicHeight="34" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Name" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kr5-C7-chO">
+                            <textField opaque="NO" tag="198" contentMode="scaleToFill" placeholderIntrinsicWidth="350" placeholderIntrinsicHeight="34" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Name" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kr5-C7-chO">
                                 <rect key="frame" x="67" y="300" width="280" height="44"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -424,7 +424,7 @@
                                 </constraints>
                                 <viewLayoutGuide key="safeArea" id="Ke1-EJ-aEg"/>
                             </view>
-                            <textField opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="350" placeholderIntrinsicHeight="34" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Email" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eWC-JX-ZAf">
+                            <textField opaque="NO" tag="199" contentMode="scaleToFill" placeholderIntrinsicWidth="350" placeholderIntrinsicHeight="34" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Email" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eWC-JX-ZAf">
                                 <rect key="frame" x="67" y="354" width="280" height="44"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -515,7 +515,7 @@
                                 <rect key="frame" x="52.5" y="568" width="309" height="30"/>
                                 <state key="normal" title="Are you a Pastor / Minister? Add your church."/>
                                 <connections>
-                                    <segue destination="aYX-82-lxS" kind="show" id="HKx-hE-uKh"/>
+                                    <segue destination="aYX-82-lxS" kind="show" id="iCE-CZ-CJ4"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -994,15 +994,26 @@
                                                         <constraint firstAttribute="height" constant="20" id="fKg-0X-HHz"/>
                                                     </constraints>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pastor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mOi-G6-Mdv">
+                                                    <rect key="frame" x="28" y="72" width="34" height="14"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="34" id="0YN-za-IEp"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="Qb6-af-xwX" firstAttribute="centerY" secondItem="gWL-ey-GSy" secondAttribute="centerY" id="2I4-05-OCb"/>
                                                 <constraint firstItem="Qb6-af-xwX" firstAttribute="leading" secondItem="gWL-ey-GSy" secondAttribute="leading" constant="20" id="7db-wC-kws"/>
+                                                <constraint firstItem="mOi-G6-Mdv" firstAttribute="centerX" secondItem="Qb6-af-xwX" secondAttribute="centerX" id="EtF-KW-S7j"/>
                                                 <constraint firstItem="4g1-Ig-Y9c" firstAttribute="centerY" secondItem="gWL-ey-GSy" secondAttribute="centerY" id="Hkc-RG-Agd"/>
                                                 <constraint firstItem="pEu-Xy-6Gh" firstAttribute="centerY" secondItem="gWL-ey-GSy" secondAttribute="centerY" id="MLk-Ah-mDJ"/>
                                                 <constraint firstItem="4g1-Ig-Y9c" firstAttribute="leading" secondItem="Qb6-af-xwX" secondAttribute="trailing" constant="10" id="Md1-z5-458"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="pEu-Xy-6Gh" secondAttribute="trailing" constant="10" id="YBE-k3-lNv"/>
+                                                <constraint firstItem="mOi-G6-Mdv" firstAttribute="top" secondItem="Qb6-af-xwX" secondAttribute="bottom" constant="2" id="c6L-aq-GbP"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1010,6 +1021,7 @@
                                         <connections>
                                             <outlet property="foto" destination="Qb6-af-xwX" id="ck4-bi-E7V"/>
                                             <outlet property="nombre" destination="4g1-Ig-Y9c" id="tbl-a5-lQP"/>
+                                            <outlet property="pastor" destination="mOi-G6-Mdv" id="h26-6P-CLm"/>
                                             <outlet property="tieneMensaje" destination="pEu-Xy-6Gh" id="DRt-1f-W41"/>
                                         </connections>
                                     </tableViewCell>
@@ -2038,7 +2050,7 @@
                                     <constraint firstAttribute="height" constant="44" id="sau-BA-Wt4"/>
                                 </constraints>
                             </view>
-                            <textField opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="350" placeholderIntrinsicHeight="34" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Name" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m8A-9O-ncT">
+                            <textField opaque="NO" tag="198" contentMode="scaleToFill" placeholderIntrinsicWidth="350" placeholderIntrinsicHeight="34" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Name" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m8A-9O-ncT">
                                 <rect key="frame" x="67" y="300" width="280" height="44"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2059,7 +2071,7 @@
                                 </constraints>
                                 <viewLayoutGuide key="safeArea" id="PYm-RE-dmR"/>
                             </view>
-                            <textField opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="350" placeholderIntrinsicHeight="34" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Email" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XbB-IS-NrD">
+                            <textField opaque="NO" tag="199" contentMode="scaleToFill" placeholderIntrinsicWidth="350" placeholderIntrinsicHeight="34" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Email" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XbB-IS-NrD">
                                 <rect key="frame" x="67" y="354" width="280" height="44"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2987,8 +2999,8 @@ We give you the ability to </string>
         <image name="worshipicon" width="30" height="23"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="t9C-jd-6oV"/>
+        <segue reference="Vsu-Bt-GX7"/>
         <segue reference="O50-xJ-ZqN"/>
-        <segue reference="BJb-6s-AhC"/>
+        <segue reference="ykW-h1-pG1"/>
     </inferredMetricsTieBreakers>
 </document>

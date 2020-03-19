@@ -200,6 +200,8 @@ class PowerOfWorshipViewController:  UIViewController, AVAudioPlayerDelegate{
         
     }
     
+    let contenedorTitulo = UIView ()
+    
     override func viewDidLoad() {
       //  audioPlayer?.delegate = self
         
@@ -264,6 +266,31 @@ class PowerOfWorshipViewController:  UIViewController, AVAudioPlayerDelegate{
         loadActiveChannel(codigo: advengers.shared.currentChurchInfo.channelActive)
         
         
+        
+        view.addSubview(contenedorTitulo)
+        
+        let laber = UILabel ()
+        
+        laber.text = "Your church is connected to this channel"
+        laber.font = UIFont(name: "Avenir-Black", size: 14)
+        laber.textAlignment = .center
+        laber.textColor = .white
+        
+        
+        view.addSubview(laber)
+        
+        laber.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        
+        laber.anchor(top: audioView.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 15, paddingLeft: 50, paddingBottom: 0, paddingRight: 50, width: 0, height: 0)
+        
+        contenedorTitulo.anchor(top: audioView.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 40, paddingLeft: 50, paddingBottom: 0, paddingRight: 50, width: 0, height: 80)
+        
+        contenedorTitulo.backgroundColor = .white
+        contenedorTitulo.alpha = 0.2
+        contenedorTitulo.layer.cornerRadius = 15
+        
+        
+        
         view.addSubview(nameChannel)
         
         
@@ -277,7 +304,7 @@ class PowerOfWorshipViewController:  UIViewController, AVAudioPlayerDelegate{
         subtitulo.textColor = .white
         
         
-        subtitulo.anchor(top: nameChannel.bottomAnchor, left: nil, bottom: nil, right: nil, paddingTop: 15, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: view.frame.width - 20, height: 0)
+        subtitulo.anchor(top: nameChannel.bottomAnchor, left: nil, bottom: nil, right: nil, paddingTop: 8, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: view.frame.width - 20, height: 0)
         subtitulo.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         
         view.addSubview(tituloCancion)
@@ -287,7 +314,7 @@ class PowerOfWorshipViewController:  UIViewController, AVAudioPlayerDelegate{
         tituloCancion.centerXAnchor.constraint(equalTo: audioView.centerXAnchor).isActive = true
         tituloCancion.textAlignment = .center
         tituloCancion.sizeToFit()
-        estadodelPlay.anchor(top: nil, left: nil, bottom: view.bottomAnchor, right: nil, paddingTop: 0, paddingLeft: 0, paddingBottom: 80, paddingRight: 0, width: 200, height: 0)
+        estadodelPlay.anchor(top: nil, left: nil, bottom: view.bottomAnchor, right: nil, paddingTop: 0, paddingLeft: 0, paddingBottom: 230, paddingRight: 0, width: 200, height: 0)
         estadodelPlay.textAlignment = .center
         estadodelPlay.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
     }
@@ -310,8 +337,8 @@ class PowerOfWorshipViewController:  UIViewController, AVAudioPlayerDelegate{
         //let userPostRef = Database.database().reference().child("Media_Channels")
         userPostRef.observeSingleEvent(of: .value, with: { (data) in
             
-            print("Entro a ver")
-            print(data.value)
+          //  print("Entro a ver")
+          //  print(data.value)
             if let devoFeed = data.value as? [String:Any] {
                 
                 
@@ -351,9 +378,9 @@ class PowerOfWorshipViewController:  UIViewController, AVAudioPlayerDelegate{
                 
                 
                 self.cannalActivo.load(dictionary: devoFeed)
-                print("Esta es la info del active channel:")
+             //  print("Esta es la info del active channel:")
                 //  print(self.cannalActivo.church)
-                print(self.cannalActivo.title)
+             //   print(self.cannalActivo.title)
                 
                 for nombre in self.cannalActivo.lista
                 {

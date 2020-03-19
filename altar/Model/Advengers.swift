@@ -87,9 +87,12 @@ class advengers {
     var fondoSeleccionado = ""
     
   //  var chatIndexSelection = IndexPath()
-    
+     var mensajesTotales =  0
     
     var fondoSeleccionadoIndex = ""
+    
+    var remitentes = [User] ()
+    
     
      @objc  func settings () {
         

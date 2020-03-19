@@ -12,6 +12,7 @@ class UsuariosUITableTableViewCell: UITableViewCell {
     
     @IBOutlet var tieneMensaje: UIImageView!
     
+    @IBOutlet var pastor: UILabel!
     @IBOutlet var foto: CustomImageView! = {
         
         let a = CustomImageView ()
@@ -83,6 +84,7 @@ class UsuariosUITableTableViewCell: UITableViewCell {
         foto.contentMode = .scaleAspectFill
         foto.clipsToBounds = true
         
+        pastor.isHidden = true
         
         nombre.textColor = .white
         

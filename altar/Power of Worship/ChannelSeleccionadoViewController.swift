@@ -386,8 +386,8 @@ class ChannelSeleccionadoViewController: UIViewController {
     
     // .observeSingleEvent(of: .value, with: { (snapshot) in
     
-    print("Este es el codigo")
-    print(codigo)
+   // print("Este es el codigo")
+   // print(codigo)
     
     let userPostRef = Database.database().reference().child("Churchs").child(codigo)
     //let userPostRef = Database.database().reference().child("Media_Channels")

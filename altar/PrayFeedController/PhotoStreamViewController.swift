@@ -478,9 +478,15 @@ class PhotoStreamViewController: UICollectionViewController, UICollectionViewDel
         
         // collectionView?.contentInset = UIEdgeInsets(top: 23, left: 16, bottom: 10, right: 16)
         
-       
         
+        
+      //  checkMails()
+      
     }
+    
+    
+    
+    
     
     
     @objc func handleDelete (index: Int) {
@@ -646,17 +652,20 @@ class PhotoStreamViewController: UICollectionViewController, UICollectionViewDel
             
             if let postfeed = data.value as? [String:NSDictionary] {
                 
+                
+                self.photos.removeAll()
+                
                 for (_,value) in postfeed
                 {
                     
                     
                     let temporarioPost = Posts (dictionary: value as! [String : Any])
-                    print("Esta lleyendo la altura ???")
-                    print(temporarioPost.photoW)
-                    print(temporarioPost.photoH)
-                    print("---------------------")
-                    print(self.view.frame.width)
-                    print(self.view.frame.height)
+//                    print("Esta lleyendo la altura ???")
+//                    print(temporarioPost.photoW)
+//                    print(temporarioPost.photoH)
+//                    print("---------------------")
+//                    print(self.view.frame.width)
+//                    print(self.view.frame.height)
                     
                     
                     

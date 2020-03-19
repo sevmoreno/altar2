@@ -134,8 +134,8 @@ class ChatViewController: MessagesViewController,InputBarAccessoryViewDelegate, 
                                                  //  tableView.reloadRows(at: [indexPath], with: .automatic)
                                                
                                                
-                                                   print("LLEGO AQUI en reloadDataChats" )
-                                                   print(diction2)
+                                                  // print("LLEGO AQUI en reloadDataChats" )
+                                                 //  print(diction2)
                                           
                                           
                          //   let queUsuario = ["usuario2UID" : self.user2UID!]

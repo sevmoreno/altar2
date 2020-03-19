@@ -358,7 +358,7 @@ class PhotoTextoCollectionViewCell: UICollectionViewCell, UIGestureRecognizerDel
             addSubview(praysDate)
             praysDate.anchor(top: nil, left: nil, bottom: nil, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 30, width: 0, height: 0)
             praysDate.centerYAnchor.constraint(equalTo: usernameLabel.centerYAnchor).isActive = true
-            
+             usernameLabel.rightAnchor.constraint(equalTo: praysDate.leftAnchor, constant: 8).isActive = true
             stackView.anchor(top: captionLabel.bottomAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil, paddingTop: 0, paddingLeft: 20, paddingBottom: -8, paddingRight: 0, width: 200, height: 50)
            
             

@@ -39,6 +39,7 @@
 		654F95DF2332AD8700175A7E /* Posts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654F95DE2332AD8700175A7E /* Posts.swift */; };
 		654F95E52339307F00175A7E /* FeedOnlyTextCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654F95E42339307F00175A7E /* FeedOnlyTextCollectionViewCell.swift */; };
 		65555936242002780021CD1E /* EditChurchProfileAllCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65555935242002780021CD1E /* EditChurchProfileAllCode.swift */; };
+		655559382421F2FB0021CD1E /* textmessage.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 655559372421F2FB0021CD1E /* textmessage.mp3 */; };
 		655BF70123847B4A002F0C7C /* NewsfeedCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655BF70023847B4A002F0C7C /* NewsfeedCollectionViewController.swift */; };
 		655BF70323847C11002F0C7C /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655BF70223847C11002F0C7C /* PostCell.swift */; };
 		655BF7052385DA1A002F0C7C /* PrayCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655BF7042385DA1A002F0C7C /* PrayCollectionViewLayout.swift */; };
@@ -154,6 +155,7 @@
 		654F95DE2332AD8700175A7E /* Posts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Posts.swift; sourceTree = "<group>"; };
 		654F95E42339307F00175A7E /* FeedOnlyTextCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedOnlyTextCollectionViewCell.swift; sourceTree = "<group>"; };
 		65555935242002780021CD1E /* EditChurchProfileAllCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditChurchProfileAllCode.swift; sourceTree = "<group>"; };
+		655559372421F2FB0021CD1E /* textmessage.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = textmessage.mp3; sourceTree = SOURCE_ROOT; };
 		655BF70023847B4A002F0C7C /* NewsfeedCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsfeedCollectionViewController.swift; sourceTree = "<group>"; };
 		655BF70223847C11002F0C7C /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		655BF7042385DA1A002F0C7C /* PrayCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayCollectionViewLayout.swift; sourceTree = "<group>"; };
@@ -449,6 +451,7 @@
 		65D42417232576A800DB286E /* altar */ = {
 			isa = PBXGroup;
 			children = (
+				655559372421F2FB0021CD1E /* textmessage.mp3 */,
 				65A7AFD52405FEBE00A233C0 /* In-App Purchases */,
 				653C0FD123FEFE6400700ACE /* Tintero */,
 				6561CA1723F505C200AA8C15 /* altar.entitlements */,
@@ -593,6 +596,7 @@
 				658303E123DA83DA00D48ED0 /* Prompt-Italic.ttf in Resources */,
 				658303EA23DA83DA00D48ED0 /* Prompt-ThinItalic.ttf in Resources */,
 				658303D923DA83D500D48ED0 /* Prompt-Black.ttf in Resources */,
+				655559382421F2FB0021CD1E /* textmessage.mp3 in Resources */,
 				658303E223DA83DA00D48ED0 /* Prompt-Light.ttf in Resources */,
 				65372DD323E9F4ED0078778A /* league-gothic.ttf in Resources */,
 				658303E323DA83DA00D48ED0 /* Prompt-LightItalic.ttf in Resources */,
@@ -919,6 +923,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = altar/altar.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.1;
 				DEVELOPMENT_TEAM = 5766G78FC9;
 				INFOPLIST_FILE = altar/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -926,6 +931,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = sevmoreno.com.altar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -940,6 +946,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = altar/altar.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.1;
 				DEVELOPMENT_TEAM = 5766G78FC9;
 				INFOPLIST_FILE = altar/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -947,6 +954,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = sevmoreno.com.altar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

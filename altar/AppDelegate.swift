@@ -24,35 +24,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate,MessagingDelegate, UNUserN
         return UIApplication.shared.delegate as! AppDelegate
     }
     
-    func showActivityIndicatior () {
-        
-        if let window = window {
-            container = UIView ()
-            container.frame = window.frame
-            container.center = window.center
-            container.backgroundColor = UIColor(white: 0, alpha: 0.8)
-            actInd.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
-            actInd.hidesWhenStopped = true
-            actInd.center = CGPoint(x: container.frame.height/2, y: container.frame.size.width/2)
-            container.addSubview(actInd)
-            window.addSubview(container)
-            actInd.startAnimating()
-            
-        }
-        
-       
-        
-    }
+//    func showActivityIndicatior () {
+//        
+//        if let window = window {
+//            container = UIView ()
+//            container.frame = window.frame
+//            container.center = window.center
+//            container.backgroundColor = UIColor(white: 0, alpha: 0.8)
+//            actInd.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+//            actInd.hidesWhenStopped = true
+//            actInd.center = CGPoint(x: container.frame.height/2, y: container.frame.size.width/2)
+//            container.addSubview(actInd)
+//            window.addSubview(container)
+//            actInd.startAnimating()
+//            
+//     
+//        }
+//        
+//    }
     
-    func dismissActivityIndicator () {
-        if let _ = window {
-            container.removeFromSuperview()
-        }
-    }
+//    func dismissActivityIndicator () {
+//        if let _ = window {
+//            container.removeFromSuperview()
+//        }
+//    }
     
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
+     
         UIApplication.shared.statusBarStyle = .lightContent
         
         attemptRegisterForNotifications(application: application)
@@ -175,4 +175,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate,MessagingDelegate, UNUserN
     }
 
 }
+
+
 

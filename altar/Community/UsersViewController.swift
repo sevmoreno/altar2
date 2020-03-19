@@ -12,6 +12,7 @@ import FirebaseFirestore
 import MessageKit
 import SDWebImage
 import InputBarAccessoryView
+import AVFoundation
 
 class UsersViewController: UIViewController, UIScrollViewDelegate {
 //    func whoNeedsUpdate(value: String) {
@@ -24,7 +25,7 @@ class UsersViewController: UIViewController, UIScrollViewDelegate {
     
     
     @IBOutlet weak var tablaUsuarios: UITableView!
-    
+    var bombSoundEffect: AVAudioPlayer?
     @IBOutlet weak var contenedor: UIView!
     let accountHelper = AccountHelpers ()
     var users = [User] ()
@@ -89,6 +90,7 @@ class UsersViewController: UIViewController, UIScrollViewDelegate {
         navigationItem.rightBarButtonItem?.tintColor = advengers.shared.colorOrange
         
        
+              mensajesActuales ()
                
         
     }
@@ -143,8 +145,8 @@ class UsersViewController: UIViewController, UIScrollViewDelegate {
      self.retriveUsers(completionHandler: { (success) -> Void in
                                  
                                  
-                                 print("************************ CANTIDAD DE USUARIOS ****************************")//
-                                 print(self.users.count)
+                                // print("************************ CANTIDAD DE USUARIOS ****************************")//
+                                // print(self.users.count)
                                  
                                //  self.tablaUsuarios.reloadData()
                                                       
@@ -170,6 +172,8 @@ class UsersViewController: UIViewController, UIScrollViewDelegate {
         
         
         NotificationCenter.default.addObserver(self, selector: #selector(deleteEvent), name: NSNotification.Name(rawValue: "deleteEvent"), object: nil)
+        
+         NotificationCenter.default.addObserver(self, selector: #selector(mensajesActuales), name: NSNotification.Name(rawValue: "resetCounterMSG"), object: nil)
         // loadEvent
         //   contenedor.backgroundColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
         
@@ -187,10 +191,59 @@ class UsersViewController: UIViewController, UIScrollViewDelegate {
         
         newSearchForMessage ()
         
-        
+      
+       
+    //    mensajesActuales ()
  
     }
     
+    
+    @objc func mensajesActuales () {
+       
+        let total = advengers.shared.mensajesTotales
+        print("**********************************************************************")
+        print(total)
+        print("**********************************************************************")
+        
+        
+        if let tabItems = self.tabBarController?.tabBar.items
+               {
+                
+                let tabItem = tabItems[3]
+                   if advengers.shared.mensajesTotales > 0 {
+                           // In this case we want to modify the badge number of the seond tab:
+                           
+                           tabItem.badgeValue = String(advengers.shared.mensajesTotales) // set count you need
+                     UIApplication.shared.applicationIconBadgeNumber = advengers.shared.mensajesTotales
+                    
+                    
+                   } else {
+                    
+                   print("no tiene ahora")
+                    
+                   
+                    
+                    
+                    DispatchQueue.main.async {
+                        
+                        UIApplication.shared.applicationIconBadgeNumber = advengers.shared.mensajesTotales
+                       self.tabBarController?.tabBar.items![3].badgeValue = nil
+                        self.tabBarController?.reloadInputViews()
+                    }
+
+                    //tabItem.badgeValue = nil
+                    
+                    
+                
+               }
+        
+    
+        
+    }
+        
+    }
+    
+   
     var messages: [Message] = []
     private var docReference: DocumentReference?
     
@@ -238,10 +291,14 @@ class UsersViewController: UIViewController, UIScrollViewDelegate {
                             if (diff.type == .added) {
                                 
                                // print("New chat: \(diff.document.data())")
-                               print("NUEVO ELEMENTO DE CHAT ")
+                          //     print("NUEVO ELEMENTO DE CHAT ")
                                 guard let quien = diff.document.data() as? NSDictionary else { return}
                            //      print("New chat: \(quien)")
                                 guard let senderID = quien["senderID"] as? String else { return }
+                                
+                                
+//                                self.mensajesTotales = self.mensajesTotales + 1
+//                                self.mensajesActuales ()
                                 self.reloadDataChats (chatid: senderID )
                             }
                             if (diff.type == .modified) {
@@ -272,7 +329,7 @@ class UsersViewController: UIViewController, UIScrollViewDelegate {
         slides.removeAll()
         eventos.removeAll()
         
-        print("Lllego a buscar eventos")
+       // print("Lllego a buscar eventos")
         
         loadEvents(completionHandler: { (success) -> Void in
             
@@ -282,7 +339,7 @@ class UsersViewController: UIViewController, UIScrollViewDelegate {
                 
                 let slide1 = Slide3Type ()
                 
-                print("Creando uno vacio")
+              //  print("Creando uno vacio")
                 
                 slide1.photoImageView.image = UIImage(named: "Background")
                 slide1.usernameLabel.text =  ""
@@ -425,11 +482,11 @@ class UsersViewController: UIViewController, UIScrollViewDelegate {
         advengers.shared.usersStatusRef.queryOrderedByKey().observeSingleEvent(of: .value) { (datasnap) in
             let usersRead = datasnap.value as! [ String : NSDictionary]
             //self.users.removeAll()
-            print("----------------------------------------RETRIVE DATA ES LLAMADO --------------------------------------")
-            print(advengers.shared.currenUSer["churchID"])
-            print(advengers.shared.currentChurchInfo.uidChurch)
+          //  print("----------------------------------------RETRIVE DATA ES LLAMADO --------------------------------------")
+         //   print(advengers.shared.currenUSer["churchID"])
+         //   print(advengers.shared.currentChurchInfo.uidChurch)
             
-            print(usersRead)
+         //   print(usersRead)
             
             for (_,value) in usersRead {
                 
@@ -442,8 +499,8 @@ class UsersViewController: UIViewController, UIScrollViewDelegate {
                     {
                         if advengers.shared.currentChurchInfo.uidChurch == value["churchID"] as? String {
                             
-                            print("Entro usuario")
-                            print(value["name"])
+                   //         print("Entro usuario")
+                     //       print(value["name"])
                             
                             let userToShow = User()
                             userToShow.setup(uid: value["userid"] as? String ?? "", dictionary:  value as! [String : Any])
@@ -453,18 +510,18 @@ class UsersViewController: UIViewController, UIScrollViewDelegate {
                             
                             guard let mydictionary = advengers.shared.currenUSer["inbox"] as? [String:Int] else  {return}
                             
-                            print("Passa el guard ????")
+                         //   print("Passa el guard ????")
                             
                             if let cantindadDeMensajes = mydictionary[usuario2Uid] {
-                                if cantindadDeMensajes > 0 {
+                                if cantindadDeMensajes > 0 || userToShow.isPastor > 0{
                                     self.users.insert(userToShow, at: 0)
                                 } else {
-                                    print("Append lapimera vez")
+                                 //   print("Append lapimera vez")
                                     self.users.append(userToShow)
                                 }
                             } else {
                                 
-                                 print("Append la segunda vez")
+                               //  print("Append la segunda vez")
                                 self.users.append(userToShow)
                                 
                             }
@@ -511,6 +568,7 @@ class UsersViewController: UIViewController, UIScrollViewDelegate {
 //        self.users.removeAll()
         
         var updateIndex: Int?
+        playSoundMessage ()
         
         for usario in self.users {
             
@@ -524,7 +582,7 @@ class UsersViewController: UIViewController, UIScrollViewDelegate {
            if  updateIndex != nil {
                 
                 self.users[updateIndex!].inbox?[chatid] = 0
-                print("Este es el STRING \(chatid)")
+               // print("Este es el STRING \(chatid)")
              //   tablaUsuarios.index
                 
                 
@@ -540,6 +598,8 @@ class UsersViewController: UIViewController, UIScrollViewDelegate {
        //                  print(diction2)
                 
                 advengers.shared.currenUSer["inbox"] = diction2
+            
+            
          //       accountHelper.fetchUserInfo()
             
             if updateIndex != 0 {
@@ -587,6 +647,27 @@ class UsersViewController: UIViewController, UIScrollViewDelegate {
         
     }
     
+    
+    func playSoundMessage () {
+    
+        
+        let urlPath = Bundle.main.url(forResource: "textmessage", withExtension: "mp3")
+  //  let path = Bundle.main.path(forResource: "textmessage.mp3", ofType:nil)!
+        if let url = urlPath {
+        
+               do {
+                   bombSoundEffect = try AVAudioPlayer(contentsOf: url)
+                   bombSoundEffect!.play()
+                   print("Playinggg!")
+               } catch {
+                   
+                   print("NotPlaying")
+                   // couldn't load file :(
+               }
+        }
+    
+    
+    }
     
     @objc func deleteEvent () {
         
@@ -639,14 +720,18 @@ extension UsersViewController: UITableViewDelegate, UITableViewDataSource {
             
             guard let mydictionary = advengers.shared.currenUSer["inbox"] as? [String:Int] else  {return}
             
-            print("----------------------------- EN TABLE VIEW ------------------------------")
-            print(mydictionary)
-
-            
-            print(usuario2Uid)
+//            print("----------------------------- EN TABLE VIEW ------------------------------")
+//            print(mydictionary)
+//
+//            
+//            print(usuario2Uid)
             
             if let cantindadDeMensajes = mydictionary[usuario2Uid] {
                 if cantindadDeMensajes > 0 {
+                    
+                    advengers.shared.mensajesTotales = advengers.shared.mensajesTotales + 1
+                    self.mensajesActuales ()
+                    
                 cell.tieneMensaje.isHidden = false
                 } else {
                    cell.tieneMensaje.isHidden = true
@@ -661,6 +746,13 @@ extension UsersViewController: UITableViewDelegate, UITableViewDataSource {
             
         }
 //
+        if self.users[indexPath.row].isPastor == 1 {
+            
+            cell.pastor.isHidden = false
+        } else {
+            cell.pastor.isHidden = true
+            
+        }
 
         cell.nombre.text = self.users[indexPath.row].fullName
 //
@@ -682,15 +774,46 @@ extension UsersViewController: UITableViewDelegate, UITableViewDataSource {
         
 
         var diction2 = advengers.shared.currenUSer["inbox"] as! [String:Int]
+       
+        
+        if let mensajeAQuitar = diction2[users[indexPath.row].uid] {
+            
+            print("Encontro tantos")
+            print(mensajeAQuitar)
+            
+           
+                      
+                      
+                
+                    advengers.shared.mensajesTotales = advengers.shared.mensajesTotales - mensajeAQuitar
+                    print("Estos son los mensajes totales \(mensajeAQuitar)")
+                    
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "resetCounterMSG"), object: nil)
+                   // self.mensajesActuales ()
+                    
+               
+                      
+                      
+            
+            
+        }
+        
+        
+      
+       
+        
             diction2.updateValue(0, forKey: users[indexPath.row].uid)
          //   let diction = [chat.user2UID: 0]
+           advengers.shared.currenUSer["inbox"] = diction2
             Database.database().reference().child("users").child( Auth.auth().currentUser!.uid).child("inbox").updateChildValues(diction2)
           //  accountHelper.fetchUserInfo()
+        
+        
             tableView.reloadRows(at: [indexPath], with: .automatic)
         
         
-            print("LLEGO AQUI")
-            print(diction2)
+//            print("LLEGO AQUI")
+//            print(diction2)
         
  
     

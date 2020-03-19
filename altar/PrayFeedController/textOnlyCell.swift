@@ -233,7 +233,7 @@ class textOnlyCell: UICollectionViewCell, UIGestureRecognizerDelegate {
             //  optionsButton.anchor(top: topAnchor, left: nil, bottom: nil, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 44, height: 0)
              
 
-             
+              usernameLabel.rightAnchor.constraint(equalTo: praysDate.leftAnchor, constant: 8).isActive = true
           
              
              addSubview(captionLabel)

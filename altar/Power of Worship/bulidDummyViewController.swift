@@ -30,15 +30,15 @@ class bulidDummyViewController: UIViewController {
         
         
         
-//        let imagen = "amanecer"
+//        let imagen = UIImage (named: "abtract4")
 //
-//        let urlimagen = postImage(foto: imagen ,completionHandler: { (success, urlphoto) -> Void in
+//        let urlimagen = postImage(foto: imagen! ,completionHandler: { (success, urlphoto) -> Void in
 //
 //            if (success) {
-//                self.postChannels (nombre: "Time in God", subtitulo: "Worship Instrumental", imagen: urlphoto, lista: ["Here I Am to Worship","Here I Am to Worship","Here I Am to Worship"])
+//                self.postChannels (nombre: "Peace in the Lord", subtitulo: "Jesus good news.", imagen: urlphoto, lista: ["10000 Reasons -  Irish Tin Whistle","All Creatures Of Our God And King","Crown Him Majesty - Matthew Bridges, Chris Tomlin, George Job Elvey","Great is thy Faithfulness Hymn - Israel Houghton","Holy Holy Holy - Keith Green","Praise to the Lord, the Almighty - Fernando Ortega"])
 //            }
 //          })
-//
+
         
      
         //   postChannels (nombre: "A Solas Con Dios", imagen: "devoback7", lista: ["AsolasconDios","AsolasconDios","AsolasconDios"])
@@ -106,7 +106,8 @@ class bulidDummyViewController: UIViewController {
                                            
                                            //       let song = wSong (dictionary: diction!)
                                            
-                                           
+                                            
+                                
                                            
                                            ref.child(uuid).updateChildValues(diction!) { (err, ref) in
                                                if let err = err {
@@ -284,8 +285,8 @@ func loadCurrentChurch (codigo: String) {
     
     // .observeSingleEvent(of: .value, with: { (snapshot) in
     
-    print("Este es el codigo")
-    print(codigo)
+  //  print("Este es el codigo")
+  //  print(codigo)
     
     let userPostRef = Database.database().reference().child("Churchs").child(codigo)
     //let userPostRef = Database.database().reference().child("Media_Channels")
@@ -309,7 +310,7 @@ func loadCurrentChurch (codigo: String) {
     
     
 }
-func postImage (foto: String,completionHandler: @escaping (_ success:Bool, _ urlphoto: String) -> Void) -> String {
+func postImage (foto: UIImage,completionHandler: @escaping (_ success:Bool, _ urlphoto: String) -> Void) -> String {
     
     
     var urlDeLaImange: String = ""
@@ -318,11 +319,13 @@ func postImage (foto: String,completionHandler: @escaping (_ success:Bool, _ url
     
     let key = advengers.shared.postPrayFeed.childByAutoId().key
     
-    let imageRef = advengers.shared.PostPrayStorage.child("channelImage").child("\(foto).jpg")
+    let imageRef = advengers.shared.PostPrayStorage.child("channelImage").child("\(foto.description).jpg")
     
-    let imagen = UIImage(named: foto)
+   // let imagen = UIImage(named: "abtract")
     
-    let data = imagen!.jpegData(compressionQuality: 0.6)
+    
+    
+    let data = foto.jpegData(compressionQuality: 0.6)
     
     
     

@@ -167,17 +167,33 @@ textbackbroundpassword.layer.cornerRadius = 22
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
 
-        textField.text = ""
+      //  textField.text = ""
+        if textField.tag == 198 || textField.tag == 199  {
+            
+            textField.text = ""
+        }
        
-        if textField.tag == 200 {
+        if textField.tag == 200  &&  textField.text == "Password" {
             textField.text = ""
             textField.isSecureTextEntry = true
         }
         
-        if textField.tag == 201 {
+        if textField.tag == 201 && textField.text == "Password validation"  {
             textField.text = ""
             textField.isSecureTextEntry = true
         }
+    }
+    
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        
+        
+        if textField.tag == 201 {
+            print("is writing")
+            passwordvalidator.text = textField.text
+            
+        }
+        
+        
     }
     
     

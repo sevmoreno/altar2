@@ -27,7 +27,7 @@ class PlayListViewController: UICollectionViewController,  UICollectionViewDeleg
          collectionView?.backgroundColor = advengers.shared.colorBlue
         
 
-           //navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add Prayer", style: .plain, target: self, action: #selector(addprayer))
+          // navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add Prayer", style: .plain, target: self, action: #selector(addprayer))
         
         self.collectionView.reloadData()
         
@@ -54,7 +54,7 @@ class PlayListViewController: UICollectionViewController,  UICollectionViewDeleg
                
                if advengers.shared.isPastor {
                    
-                 //  navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Select Channel", style: .plain, target: self, action: #selector(addDevotional))
+                   navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Select Channel", style: .plain, target: self, action: #selector(addDevotional))
                    
                }
         

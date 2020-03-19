@@ -313,7 +313,7 @@ class AudioCollectionViewCell: UICollectionViewCell, UIGestureRecognizerDelegate
         praysDate.anchor(top: nil, left: nil, bottom: nil, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 30, width: 0, height: 0)
         praysDate.centerYAnchor.constraint(equalTo: usernameLabel.centerYAnchor).isActive = true
         
-        
+         usernameLabel.rightAnchor.constraint(equalTo: praysDate.leftAnchor, constant: 8).isActive = true
         addSubview(statusAudio)
         
         

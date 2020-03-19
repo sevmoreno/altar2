@@ -388,7 +388,13 @@ class AudibleViewController: UIViewController, AVAudioRecorderDelegate {
     
     @objc func postAudio () {
         
-        AppDelegate.instance().showActivityIndicatior()
+        
+        let accounthelper = AccountHelpers ()
+               
+               
+               accounthelper.showActivityIndicatior(window: view)
+        
+     
               
               let uid = Auth.auth().currentUser?.uid
         
@@ -435,7 +441,7 @@ class AudibleViewController: UIViewController, AVAudioRecorderDelegate {
                                         guard let currentChurchID = advengers.shared.currenUSer["churchID"] as? String else { return }
                                         advengers.shared.postPrayFeed.child(currentChurchID).updateChildValues(postfeed)
                                         
-                                        AppDelegate.instance().dismissActivityIndicator()
+                                        accounthelper.dismissActivityIndicator()
                                         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "UpdateFeed"), object: nil)
                                         _ = self.navigationController?.popViewController(animated: true)
                                         

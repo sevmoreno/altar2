@@ -63,7 +63,204 @@ class AccountHelpers  {
         
     }
     
+    var container: UIView = {
+        
+        let a = UIView ()
+        
+        a.backgroundColor = .darkGray
+        a.alpha = 0.3
+        
+        return a
+        
+    } ()
     
+     let actInd = UIActivityIndicatorView()
+    
+    
+    
+    func checkMails()  {
+        
+        
+        //func retriveUsers (completionHandler: @escaping (_ success:Bool) -> Void) -> Void {
+            
+            //  self.users.removeAll()
+            // advengers.shared.postPrayFeed.child(currentChurchID).observeSingleEvent(of: .value, with: { (data) in
+            advengers.shared.usersStatusRef.queryOrderedByKey().observeSingleEvent(of: .value) { (datasnap) in
+                let usersRead = datasnap.value as! [ String : NSDictionary]
+                //self.users.removeAll()
+              //  print("----------------------------------------RETRIVE DATA ES LLAMADO --------------------------------------")
+             //   print(advengers.shared.currenUSer["churchID"])
+             //   print(advengers.shared.currentChurchInfo.uidChurch)
+                
+             //   print(usersRead)
+                
+                for (_,value) in usersRead {
+                    
+                    
+                    if let userid = value["userid"] as? String {
+                        
+                        
+                        
+                        if userid != Auth.auth().currentUser?.uid
+                        {
+                            if advengers.shared.currentChurchInfo.uidChurch == value["churchID"] as? String {
+                                
+                       //         print("Entro usuario")
+                         //       print(value["name"])
+                                
+                                let userToShow = User()
+                                userToShow.setup(uid: value["userid"] as? String ?? "", dictionary:  value as! [String : Any])
+                                
+                                
+                                let usuario2Uid = userToShow.userID
+                                
+                                guard let mydictionary = advengers.shared.currenUSer["inbox"] as? [String:Int] else  {return}
+                                
+                             //   print("Passa el guard ????")
+                                
+                                if let cantindadDeMensajes = mydictionary[usuario2Uid] {
+                                    if cantindadDeMensajes > 0 {
+                                        advengers.shared.remitentes.insert(userToShow, at: 0)
+                                        
+                                         advengers.shared.mensajesTotales = advengers.shared.mensajesTotales + 1
+                                        
+                                        
+                                        
+                                    } else {
+                                     //   print("Append lapimera vez")
+                                        advengers.shared.remitentes.append(userToShow)
+                                    }
+                                } else {
+                                    
+                                   //  print("Append la segunda vez")
+                                    advengers.shared.remitentes.append(userToShow)
+                                    
+                                }
+                                
+                                
+                              //  self.tablaUsuarios.reloadData()
+                                
+                            }
+                            
+                            
+                        }
+                    }
+                }
+                
+              //  completionHandler(true)//
+                
+           // }
+            // advengers.shared.usersStatusRef.removeAllObservers()
+            
+        }
+        
+        
+//        func mensajesActuales () {
+//           
+//            let total = advengers.shared.mensajesTotales
+//            print("**********************************************************************")
+//            print(total)
+//            print("**********************************************************************")
+//            
+//            
+//            if let tabItems = self.tabBarController?.tabBar.items
+//                   {
+//                    
+//                    let tabItem = tabItems[3]
+//                       if advengers.shared.mensajesTotales > 0 {
+//                               // In this case we want to modify the badge number of the seond tab:
+//                               
+//                               tabItem.badgeValue = String(advengers.shared.mensajesTotales) // set count you need
+//                         UIApplication.shared.applicationIconBadgeNumber = advengers.shared.mensajesTotales
+//                        
+//                        
+//                       } else {
+//                        
+//                       print("no tiene ahora")
+//                        
+//                       
+//                        
+//                        
+//                        DispatchQueue.main.async {
+//                            
+//                            UIApplication.shared.applicationIconBadgeNumber = advengers.shared.mensajesTotales
+//                           self.tabBarController?.tabBar.items![3].badgeValue = nil
+//                            self.tabBarController?.reloadInputViews()
+//                        }
+//
+//                        //tabItem.badgeValue = nil
+//                        
+//                        
+//                    
+//                   }
+//            
+//        
+//            
+//        }
+//            
+//        }
+        
+        
+    }
+    
+    
+    
+    func showActivityIndicatior (window: UIView) {
+        
+        
+        
+        var spinner = UIActivityIndicatorView(style: .whiteLarge)
+
+        window.addSubview(container)
+        
+        container.translatesAutoresizingMaskIntoConstraints = false
+        
+        container.centerXAnchor.constraint(equalTo: window.centerXAnchor).isActive = true
+        container.centerYAnchor.constraint(equalTo: window.centerYAnchor).isActive = true
+        
+        container.backgroundColor = .darkGray
+        container.alpha = 0.3
+        
+        container.widthAnchor.constraint(equalToConstant: window.frame.width).isActive = true
+        
+        container.heightAnchor.constraint(equalToConstant: window.frame.height).isActive = true
+        
+        
+        container.addSubview(spinner)
+        
+        
+        
+        spinner.translatesAutoresizingMaskIntoConstraints = false
+       
+//
+//            container = UIView ()
+//            container.frame = window.frame
+//            container.center = window.center
+//            container.backgroundColor = UIColor(white: 0, alpha: 0.8)
+//            actInd.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+//            actInd.hidesWhenStopped = true
+//            actInd.center = CGPoint(x: container.frame.height/2, y: container.frame.size.width/2)
+//            container.addSubview(actInd)
+//            window.addSubview(container)
+        
+         DispatchQueue.main.async {
+         //   self.actInd.startAnimating()
+             spinner.startAnimating()
+            
+            spinner.centerXAnchor.constraint(equalTo: window.centerXAnchor).isActive = true
+            spinner.centerYAnchor.constraint(equalTo: window.centerYAnchor).isActive = true
+ 
+              }
+     
+       
+        
+    }
+    
+    func dismissActivityIndicator () {
+    
+            container.removeFromSuperview()
+       
+    }
     
     
     func loadCurrentUserInfo (completionHandler: @escaping (_ success:Bool) -> Void)  {
