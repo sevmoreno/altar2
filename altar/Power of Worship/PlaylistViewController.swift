@@ -54,7 +54,7 @@ class PlayListViewController: UICollectionViewController,  UICollectionViewDeleg
                
                if advengers.shared.isPastor {
                    
-                   navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Select Channel", style: .plain, target: self, action: #selector(addDevotional))
+                  // navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Select Channel", style: .plain, target: self, action: #selector(addDevotional))
                    
                }
         

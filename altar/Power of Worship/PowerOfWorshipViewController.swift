@@ -310,11 +310,12 @@ class PowerOfWorshipViewController:  UIViewController, AVAudioPlayerDelegate{
         view.addSubview(tituloCancion)
         view.addSubview(estadodelPlay)
         
-        tituloCancion.anchor(top: audioView.centerYAnchor, left: nil, bottom: nil, right: nil, paddingTop: 100, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 400, height: 0)
+        tituloCancion.anchor(top: audioView.centerYAnchor, left: view.leftAnchor, bottom: estadodelPlay.topAnchor, right: view.rightAnchor, paddingTop: 100, paddingLeft: 20, paddingBottom: 30, paddingRight: 20, width: 0, height: 0)
         tituloCancion.centerXAnchor.constraint(equalTo: audioView.centerXAnchor).isActive = true
         tituloCancion.textAlignment = .center
+        tituloCancion.numberOfLines = 0
         tituloCancion.sizeToFit()
-        estadodelPlay.anchor(top: nil, left: nil, bottom: view.bottomAnchor, right: nil, paddingTop: 0, paddingLeft: 0, paddingBottom: 230, paddingRight: 0, width: 200, height: 0)
+        estadodelPlay.anchor(top: nil, left: nil, bottom: view.bottomAnchor, right: nil, paddingTop: 0, paddingLeft: 0, paddingBottom: 140, paddingRight: 0, width: 200, height: 0)
         estadodelPlay.textAlignment = .center
         estadodelPlay.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
     }
