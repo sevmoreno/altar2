@@ -52,6 +52,9 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
     var imageToSave: UIImage?
     
     let scrollview = UIScrollView()
+    
+    let accounthelper = AccountHelpers ()
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -218,8 +221,11 @@ textbackbroundpassword.layer.cornerRadius = 22
        mainScrollViewBottomConstraint.constant = 0
    }
  */
+    
+    // let accounthelper = AccountHelpers ()
 
     @IBAction func signIn(_ sender: Any) {
+        
         
         guard name?.text != "", email.text != "", password.text != "", passwordvalidator.text != "" else {
             errorLabel.text = "You need your email & password to access Altar."
@@ -242,6 +248,8 @@ textbackbroundpassword.layer.cornerRadius = 22
                     
                 })
                 self.errorLabel.text = "Creating account ... "
+                self.accounthelper.showActivityIndicatior(window: self.view)
+                
                 if user != nil {
                     
                     
@@ -287,6 +295,8 @@ textbackbroundpassword.layer.cornerRadius = 22
                     })
 
                 uploadTask.resume()
+                    
+                self.accounthelper.dismissActivityIndicator()
                 self.performSegue(withIdentifier: "accesoOK", sender: self)
    
                 }

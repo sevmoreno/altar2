@@ -32,7 +32,7 @@ class SettingsViewController: UIViewController, UIActivityItemSource {
 
         Download the app in this link to be together in the same Spirit:
         
-        \(URL(string: "https://www.altarapp.com")!.absoluteString)
+        \(URL(string: "https://apps.apple.com/us/app/altar/id1500498522?ls=1")!.absoluteString)
         
         Find our church \(advengers.shared.currentChurch) and join us!
         """
@@ -344,7 +344,7 @@ class SettingsViewController: UIViewController, UIActivityItemSource {
         
         
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "EditChurchProfile") as! EditChurchProfileViewController
+         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "EditChurchProfile") as! EditChurchProfileAllCode
         // nextViewController.referalDetailsFromDB()
          self.navigationController?.pushViewController(nextViewController, animated: true)
         

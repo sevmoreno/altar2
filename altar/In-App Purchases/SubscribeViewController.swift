@@ -17,6 +17,8 @@ class SubscribeViewController: UIViewController {
      let model = Model()
   //  let product = SKProduct ()
     
+    let accounthelper = AccountHelpers ()
+    
     func showAlert(for product: SKProduct) {
            guard let price = IAPManager.shared.getPriceFormatted(for: product) else { return }
            
