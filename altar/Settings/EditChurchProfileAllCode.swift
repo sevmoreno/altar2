@@ -19,7 +19,7 @@ import Firebase
 import FirebaseUI
 
 
-class NewChurchAllCode: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
+class EditChurchProfileAllCode: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
     
     var imageToSave: UIImage?
           let accounthelper = AccountHelpers ()
@@ -703,7 +703,7 @@ class NewChurchAllCode: UIViewController, UIImagePickerControllerDelegate, UINav
         creatProfile.layer.cornerRadius = 22
         creatProfile.layer.masksToBounds = true
         creatProfile.setTitleColor(.white , for: .normal)
-        creatProfile.setTitle("Sign in", for: .normal)
+        creatProfile.setTitle("Update", for: .normal)
         creatProfile.setTitleColor(UIColor.white.withAlphaComponent(0.3), for: .highlighted )
         creatProfile.applyGradient(colors: [WelcomeViewController.UIColorFromRGB(0xF78361).cgColor,WelcomeViewController.UIColorFromRGB(0xF54B64).cgColor])
         
@@ -731,6 +731,28 @@ class NewChurchAllCode: UIViewController, UIImagePickerControllerDelegate, UINav
                      if success {
                          self.isUserLoaded = true
                         self.creatProfile.isEnabled = true
+                        
+                        
+                        
+                        
+                            self.accounthelper.loadCurrentUserInfo { (true) in
+                                  
+                                  
+                                  self.name.text = advengers.shared.currentChurchInfo.name ?? ""
+                                  self.address.text = advengers.shared.currentChurchInfo.address ?? ""
+                                  self.state.text = advengers.shared.currentChurchInfo.state ?? ""
+                                  self.zipcode.text = advengers.shared.currentChurchInfo.zipCode ?? ""
+                                  self.country.text = advengers.shared.currentChurchInfo.country ?? ""
+                                  self.email.text = advengers.shared.currentChurchInfo.email ?? ""
+                                  self.phonenumber.text = advengers.shared.currentChurchInfo.phoneNumber ?? ""
+                                self.displayname.text = advengers.shared.currentChurchInfo.displayname ?? ""
+                               //   self.website.text = advengers.shared.currentChurchInfo.webSite ?? ""
+                                  
+                              }
+                              
+                        
+                        
+                        
                         
                      }
                          
@@ -856,7 +878,7 @@ class NewChurchAllCode: UIViewController, UIImagePickerControllerDelegate, UINav
                     {
                     
                     guard let usuarioNumber = Auth.auth().currentUser?.uid else {return}
-                        accounthelper.creatChurch(userID: usuarioNumber, name: name.text!, address: address.text ?? "", state: state.text ?? "", country: country.text ?? "", zipCode: zipcode.text ?? "", email: email.text!, facebook: "", instragram: "", webSite: "" ?? "", phoneNumber: phonenumber.text ?? "", displayname: displayname.text!, completionHandler: { (success) -> Void in
+                        accounthelper.creatChurch(userID: usuarioNumber, name: name.text!, address: address.text ?? "", state: state.text ?? "", country: country.text ?? "", zipCode: zipcode.text ?? "", email: email.text!, facebook: "", instragram: "", webSite:  "", phoneNumber: phonenumber.text ?? "", displayname: displayname.text!, completionHandler: { (success) -> Void in
                         
                         
                         
@@ -882,7 +904,7 @@ class NewChurchAllCode: UIViewController, UIImagePickerControllerDelegate, UINav
                     
                     
                 }
-    
+                
     
 }
 

@@ -1,12 +1,24 @@
 
-/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "03H-q2-U51"; */
-"03H-q2-U51.title" = "Item";
+/* Class = "UIButton"; normalTitle = "X"; ObjectID = "0fb-NU-47f"; */
+"0fb-NU-47f.normalTitle" = "X";
 
-/* Class = "UIButton"; normalTitle = "Edit Picture"; ObjectID = "1MM-qv-I2B"; */
-"1MM-qv-I2B.normalTitle" = "Edit Picture";
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "1D9-TH-jIq"; */
+"1D9-TH-jIq.placeholder" = "Password";
 
-/* Class = "UILabel"; text = "Full Name"; ObjectID = "1oU-4q-a5u"; */
-"1oU-4q-a5u.text" = "Full Name";
+/* Class = "UITextField"; text = "Password"; ObjectID = "1D9-TH-jIq"; */
+"1D9-TH-jIq.text" = "Password";
+
+/* Class = "UITextField"; text = "Change title here ..."; ObjectID = "1G2-fX-vzX"; */
+"1G2-fX-vzX.text" = "Cambia el titulo aquí …";
+
+/* Class = "UIButton"; normalTitle = "+"; ObjectID = "1MM-qv-I2B"; */
+"1MM-qv-I2B.normalTitle" = "+";
+
+/* Class = "UITextField"; placeholder = "Name"; ObjectID = "1YH-oR-qj7"; */
+"1YH-oR-qj7.placeholder" = "Nombre";
+
+/* Class = "UITextField"; text = "Name"; ObjectID = "1YH-oR-qj7"; */
+"1YH-oR-qj7.text" = "Nombre";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "2XX-0u-S6X"; */
 "2XX-0u-S6X.text" = "Label";
@@ -14,26 +26,59 @@
 /* Class = "UILabel"; text = "Label"; ObjectID = "3Ms-Cc-2wM"; */
 "3Ms-Cc-2wM.text" = "Label";
 
-/* Class = "UITabBarItem"; title = "Power of Pray"; ObjectID = "53m-hi-SVr"; */
-"53m-hi-SVr.title" = "Power of Pray";
+/* Class = "UILabel"; text = "Select your profile picture"; ObjectID = "3Xl-0I-kRF"; */
+"3Xl-0I-kRF.text" = "Seleciona tu foto de perfil";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "4g1-Ig-Y9c"; */
+"4g1-Ig-Y9c.text" = "Label";
 
 /* Class = "UITextField"; placeholder = "Email"; ObjectID = "5e4-Yk-Fsu"; */
 "5e4-Yk-Fsu.placeholder" = "Email";
 
-/* Class = "UIButton"; normalTitle = "Style5"; ObjectID = "7Ct-HX-F72"; */
-"7Ct-HX-F72.normalTitle" = "Style5";
+/* Class = "UITextView"; text = "Change title here ..."; ObjectID = "6Hq-DC-WGq"; */
+"6Hq-DC-WGq.text" = "Cambia el titulo aquí …";
 
-/* Class = "UITabBarItem"; title = "Item"; ObjectID = "89g-8m-uDk"; */
-"89g-8m-uDk.title" = "Item";
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "6Nl-PO-pyb"; */
+"6Nl-PO-pyb.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Are you a Pastor / Minister? Add your church."; ObjectID = "7mg-jU-Hd2"; */
+"7mg-jU-Hd2.normalTitle" = "Eres Pastor o Ministro? Agrega tu Iglesia.";
+
+/* Class = "UITabBarItem"; title = "Power of Pray"; ObjectID = "89g-8m-uDk"; */
+"89g-8m-uDk.title" = "Poder de Orar";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "8RK-md-cSH"; */
 "8RK-md-cSH.text" = "Label";
 
-/* Class = "UIBarButtonItem"; title = "Add prayer"; ObjectID = "BEb-rR-cC1"; */
-"BEb-rR-cC1.title" = "Add prayer";
+/* Class = "UIButton"; normalTitle = "Select your church"; ObjectID = "8lg-Ii-CYh"; */
+"8lg-Ii-CYh.normalTitle" = "Selecciona tu Iglesia";
 
-/* Class = "UIButton"; normalTitle = "Photo/Video"; ObjectID = "Csx-GS-71j"; */
-"Csx-GS-71j.normalTitle" = "Photo/Video";
+/* Class = "UIBarButtonItem"; title = "Add prayer"; ObjectID = "BEb-rR-cC1"; */
+"BEb-rR-cC1.title" = "Agregar Oracion";
+
+/* Class = "UILabel"; text = "Billed monthly. Subscription terms: Altar subscription automatically renews unless auto-renew is turned off at least 24h before current period ends. Payment is charged to your iTunes accounts. Manage subscription and turn off auto-renewal in Account Settings. Terms and Privacy Policy."; ObjectID = "BWN-wQ-UWC"; */
+"BWN-wQ-UWC.text" = "Billed monthly. Subscription terms: Altar subscription automatically renews unless auto-renew is turned off at least 24h before current period ends. Payment is charged to your iTunes accounts. Manage subscription and turn off auto-renewal in Account Settings. Terms and Privacy Policy.";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "BfD-yZ-9cH"; */
+"BfD-yZ-9cH.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Photo / Video"; ObjectID = "Csx-GS-71j"; */
+"Csx-GS-71j.normalTitle" = "Photo / Video";
+
+/* Class = "UITextField"; text = "State"; ObjectID = "D3a-hV-g1y"; */
+"D3a-hV-g1y.text" = "Estado";
+
+/* Class = "UIButton"; normalTitle = "Sign In"; ObjectID = "E3K-1r-uIR"; */
+"E3K-1r-uIR.normalTitle" = "Ingresar";
+
+/* Class = "UIButton"; normalTitle = "X"; ObjectID = "FwY-Bv-ZgW"; */
+"FwY-Bv-ZgW.normalTitle" = "X";
+
+/* Class = "UITextField"; placeholder = "State"; ObjectID = "GHS-Vc-nI2"; */
+"GHS-Vc-nI2.placeholder" = "Estado";
+
+/* Class = "UITextField"; text = "State"; ObjectID = "GHS-Vc-nI2"; */
+"GHS-Vc-nI2.text" = "Estado";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "GKh-Ge-m98"; */
 "GKh-Ge-m98.text" = "Label";
@@ -44,65 +89,146 @@
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "HwI-PK-bSy"; */
 "HwI-PK-bSy.normalTitle" = "Button";
 
+/* Class = "UILabel"; text = "Add a church or ministry"; ObjectID = "Ijq-w0-tNE"; */
+"Ijq-w0-tNE.text" = "Agrega tu iglesia o ministerio";
+
+/* Class = "UIButton"; normalTitle = "Select your church"; ObjectID = "JwV-Hr-m15"; */
+"JwV-Hr-m15.normalTitle" = "Selecciona tu iglesia";
+
 /* Class = "UILabel"; text = "Label"; ObjectID = "KgI-o4-j0o"; */
 "KgI-o4-j0o.text" = "Label";
 
 /* Class = "UITextField"; placeholder = "Name"; ObjectID = "Kr5-C7-chO"; */
-"Kr5-C7-chO.placeholder" = "Name";
+"Kr5-C7-chO.placeholder" = "Nombre";
 
-/* Class = "UILabel"; text = "The only thing that I see that is distinctly different from me is: I'm not afraid to die on a treadmill. I will not be outworked, period. You might have more talent than me, you might be smarter than me, you might be sexier than me."; ObjectID = "L3R-ks-JIL"; */
-"L3R-ks-JIL.text" = "The only thing that I see that is distinctly different from me is: I'm not afraid to die on a treadmill. I will not be outworked, period. You might have more talent than me, you might be smarter than me, you might be sexier than me.";
+/* Class = "UITextField"; text = "Name"; ObjectID = "Kr5-C7-chO"; */
+"Kr5-C7-chO.text" = "Nombre";
 
-/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit "; ObjectID = "LIw-gw-FZc"; */
-"LIw-gw-FZc.text" = "Lorem ipsum dolor sit er elit ";
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "MnB-7I-l0M"; */
+"MnB-7I-l0M.placeholder" = "Password";
 
-/* Class = "UIButton"; normalTitle = "Background image"; ObjectID = "Nmy-ys-uJV"; */
-"Nmy-ys-uJV.normalTitle" = "Background image";
+/* Class = "UITextField"; text = "Old Password"; ObjectID = "MnB-7I-l0M"; */
+"MnB-7I-l0M.text" = "Viejo Password";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "N7p-Ej-JbJ"; */
+"N7p-Ej-JbJ.text" = "Label";
+
+/* Class = "UITextField"; placeholder = "Address"; ObjectID = "Nsc-wu-n06"; */
+"Nsc-wu-n06.placeholder" = "Dirección";
+
+/* Class = "UITextField"; text = "Address"; ObjectID = "Nsc-wu-n06"; */
+"Nsc-wu-n06.text" = "Dirección";
 
 /* Class = "UIButton"; normalTitle = "Sing in"; ObjectID = "O0A-1R-zTG"; */
-"O0A-1R-zTG.normalTitle" = "Sing in";
-
-/* Class = "UILabel"; text = "Label"; ObjectID = "OHc-3R-AJq"; */
-"OHc-3R-AJq.text" = "Label";
+"O0A-1R-zTG.normalTitle" = "Ingresar";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "OXC-za-Q6Q"; */
 "OXC-za-Q6Q.text" = "Label";
 
-/* Class = "UIButton"; normalTitle = "Style4"; ObjectID = "Onz-fe-qtF"; */
-"Onz-fe-qtF.normalTitle" = "Style4";
+/* Class = "UITextField"; placeholder = "Display name"; ObjectID = "Pe1-db-Yfg"; */
+"Pe1-db-Yfg.placeholder" = "Nombre de pantalla";
 
-/* Class = "UIButton"; normalTitle = "Post"; ObjectID = "QHy-37-KRr"; */
-"QHy-37-KRr.normalTitle" = "Post";
+/* Class = "UITextField"; text = "Display name"; ObjectID = "Pe1-db-Yfg"; */
+"Pe1-db-Yfg.text" = "Nombre de pantalla";
 
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "QSD-Og-clK"; */
 "QSD-Og-clK.normalTitle" = "Button";
 
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "QY7-zc-Jmx"; */
+"QY7-zc-Jmx.normalTitle" = "Button";
+
 /* Class = "UIButton"; normalTitle = "Sign In"; ObjectID = "RNC-D6-GfG"; */
-"RNC-D6-GfG.normalTitle" = "Sign In";
+"RNC-D6-GfG.normalTitle" = "Ingresar";
 
-/* Class = "UILabel"; text = "Label"; ObjectID = "SEq-Ul-DKH"; */
-"SEq-Ul-DKH.text" = "Label";
+/* Class = "UILabel"; text = "Label"; ObjectID = "RZt-sl-g4G"; */
+"RZt-sl-g4G.text" = "Label";
 
-/* Class = "UINavigationItem"; title = "Altar"; ObjectID = "SPw-Fw-lh0"; */
-"SPw-Fw-lh0.title" = "Altar";
+/* Class = "UILabel"; text = "Label"; ObjectID = "SOU-qp-xsc"; */
+"SOU-qp-xsc.text" = "Label";
 
-/* Class = "UILabel"; text = "En un mismo espirtu"; ObjectID = "Sgd-7N-No7"; */
-"Sgd-7N-No7.text" = "En un mismo espíritu";
+/* Class = "UILabel"; text = "Login to your account"; ObjectID = "Sgd-7N-No7"; */
+"Sgd-7N-No7.text" = "Ingresar en su cuenta";
 
-/* Class = "UIBarButtonItem"; title = "logout"; ObjectID = "T38-kH-M16"; */
-"T38-kH-M16.title" = "logout";
+/* Class = "UILabel"; text = "Forgot password"; ObjectID = "Trw-56-t32"; */
+"Trw-56-t32.text" = "Olvide el password";
+
+/* Class = "UIButton"; normalTitle = "Change your profile picture"; ObjectID = "Uji-uX-vtK"; */
+"Uji-uX-vtK.normalTitle" = "Cambiar foto de perfil";
+
+/* Class = "UIButton"; normalTitle = "Update"; ObjectID = "VoW-GZ-2sI"; */
+"VoW-GZ-2sI.normalTitle" = "Actualizar";
+
+/* Class = "UILabel"; text = "Edit User Profile"; ObjectID = "WfE-Zb-mOR"; */
+"WfE-Zb-mOR.text" = "Editar perfil de usuario";
+
+/* Class = "UITextField"; placeholder = "Name"; ObjectID = "WpC-MY-tj9"; */
+"WpC-MY-tj9.placeholder" = "Nombre";
+
+/* Class = "UITextField"; text = "Name"; ObjectID = "WpC-MY-tj9"; */
+"WpC-MY-tj9.text" = "Nombre";
+
+/* Class = "UITextField"; text = "Your email"; ObjectID = "Wto-PH-REs"; */
+"Wto-PH-REs.text" = "Tu email";
+
+/* Class = "UILabel"; text = "My Church"; ObjectID = "XHn-6x-jZp"; */
+"XHn-6x-jZp.text" = "Mi Iglesia;
+
+/* Class = "UILabel"; text = "Create an account"; ObjectID = "Xae-ap-PQP"; */
+"Xae-ap-PQP.text" = "Crear cuenta";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "XbB-IS-NrD"; */
+"XbB-IS-NrD.placeholder" = "Email";
+
+/* Class = "UITextField"; text = "Email"; ObjectID = "XbB-IS-NrD"; */
+"XbB-IS-NrD.text" = "Email";
+
+/* Class = "UILabel"; text = "My Community"; ObjectID = "YR7-2j-obg"; */
+"YR7-2j-obg.text" = "Mi Comunidad";
 
 /* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "; ObjectID = "ZMA-6U-zMI"; */
 "ZMA-6U-zMI.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ";
 
-/* Class = "UIButton"; normalTitle = "Post"; ObjectID = "axB-Gi-qNy"; */
-"axB-Gi-qNy.normalTitle" = "Post";
+/* Class = "UITextField"; placeholder = "Password validation"; ObjectID = "ZfN-EL-X7L"; */
+"ZfN-EL-X7L.placeholder" = "Validación de Password;
+
+/* Class = "UITextField"; text = "Password validation"; ObjectID = "ZfN-EL-X7L"; */
+"ZfN-EL-X7L.text" = "Validación de Password";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "bpG-jf-CjU"; */
+"bpG-jf-CjU.text" = "Label";
+
+/* Class = "UILabel"; text = "Messsages"; ObjectID = "chM-2o-t3e"; */
+"chM-2o-t3e.text" = "Mensajes";
+
+/* Class = "UILabel"; text = "* Android version will be released in Spring 2020."; ObjectID = "cly-JL-H2V"; */
+"cly-JL-H2V.text" = "* version Android sera lanzada en Primavera 2020.";
 
 /* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "dNJ-Td-0sR"; */
 "dNJ-Td-0sR.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
 
+/* Class = "UITextField"; placeholder = "Phone number"; ObjectID = "dc6-SE-jeK"; */
+"dc6-SE-jeK.placeholder" = "Teléfono";
+
+/* Class = "UITextField"; text = "Phone number"; ObjectID = "dc6-SE-jeK"; */
+"dc6-SE-jeK.text" = "Teléfono";
+
+/* Class = "UITextField"; placeholder = "Zip Code"; ObjectID = "eRp-Vp-wFc"; */
+"eRp-Vp-wFc.placeholder" = "Codigo Postal";
+
+/* Class = "UITextField"; text = "Zip Code"; ObjectID = "eRp-Vp-wFc"; */
+"eRp-Vp-wFc.text" = "Codigo Postal";
+
+/* Class = "UILabel"; text = "Select your profile picture"; ObjectID = "eW6-am-4k8"; */
+"eW6-am-4k8.text" = "Selecciona foto de perfil";
+
 /* Class = "UITextField"; placeholder = "Email"; ObjectID = "eWC-JX-ZAf"; */
 "eWC-JX-ZAf.placeholder" = "Email";
+
+/* Class = "UITextField"; text = "Email"; ObjectID = "eWC-JX-ZAf"; */
+"eWC-JX-ZAf.text" = "Email";
+
+/* Class = "UILabel"; text = "Create a Pastor account"; ObjectID = "eru-fd-quL"; */
+"eru-fd-quL.text" = "Crear cuenta de Pastor";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "esq-bz-5Mw"; */
 "esq-bz-5Mw.text" = "Label";
@@ -110,26 +236,89 @@
 /* Class = "UINavigationItem"; title = "Altar"; ObjectID = "fLZ-C6-76v"; */
 "fLZ-C6-76v.title" = "Altar";
 
+/* Class = "UILabel"; text = "Welcome back"; ObjectID = "gpJ-bs-Axu"; */
+"gpJ-bs-Axu.text" = "Bienvenido";
+
+/* Class = "UILabel"; text = "Add your church or ministry"; ObjectID = "hH1-4S-ba4"; */
+"hH1-4S-ba4.text" = "Agrega tu iglesia o ministerio";
+
+/* Class = "UIButton"; normalTitle = "X"; ObjectID = "hcV-mR-254"; */
+"hcV-mR-254.normalTitle" = "X";
+
+/* Class = "UILabel"; text = "We've sent you an email with a link to reset your password"; ObjectID = "kh7-n2-LpG"; */
+"kh7-n2-LpG.text" = "Le enviamos un link para resetear su password.";
+
+/* Class = "UITextField"; placeholder = "Name"; ObjectID = "m8A-9O-ncT"; */
+"m8A-9O-ncT.placeholder" = "Nombre";
+
+/* Class = "UITextField"; text = "Name"; ObjectID = "m8A-9O-ncT"; */
+"m8A-9O-ncT.text" = "Nombre";
+
+/* Class = "UILabel"; text = "Altar"; ObjectID = "mOF-9k-X0i"; */
+"mOF-9k-X0i.text" = "Altar";
+
+/* Class = "UILabel"; text = "Pastor"; ObjectID = "mOi-G6-Mdv"; */
+"mOi-G6-Mdv.text" = "Pastor";
+
+/* Class = "UIButton"; normalTitle = "Subscribe"; ObjectID = "mWn-c0-gsf"; */
+"mWn-c0-gsf.normalTitle" = "Suscribirse";
+
+/* Class = "UIButton"; normalTitle = "Create Profile"; ObjectID = "nU5-wX-Nrz"; */
+"nU5-wX-Nrz.normalTitle" = "Crear perfil";
+
+/* Class = "UITextField"; placeholder = "Country"; ObjectID = "oAS-Tu-ap7"; */
+"oAS-Tu-ap7.placeholder" = "Pais";
+
+/* Class = "UITextField"; text = "Country"; ObjectID = "oAS-Tu-ap7"; */
+"oAS-Tu-ap7.text" = "Pais";
+
+/* Class = "UIButton"; normalTitle = "X"; ObjectID = "ocV-Ta-fYA"; */
+"ocV-Ta-fYA.normalTitle" = "X";
+
 /* Class = "UIButton"; normalTitle = "Audible Prayer"; ObjectID = "ooa-gF-WHf"; */
-"ooa-gF-WHf.normalTitle" = "Audible Prayer";
+"ooa-gF-WHf.normalTitle" = "Oracion en Audio";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "p6l-yy-Ckk"; */
+"p6l-yy-Ckk.text" = "Titulo";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "pE6-KP-56C"; */
 "pE6-KP-56C.text" = "Label";
 
-/* Class = "UIButton"; normalTitle = "Style3"; ObjectID = "pgE-zd-qew"; */
-"pgE-zd-qew.normalTitle" = "Style3";
-
 /* Class = "UINavigationItem"; title = "Power of Prayer"; ObjectID = "pkq-IK-ZeI"; */
-"pkq-IK-ZeI.title" = "Power of Prayer";
+"pkq-IK-ZeI.title" = "Poder de Oracion";
 
-/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim"; ObjectID = "pvp-hd-VXQ"; */
-"pvp-hd-VXQ.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim";
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "ppw-pf-bDX"; */
+"ppw-pf-bDX.placeholder" = "Email";
+
+/* Class = "UITextField"; text = "Email"; ObjectID = "ppw-pf-bDX"; */
+"ppw-pf-bDX.text" = "Email";
+
+/* Class = "UITextView"; text = "What is your prayer"; ObjectID = "pvp-hd-VXQ"; */
+"pvp-hd-VXQ.text" = "Cual es tu oración.";
+
+/* Class = "UIButton"; normalTitle = "SEND"; ObjectID = "qNJ-vM-LYv"; */
+"qNJ-vM-LYv.normalTitle" = "ENVIAR";
 
 /* Class = "UITextField"; placeholder = "Password"; ObjectID = "qVH-1X-tyT"; */
 "qVH-1X-tyT.placeholder" = "Password";
 
+/* Class = "UITextField"; text = "Password"; ObjectID = "qVH-1X-tyT"; */
+"qVH-1X-tyT.text" = "Password";
+
+/* Class = "UITextField"; placeholder = "Title"; ObjectID = "qc8-AT-YZ4"; */
+"qc8-AT-YZ4.placeholder" = "Título";
+
+/* Class = "UITextField"; text = "Title"; ObjectID = "qc8-AT-YZ4"; */
+"qc8-AT-YZ4.text" = "Título";
+
 /* Class = "UIButton"; normalTitle = "Sign Up"; ObjectID = "qcy-2h-B2e"; */
-"qcy-2h-B2e.normalTitle" = "Sign Up";
+"qcy-2h-B2e.normalTitle" = "Ingresar";
+
+/* Class = "UIButton"; normalTitle = "Change Picture"; ObjectID = "riI-E0-Ly4"; */
+"riI-E0-Ly4.normalTitle" = "Cambiar foto";
+
+/* Class = "UIButton"; normalTitle = "Restore"; ObjectID = "rvj-sE-bt7"; */
+"rvj-sE-bt7.normalTitle" = "Restaurar";
 
 /* Class = "UITextField"; placeholder = "Password"; ObjectID = "sDZ-Z7-Pva"; */
 "sDZ-Z7-Pva.placeholder" = "Password";
@@ -137,17 +326,62 @@
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "sEK-Wa-ysU"; */
 "sEK-Wa-ysU.normalTitle" = "Button";
 
-/* Class = "UIButton"; normalTitle = "Style2"; ObjectID = "tHQ-Wq-q99"; */
-"tHQ-Wq-q99.normalTitle" = "Style2";
+/* Class = "UILabel"; text = "Label"; ObjectID = "sfT-Ee-aia"; */
+"sfT-Ee-aia.text" = "Label";
 
-/* Class = "UITabBarItem"; title = "Users"; ObjectID = "uPw-uh-Mzn"; */
-"uPw-uh-Mzn.title" = "Users";
+/* Class = "UITabBarItem"; title = "Power of the Word"; ObjectID = "sfn-Cb-dDy"; */
+"sfn-Cb-dDy.title" = "Poder de la Palabra";
 
-/* Class = "UILabel"; text = "text editing"; ObjectID = "uiL-wg-zhO"; */
-"uiL-wg-zhO.text" = "text editing";
+/* Class = "UIButton"; normalTitle = "Are you a Pastor / Minister? Add your church."; ObjectID = "sqA-WV-Z18"; */
+"sqA-WV-Z18.normalTitle" = "Eres Pastor o Ministro? Agrega tu iglesia.";
 
-/* Class = "UITextField"; placeholder = "Password"; ObjectID = "umP-gQ-xSf"; */
-"umP-gQ-xSf.placeholder" = "Password";
+/* Class = "UILabel"; text = "Create a New Account.It’s quick and easy."; ObjectID = "tB3-wJ-jk4"; */
+"tB3-wJ-jk4.text" = "Crear nueva cuenta.Es rápido y fácil.";
 
-/* Class = "UIButton"; normalTitle = "Style1"; ObjectID = "yWf-SN-EX8"; */
-"yWf-SN-EX8.normalTitle" = "Style1";
+/* Class = "UITextField"; placeholder = "Password validation"; ObjectID = "tIS-fn-TgG"; */
+"tIS-fn-TgG.placeholder" = "Password validation";
+
+/* Class = "UITextField"; text = "Password validation"; ObjectID = "tIS-fn-TgG"; */
+"tIS-fn-TgG.text" = "Password validation";
+
+/* Class = "UITabBarItem"; title = "Community"; ObjectID = "uPw-uh-Mzn"; */
+"uPw-uh-Mzn.title" = "Comunidad";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "uWQ-XK-Gcx"; */
+"uWQ-XK-Gcx.text" = "Label";
+
+/* Class = "UITextField"; placeholder = "Password validation"; ObjectID = "umP-gQ-xSf"; */
+"umP-gQ-xSf.placeholder" = "Validacion Password";
+
+/* Class = "UITextField"; text = "Password validation"; ObjectID = "umP-gQ-xSf"; */
+"umP-gQ-xSf.text" = "Validacion Password";
+
+/* Class = "UIButton"; normalTitle = "Change Picture"; ObjectID = "wFi-QL-zwG"; */
+"wFi-QL-zwG.normalTitle" = "Cambiar foto";
+
+/* Class = "UINavigationController"; title = "Inicial"; ObjectID = "wgu-KU-Dhh"; */
+"wgu-KU-Dhh.title" = "Inicial";
+
+/* Class = "UILabel"; text = "Please enter your email address. You will receive a link to create a new password via email."; ObjectID = "xPm-SY-4Rh"; */
+"xPm-SY-4Rh.text" = "Igrese su dirección de email. Recibira un link para crear un nuevo password.";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "yNE-53-i5f"; */
+"yNE-53-i5f.placeholder" = "Email";
+
+/* Class = "UITextField"; text = "Email"; ObjectID = "yNE-53-i5f"; */
+"yNE-53-i5f.text" = "Email";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "yVe-z5-7bO"; */
+"yVe-z5-7bO.placeholder" = "Password";
+
+/* Class = "UITextField"; text = "Password"; ObjectID = "yVe-z5-7bO"; */
+"yVe-z5-7bO.text" = "Password";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "yf4-Ip-4r7"; */
+"yf4-Ip-4r7.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "+"; ObjectID = "yhT-XA-cDm"; */
+"yhT-XA-cDm.normalTitle" = "+";
+
+/* Class = "UITabBarItem"; title = "Power of Worship"; ObjectID = "ysI-dt-3cy"; */
+"ysI-dt-3cy.title" = "Poder de la Alabanza";

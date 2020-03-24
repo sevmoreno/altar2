@@ -1638,10 +1638,10 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="341" placeholderIntrinsicHeight="66" axis="vertical" distribution="equalCentering" alignment="center" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="sgg-j8-1A5">
-                                <rect key="frame" x="36.5" y="586" width="341" height="186"/>
+                                <rect key="frame" x="36.5" y="676" width="341" height="96"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Csx-GS-71j">
-                                        <rect key="frame" x="75" y="0.0" width="191" height="90"/>
+                                        <rect key="frame" x="97.5" y="0.0" width="146" height="45"/>
                                         <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="16"/>
                                         <inset key="titleEdgeInsets" minX="17" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" title="Photo / Video" image="iconphoto&amp;video">
@@ -1652,7 +1652,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ooa-gF-WHf" userLabel="Audible Prayer">
-                                        <rect key="frame" x="66.5" y="96" width="208" height="90"/>
+                                        <rect key="frame" x="89" y="51" width="163" height="45"/>
                                         <inset key="titleEdgeInsets" minX="17" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" title="Audible Prayer" image="Audible">
                                             <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2999,7 +2999,7 @@ We give you the ability to </string>
         <image name="worshipicon" width="30" height="23"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Vsu-Bt-GX7"/>
+        <segue reference="0IP-OO-JA9"/>
         <segue reference="O50-xJ-ZqN"/>
         <segue reference="ykW-h1-pG1"/>
     </inferredMetricsTieBreakers>

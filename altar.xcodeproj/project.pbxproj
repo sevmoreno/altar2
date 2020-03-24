@@ -222,6 +222,8 @@
 		65ABFC84232C0E1D00729B57 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		65ABFC86232C12C200729B57 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		65ABFC88232C170200729B57 /* Advengers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Advengers.swift; sourceTree = "<group>"; };
+		65B55006242A822B00F96E9D /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Main.strings"; sourceTree = "<group>"; };
+		65B55007242A822B00F96E9D /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		65C7FE05237B3E3B000D6D80 /* PhotoVideoPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoVideoPostViewController.swift; sourceTree = "<group>"; };
 		65C7FE07237CF5B0000D6D80 /* OnlyVideoPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OnlyVideoPostViewController.swift; path = Controller/OnlyVideoPostViewController.swift; sourceTree = "<group>"; };
 		65CB7E8523BFF01F0018526D /* PowerOfWordCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerOfWordCollection.swift; sourceTree = "<group>"; };
@@ -577,6 +579,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"es-419",
 			);
 			mainGroup = 65D4240C232576A800DB286E;
 			productRefGroup = 65D42416232576A800DB286E /* Products */;
@@ -783,6 +786,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				65D4241D232576A800DB286E /* Base */,
+				65B55006242A822B00F96E9D /* es-419 */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -791,6 +795,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				65D42425232576AA00DB286E /* Base */,
+				65B55007242A822B00F96E9D /* es-419 */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";

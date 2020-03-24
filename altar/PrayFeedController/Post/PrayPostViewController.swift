@@ -389,11 +389,18 @@ class PrayPostViewController: UIViewController, UIImagePickerControllerDelegate,
        // AppDelegate.instance().showActivityIndicatior()
         
         
-        let accounthelper = AccountHelpers ()
+       // let accounthelper = AccountHelpers ()
         
-        accounthelper.showActivityIndicatior(window: view)
+       // accounthelper.showActivityIndicatior(window: view)
         
         
+        // spinerr
+        var spinner = UIActivityIndicatorView(style: .whiteLarge)
+        spinner.translatesAutoresizingMaskIntoConstraints = false
+        spinner.startAnimating()
+        view.addSubview(spinner)
+        spinner.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        spinner.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         
         
         let uid = Auth.auth().currentUser?.uid
@@ -449,7 +456,12 @@ class PrayPostViewController: UIViewController, UIImagePickerControllerDelegate,
                         guard let currentChurchID = advengers.shared.currenUSer["churchID"] as? String else { return }
                         advengers.shared.postPrayFeed.child(currentChurchID).updateChildValues(postfeed)
                         
-                        accounthelper.dismissActivityIndicator()
+                        let postnoto1 = [key:currentChurchID]
+                        
+                              Database.database().reference().child("Postnoti").updateChildValues(postnoto1)
+                              
+                              spinner.stopAnimating()
+                              spinner.isHidden = true
                         
                         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "UpdateFeed"), object: nil)
                         _ = self.navigationController?.popViewController(animated: true)
@@ -497,9 +509,14 @@ class PrayPostViewController: UIViewController, UIImagePickerControllerDelegate,
             
             guard let currentChurchID = advengers.shared.currenUSer["churchID"] as? String else { return }
             advengers.shared.postPrayFeed.child(currentChurchID).updateChildValues(postfeed)
-        //    advengers.shared.postPrayFeed.updateChildValues(postfeed)
             
-            accounthelper.dismissActivityIndicator()
+            
+            let postnoto1 = [key:currentChurchID]
+      
+            Database.database().reference().child("Postnoti").updateChildValues(postnoto1)
+            
+            spinner.stopAnimating()
+            spinner.isHidden = true
             
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "UpdateFeed"), object: nil)
             _ = self.navigationController?.popViewController(animated: true)
