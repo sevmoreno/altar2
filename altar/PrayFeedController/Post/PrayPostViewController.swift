@@ -519,7 +519,7 @@ class PrayPostViewController: UIViewController, UIImagePickerControllerDelegate,
             spinner.isHidden = true
             
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "UpdateFeed"), object: nil)
-            _ = self.navigationController?.popViewController(animated: true)
+           _ = self.navigationController?.popViewController(animated: true)
 
             
         }

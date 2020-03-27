@@ -392,7 +392,10 @@ class AudibleViewController: UIViewController, AVAudioRecorderDelegate {
         let accounthelper = AccountHelpers ()
                
                
-               accounthelper.showActivityIndicatior(window: view)
+                let activityView = UIActivityIndicatorView(style: .whiteLarge)
+                             activityView.center = self.view.center
+                             self.view.addSubview(activityView)
+                             activityView.startAnimating()
         
      
               
@@ -441,7 +444,7 @@ class AudibleViewController: UIViewController, AVAudioRecorderDelegate {
                                         guard let currentChurchID = advengers.shared.currenUSer["churchID"] as? String else { return }
                                         advengers.shared.postPrayFeed.child(currentChurchID).updateChildValues(postfeed)
                                         
-                                        accounthelper.dismissActivityIndicator()
+                              //          accounthelper.dismissActivityIndicator()
                                         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "UpdateFeed"), object: nil)
                                         _ = self.navigationController?.popViewController(animated: true)
                                         

@@ -179,7 +179,10 @@ class PhotoVideoPostViewController: UIViewController, UIImagePickerControllerDel
         let accounthelper = AccountHelpers ()
         
         
-        accounthelper.showActivityIndicatior(window: view)
+       let activityView = UIActivityIndicatorView(style: .whiteLarge)
+                      activityView.center = self.view.center
+                      self.view.addSubview(activityView)
+                      activityView.startAnimating()
         
         let uid = Auth.auth().currentUser?.uid
         
@@ -231,7 +234,7 @@ class PhotoVideoPostViewController: UIViewController, UIImagePickerControllerDel
                     advengers.shared.postPrayFeed.child(currentChurchID).updateChildValues(postfeed)
                  //   advengers.shared.postPrayFeed.updateChildValues(postfeed)
                     
-                    accounthelper.dismissActivityIndicator()
+                 //   accounthelper.dismissActivityIndicator()
                     NotificationCenter.default.post(name: NSNotification.Name(rawValue: "UpdateFeed"), object: nil)
                     _ = self.navigationController?.popToRootViewController(animated: true)
                     

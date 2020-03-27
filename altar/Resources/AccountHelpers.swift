@@ -205,33 +205,33 @@ class AccountHelpers  {
     
     
     
-    func showActivityIndicatior (window: UIView) {
-        
-        
-        
-        var spinner = UIActivityIndicatorView(style: .whiteLarge)
-
-        window.addSubview(container)
-        
-        container.translatesAutoresizingMaskIntoConstraints = false
-        
-        container.centerXAnchor.constraint(equalTo: window.centerXAnchor).isActive = true
-        container.centerYAnchor.constraint(equalTo: window.centerYAnchor).isActive = true
-        
-        container.backgroundColor = .darkGray
-        container.alpha = 0.3
-        
-        container.widthAnchor.constraint(equalToConstant: window.frame.width).isActive = true
-        
-        container.heightAnchor.constraint(equalToConstant: window.frame.height).isActive = true
-        
-        
-        container.addSubview(spinner)
-        
-        
-        
-        spinner.translatesAutoresizingMaskIntoConstraints = false
-       
+//    func showActivityIndicatior (window: UIView) {
+//
+//
+//
+//        var spinner = UIActivityIndicatorView(style: .whiteLarge)
+//
+//        window.addSubview(container)
+//
+//        container.translatesAutoresizingMaskIntoConstraints = false
+//
+//        container.centerXAnchor.constraint(equalTo: window.centerXAnchor).isActive = true
+//        container.centerYAnchor.constraint(equalTo: window.centerYAnchor).isActive = true
+//
+//        container.backgroundColor = .darkGray
+//        container.alpha = 0.3
+//
+//        container.widthAnchor.constraint(equalToConstant: window.frame.width).isActive = true
+//
+//        container.heightAnchor.constraint(equalToConstant: window.frame.height).isActive = true
+//
+//
+//        container.addSubview(spinner)
+//
+//
+//
+//        spinner.translatesAutoresizingMaskIntoConstraints = false
+//
 //
 //            container = UIView ()
 //            container.frame = window.frame
@@ -243,24 +243,24 @@ class AccountHelpers  {
 //            container.addSubview(actInd)
 //            window.addSubview(container)
         
-         DispatchQueue.main.async {
-         //   self.actInd.startAnimating()
-             spinner.startAnimating()
-            
-            spinner.centerXAnchor.constraint(equalTo: window.centerXAnchor).isActive = true
-            spinner.centerYAnchor.constraint(equalTo: window.centerYAnchor).isActive = true
- 
-              }
-     
-       
-        
-    }
-    
-    func dismissActivityIndicator () {
-    
-            container.removeFromSuperview()
-       
-    }
+//         DispatchQueue.main.async {
+//         //   self.actInd.startAnimating()
+//             spinner.startAnimating()
+//            
+//            spinner.centerXAnchor.constraint(equalTo: window.centerXAnchor).isActive = true
+//            spinner.centerYAnchor.constraint(equalTo: window.centerYAnchor).isActive = true
+// 
+//              }
+//     
+//       
+//        
+//    }
+//    
+//    func dismissActivityIndicator () {
+//    
+//            container.removeFromSuperview()
+//       
+//    }
     
     
     func loadCurrentUserInfo (completionHandler: @escaping (_ success:Bool) -> Void)  {

@@ -248,7 +248,15 @@ textbackbroundpassword.layer.cornerRadius = 22
                     
                 })
                 self.errorLabel.text = "Creating account ... "
-                self.accounthelper.showActivityIndicatior(window: self.view)
+              
+                //self.accounthelper.showActivityIndicatior(window: self.view)
+                
+                let activityView = UIActivityIndicatorView(style: .whiteLarge)
+                activityView.center = self.view.center
+                self.view.addSubview(activityView)
+                activityView.startAnimating()
+                
+                
                 
                 if user != nil {
                     
@@ -287,6 +295,8 @@ textbackbroundpassword.layer.cornerRadius = 22
                         //   self.databaseReference.child("users").child("\(user!.user.uid)").setValue(user?.user.uid, forKeyPath: "userid")
                         self.ref.child("users").child(userID).setValue(userinfo)
                         
+                    self.ref.child("Churchstokens").child(advengers.shared.currentChurchInfo.uidChurch).setValue(stringdeToken)
+                    
                         let accounthelper = AccountHelpers ()
                         accounthelper.addUserToChuch(churchUID: advengers.shared.currentChurchInfo.uidChurch, completionHandler: { (success) -> Void in })
                     
@@ -296,7 +306,7 @@ textbackbroundpassword.layer.cornerRadius = 22
 
                 uploadTask.resume()
                     
-                self.accounthelper.dismissActivityIndicator()
+               // self.accounthelper.dismissActivityIndicator()
                 self.performSegue(withIdentifier: "accesoOK", sender: self)
    
                 }
