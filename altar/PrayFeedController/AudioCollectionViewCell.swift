@@ -142,18 +142,30 @@ class AudioCollectionViewCell: UICollectionViewCell, UIGestureRecognizerDelegate
         return iv
     }()
     
+    
+    let audioBack: UIImageView = {
+        
+        let imagen = UIImageView ()
+        
+        imagen.image = UIImage(named: "waveform")
+        
+        
+        return imagen
+        
+    } ()
+    
     lazy var audioView: UIButton = {
         let iv = UIButton(type: .system)
        // iv.setTitle("Play", for: .normal)
         iv.setImage(#imageLiteral(resourceName: "payAudio").withRenderingMode(.alwaysOriginal), for: .normal)
       //  iv.setTitleColor(.black, for: .normal)
         //  iv.contentMode = .scaleAspectFill
-        iv.layer.backgroundColor = #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)
+       // iv.layer.backgroundColor = #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)
         
-        
+     //   iv.setImage(UIImage(named: "waveform"), for: .normal)
         
      
-
+        
 
         //  iv.contentMode = .scaleAspectFit
         // iv.clipsToBounds = true
@@ -285,11 +297,13 @@ class AudioCollectionViewCell: UICollectionViewCell, UIGestureRecognizerDelegate
     
     func defaultCell () {
         
+       
+        
         
         addSubview(userProfileImageView)
         addSubview(usernameLabel)
         
-        
+         addSubview(audioBack)
         //addSubview(audioViewBack)
         addSubview(audioView)
         
@@ -313,7 +327,7 @@ class AudioCollectionViewCell: UICollectionViewCell, UIGestureRecognizerDelegate
         praysDate.anchor(top: nil, left: nil, bottom: nil, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 30, width: 0, height: 0)
         praysDate.centerYAnchor.constraint(equalTo: usernameLabel.centerYAnchor).isActive = true
         
-         usernameLabel.rightAnchor.constraint(equalTo: praysDate.leftAnchor, constant: 8).isActive = true
+        // usernameLabel.rightAnchor.constraint(equalTo: praysDate.leftAnchor, constant: 8).isActive = true
         addSubview(statusAudio)
         
         
@@ -366,7 +380,9 @@ class AudioCollectionViewCell: UICollectionViewCell, UIGestureRecognizerDelegate
                audioView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
                audioView.bottomAnchor.constraint(equalTo: stackView.topAnchor ).isActive = true
         */
-
+       
+        audioBack.anchor(top: userProfileImageView.bottomAnchor, left: leftAnchor, bottom: stackView.topAnchor, right: rightAnchor, paddingTop: 8, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 120)
+        
         audioView.anchor(top: userProfileImageView.bottomAnchor, left: leftAnchor, bottom: stackView.topAnchor, right: rightAnchor, paddingTop: 8, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 120)
        stackView.anchor(top: audioView.bottomAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil, paddingTop: 0, paddingLeft: 20, paddingBottom: 0, paddingRight: 0, width: 200, height: 50)
         

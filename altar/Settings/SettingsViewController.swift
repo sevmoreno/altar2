@@ -22,7 +22,7 @@ class SettingsViewController: UIViewController, UIActivityItemSource {
                I'm using Altar app.
                Download the app in this link to be together in the same Spirit:
                
-               \(URL(string: "https://www.altarapp.com")!.absoluteString)
+               \(URL(string: "https://www.altarapp.org")!.absoluteString)
                """
         
      if advengers.shared.isPastor {
@@ -32,7 +32,7 @@ class SettingsViewController: UIViewController, UIActivityItemSource {
 
         Download the app in this link to be together in the same Spirit:
         
-         \(URL(string: "http://altarapp.com")!.absoluteString)
+         \(URL(string: "https://www.altarapp.org")!.absoluteString)
         
         Find our church \(advengers.shared.currentChurch) and join us!
         """
@@ -356,7 +356,7 @@ class SettingsViewController: UIViewController, UIActivityItemSource {
     
     @objc func developerPage () {
         
-        if let url = URL(string: "http://www.altarapp.com/developer") {
+        if let url = URL(string: "https://www.altarapp.org/developer") {
             UIApplication.shared.open(url)
         }
         

@@ -515,7 +515,7 @@
                                 <rect key="frame" x="52.5" y="568" width="309" height="30"/>
                                 <state key="normal" title="Are you a Pastor / Minister? Add your church."/>
                                 <connections>
-                                    <segue destination="aYX-82-lxS" kind="show" id="iCE-CZ-CJ4"/>
+                                    <segue destination="aYX-82-lxS" kind="show" id="Cgd-SH-VSm"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1955,6 +1955,70 @@
             </objects>
             <point key="canvasLocation" x="3618.840579710145" y="-825"/>
         </scene>
+        <!--On Boarding View Controller-->
+        <scene sceneID="xHw-dH-OzP">
+            <objects>
+                <viewController id="NCf-i4-YcT" customClass="OnBoardingViewController" customModule="altar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bs2-gA-Ie3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fullsky2" translatesAutoresizingMaskIntoConstraints="NO" id="xPr-E5-ygm">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_dark _F" translatesAutoresizingMaskIntoConstraints="NO" id="ure-Qz-siJ">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OXZ-a4-leO">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="719"/>
+                                <viewLayoutGuide key="contentLayoutGuide" id="Ynl-Lr-iaX"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="mEm-cF-Alv"/>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dxG-D0-SzL">
+                                <rect key="frame" x="40" y="798" width="334" height="30"/>
+                                <state key="normal" title="Skip the Tutorial"/>
+                                <connections>
+                                    <segue destination="Leq-eS-bcM" kind="show" id="ov4-Wi-xhb"/>
+                                </connections>
+                            </button>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="pet-EY-GHv">
+                                <rect key="frame" x="187.5" y="749" width="39" height="37"/>
+                            </pageControl>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="ure-Qz-siJ" firstAttribute="leading" secondItem="bs2-gA-Ie3" secondAttribute="leading" id="0Pg-41-PQ7"/>
+                            <constraint firstItem="pet-EY-GHv" firstAttribute="top" secondItem="OXZ-a4-leO" secondAttribute="bottom" constant="19" id="7HB-SU-7RQ"/>
+                            <constraint firstItem="OXZ-a4-leO" firstAttribute="top" secondItem="bs2-gA-Ie3" secondAttribute="top" id="Add-9t-9TJ"/>
+                            <constraint firstItem="ure-Qz-siJ" firstAttribute="trailing" secondItem="1zQ-JX-h2A" secondAttribute="trailing" id="AmC-Cc-4gr"/>
+                            <constraint firstAttribute="bottom" secondItem="xPr-E5-ygm" secondAttribute="bottom" id="CCF-es-VJ4"/>
+                            <constraint firstItem="xPr-E5-ygm" firstAttribute="leading" secondItem="bs2-gA-Ie3" secondAttribute="leading" id="EJY-aK-EfJ"/>
+                            <constraint firstItem="OXZ-a4-leO" firstAttribute="trailing" secondItem="1zQ-JX-h2A" secondAttribute="trailing" id="HKt-fc-Uc3"/>
+                            <constraint firstItem="xPr-E5-ygm" firstAttribute="top" secondItem="bs2-gA-Ie3" secondAttribute="top" id="NJl-Mb-w8L"/>
+                            <constraint firstItem="ure-Qz-siJ" firstAttribute="top" secondItem="bs2-gA-Ie3" secondAttribute="top" id="NQz-dI-Rid"/>
+                            <constraint firstAttribute="bottom" secondItem="ure-Qz-siJ" secondAttribute="bottom" id="PPY-Qk-HCx"/>
+                            <constraint firstAttribute="trailing" secondItem="xPr-E5-ygm" secondAttribute="trailing" id="SKa-eY-K3q"/>
+                            <constraint firstItem="pet-EY-GHv" firstAttribute="centerX" secondItem="bs2-gA-Ie3" secondAttribute="centerX" id="SiM-No-xDq"/>
+                            <constraint firstItem="OXZ-a4-leO" firstAttribute="leading" secondItem="1zQ-JX-h2A" secondAttribute="leading" id="VLM-VC-euP"/>
+                            <constraint firstItem="xPr-E5-ygm" firstAttribute="centerX" secondItem="bs2-gA-Ie3" secondAttribute="centerX" id="dlg-hR-T9t"/>
+                            <constraint firstItem="1zQ-JX-h2A" firstAttribute="bottom" secondItem="dxG-D0-SzL" secondAttribute="bottom" constant="34" id="iUd-5C-5az"/>
+                            <constraint firstItem="dxG-D0-SzL" firstAttribute="top" secondItem="pet-EY-GHv" secondAttribute="bottom" constant="12" id="mkg-rd-hcW"/>
+                            <constraint firstItem="dxG-D0-SzL" firstAttribute="leading" secondItem="1zQ-JX-h2A" secondAttribute="leading" constant="40" id="pY2-jO-urf"/>
+                            <constraint firstItem="1zQ-JX-h2A" firstAttribute="trailing" secondItem="dxG-D0-SzL" secondAttribute="trailing" constant="40" id="yO6-Wc-fOx"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="1zQ-JX-h2A"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="pdI-9m-uo9"/>
+                    <connections>
+                        <outlet property="btnGetStarted" destination="dxG-D0-SzL" id="pHm-MJ-9Z1"/>
+                        <outlet property="pageControl" destination="pet-EY-GHv" id="Svq-yd-RG4"/>
+                        <outlet property="scrollView" destination="OXZ-a4-leO" id="Hd4-kO-Z8h"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3a2-Sy-WLp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="890" y="-2525"/>
+        </scene>
         <!--Community-->
         <scene sceneID="kCg-gi-m3M">
             <objects>
@@ -2447,10 +2511,10 @@ We give you the ability to </string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mWn-c0-gsf">
-                                <rect key="frame" x="57" y="724" width="300" height="50"/>
+                                <rect key="frame" x="7" y="724" width="400" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="SnN-OL-x9i"/>
-                                    <constraint firstAttribute="width" constant="300" id="Tyx-mW-Y2a"/>
+                                    <constraint firstAttribute="width" constant="400" id="Tyx-mW-Y2a"/>
                                 </constraints>
                                 <state key="normal" title="Subscribe"/>
                                 <connections>
@@ -2463,6 +2527,13 @@ We give you the ability to </string>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GX0-ET-occ">
+                                <rect key="frame" x="49" y="88" width="18" height="22"/>
+                                <state key="normal" image="Close"/>
+                                <connections>
+                                    <action selector="goBack:" destination="aYX-82-lxS" eventType="touchUpInside" id="ygo-38-RPG"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -2480,11 +2551,13 @@ We give you the ability to </string>
                             <constraint firstItem="6Z5-Gq-1dU" firstAttribute="top" secondItem="hH1-4S-ba4" secondAttribute="bottom" constant="15" id="Psa-OM-URh"/>
                             <constraint firstAttribute="bottom" secondItem="RgQ-JP-EfS" secondAttribute="bottom" constant="-8" id="QQe-EY-SGi"/>
                             <constraint firstItem="6Z5-Gq-1dU" firstAttribute="centerX" secondItem="Ny1-zh-Zir" secondAttribute="centerX" id="XJB-hH-dZR"/>
+                            <constraint firstItem="GX0-ET-occ" firstAttribute="leading" secondItem="iBX-b9-3S9" secondAttribute="leading" constant="49" id="XbV-wi-7Q6"/>
                             <constraint firstAttribute="bottom" secondItem="y7I-lB-Yff" secondAttribute="bottom" constant="-1" id="Zcs-ys-RVR"/>
                             <constraint firstItem="y7I-lB-Yff" firstAttribute="leading" secondItem="Ny1-zh-Zir" secondAttribute="leading" constant="-6" id="c8x-nf-wcV"/>
                             <constraint firstItem="hH1-4S-ba4" firstAttribute="top" secondItem="iBX-b9-3S9" secondAttribute="top" constant="50" id="gne-Sm-QZA"/>
                             <constraint firstItem="RgQ-JP-EfS" firstAttribute="top" secondItem="Ny1-zh-Zir" secondAttribute="top" constant="-13" id="itp-Y8-pTh"/>
                             <constraint firstItem="iBX-b9-3S9" firstAttribute="bottom" secondItem="mWn-c0-gsf" secondAttribute="bottom" constant="88" id="jY1-gO-1er"/>
+                            <constraint firstItem="GX0-ET-occ" firstAttribute="top" secondItem="iBX-b9-3S9" secondAttribute="top" id="mJf-3X-ugT"/>
                             <constraint firstItem="y7I-lB-Yff" firstAttribute="top" secondItem="Ny1-zh-Zir" secondAttribute="top" constant="-1" id="pEK-Fo-J0J"/>
                             <constraint firstItem="cly-JL-H2V" firstAttribute="centerX" secondItem="Ny1-zh-Zir" secondAttribute="centerX" id="tt0-kC-nO7"/>
                             <constraint firstItem="RgQ-JP-EfS" firstAttribute="leading" secondItem="Ny1-zh-Zir" secondAttribute="leading" constant="-7" id="wji-CA-8IX"/>
@@ -2515,7 +2588,7 @@ We give you the ability to </string>
                     </view>
                     <navigationItem key="navigationItem" id="dGf-fp-ajJ"/>
                     <connections>
-                        <segue destination="Leq-eS-bcM" kind="show" identifier="welcome" id="0IP-OO-JA9"/>
+                        <segue destination="NCf-i4-YcT" kind="show" identifier="welcome" id="scU-Pp-ogy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XIy-nf-wyt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -2799,7 +2872,7 @@ We give you the ability to </string>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ds1-Th-LED" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <textField opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="350" placeholderIntrinsicHeight="34" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="State" textAlignment="natural" minimumFontSize="17" id="D3a-hV-g1y">
+                <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" placeholderIntrinsicWidth="350" placeholderIntrinsicHeight="34" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="State" textAlignment="natural" minimumFontSize="17" id="D3a-hV-g1y">
                     <rect key="frame" x="0.0" y="0.0" width="350" height="44"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2986,6 +3059,7 @@ We give you the ability to </string>
         <image name="background_image-1" width="375" height="812"/>
         <image name="background_image-2" width="375" height="812"/>
         <image name="bg copy" width="375" height="812"/>
+        <image name="bg_dark _F" width="375" height="812"/>
         <image name="bg_dark-1" width="375" height="812"/>
         <image name="bg_dark_F" width="375" height="812"/>
         <image name="bg_darkogin" width="375" height="812"/>
@@ -2999,7 +3073,7 @@ We give you the ability to </string>
         <image name="worshipicon" width="30" height="23"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="0IP-OO-JA9"/>
+        <segue reference="ov4-Wi-xhb"/>
         <segue reference="O50-xJ-ZqN"/>
         <segue reference="ykW-h1-pG1"/>
     </inferredMetricsTieBreakers>

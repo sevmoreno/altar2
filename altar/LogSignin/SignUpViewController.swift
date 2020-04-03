@@ -280,10 +280,10 @@ textbackbroundpassword.layer.cornerRadius = 22
                         let modoString = String (url!.absoluteString)
                         self.ref = self.databaseReference
                     
-                    var stringdeToken = [""]
+                    var stringdeToken = ["797"]
                     
                     if let fcmToken = Messaging.messaging().fcmToken {
-                        stringdeToken.removeAll()
+                     //   stringdeToken.removeAll()
                         stringdeToken.append(fcmToken)
                     }
                        
@@ -295,7 +295,9 @@ textbackbroundpassword.layer.cornerRadius = 22
                         //   self.databaseReference.child("users").child("\(user!.user.uid)").setValue(user?.user.uid, forKeyPath: "userid")
                         self.ref.child("users").child(userID).setValue(userinfo)
                         
-                    self.ref.child("Churchstokens").child(advengers.shared.currentChurchInfo.uidChurch).setValue(stringdeToken)
+                        let tokensChurchs = ["fmtokens" : stringdeToken]
+                    
+                        self.ref.child("Churchstokens").child(advengers.shared.currentChurchInfo.uidChurch).updateChildValues(tokensChurchs)
                     
                         let accounthelper = AccountHelpers ()
                         accounthelper.addUserToChuch(churchUID: advengers.shared.currentChurchInfo.uidChurch, completionHandler: { (success) -> Void in })

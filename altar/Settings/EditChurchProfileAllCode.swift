@@ -878,7 +878,7 @@ class EditChurchProfileAllCode: UIViewController, UIImagePickerControllerDelegat
                     {
                     
                     guard let usuarioNumber = Auth.auth().currentUser?.uid else {return}
-                        accounthelper.creatChurch(userID: usuarioNumber, name: name.text!, address: address.text ?? "", state: state.text ?? "", country: country.text ?? "", zipCode: zipcode.text ?? "", email: email.text!, facebook: "", instragram: "", webSite:  "", phoneNumber: phonenumber.text ?? "", displayname: displayname.text!, completionHandler: { (success) -> Void in
+                        accounthelper.editChurch(churchUID: advengers.shared.currentChurchInfo.uidChurch, userID: usuarioNumber, name: name.text!, address: address.text ?? "", state: state.text ?? "", country: country.text ?? "", zipCode: zipcode.text ?? "", email: email.text!, facebook: "", instragram: "", webSite:  "", phoneNumber: phonenumber.text ?? "", displayname: displayname.text!, completionHandler: { (success) -> Void in
                         
                         
                         
@@ -894,8 +894,13 @@ class EditChurchProfileAllCode: UIViewController, UIImagePickerControllerDelegat
     //                        self.accounthelper.loadFirstContent()
                           //   self.performSegue(withIdentifier: "welcome", sender: self)
                             self.navigationController?.popToRootViewController(animated: true)
+                             self.accounthelper.loadCurrentUserInfo { (true) in
+                                
+                                advengers.shared.currentChurch = self.displayname.text!
+                                
+                            }
                           //  advengers.shared.isPastor =  true
-                            advengers.shared.currentChurch = self.displayname.text!
+                            
                             
                         }
                         

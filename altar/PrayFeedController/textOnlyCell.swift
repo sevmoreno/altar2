@@ -273,13 +273,15 @@ class textOnlyCell: UICollectionViewCell, UIGestureRecognizerDelegate {
         //        contenedor.addGestureRecognizer(swipeCell)
                 //textOnlyCell?.addGestureRecognizer(swipeCell)
         
-        if advengers.shared.isPastor == true {
+     //   if advengers.shared.isPastor == true {
         let swipeCell = UISwipeGestureRecognizer(target: self, action: #selector(hiddenContainerViewTapped))
         swipeCell.direction = .left
         swipeCell.delegate = self
         
         addGestureRecognizer(swipeCell)
-        }
+            
+          
+      //  }
      let swipeCell2 = UISwipeGestureRecognizer(target: self, action: #selector(changeMyMind))
                       swipeCell2.direction = .right
                       swipeCell2.delegate = self

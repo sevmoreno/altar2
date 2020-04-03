@@ -81,7 +81,8 @@ class NewPastorViewController: UIViewController, UIImagePickerControllerDelegate
                                     let userID = Auth.auth().currentUser?.uid as? String
                                    //   self.databaseReference.child("users").child("\(user!.user.uid)").setValue(user?.user.uid, forKeyPath: "userid")
                                     self.ref.child("users").child(userID!).setValue(userinfo)
-                                   
+                                    self.ref.child("pastors").child(userID!).setValue(userinfo)
+            
                                    self.accounthelper.loadCurrentUserInfo(completionHandler: { (success) -> Void in
                                                   
                                                   if success {
@@ -289,6 +290,12 @@ textbackbroundpassword.layer.cornerRadius = 22
                 
                 self.errorLabel.text = "Creating account ... "
                 
+                let activityView = UIActivityIndicatorView(style: .whiteLarge)
+                activityView.center = self.view.center
+                self.view.addSubview(activityView)
+                activityView.startAnimating()
+                
+                
                 if user != nil {
                 
                 let imageref = self.storageReference.child("picture").child("\(user!.user.uid)")
@@ -330,6 +337,8 @@ textbackbroundpassword.layer.cornerRadius = 22
                         let userID = String ((user?.user.uid)!) ?? "NoTiene"
                         //   self.databaseReference.child("users").child("\(user!.user.uid)").setValue(user?.user.uid, forKeyPath: "userid")
                         self.ref.child("users").child(userID).setValue(userinfo)
+                        
+                         self.ref.child("pastors").child(userID).setValue(userinfo)
                         
                         self.accounthelper.loadCurrentUserInfo(completionHandler: { (success) -> Void in
                                        

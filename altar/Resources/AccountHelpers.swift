@@ -436,6 +436,55 @@ class AccountHelpers  {
         
     }
     
+    
+    func editChurch (churchUID: String, userID: String, name: String, address: String?, state: String, country: String, zipCode: String?,email: String?,facebook: String?,instragram: String?, webSite: String?, phoneNumber: String?, displayname: String, completionHandler: @escaping (_ success:Bool) -> Void) {
+           
+           let userPostRef = Database.database().reference().child("Churchs")
+           
+           let uuid = churchUID
+           guard let fcmToken = Messaging.messaging().fcmToken else { return }
+           var stringdeToken = [String] ()
+                                stringdeToken.append(fcmToken)
+           let diction = ["userID" : userID,
+                      "name" : name,
+                      "address" : address,
+                      "country" : country,
+                      "state": state,
+                      "zipCode" : zipCode,
+                      "email" : email,
+                      "facebook" : facebook,
+                      "instragram" : instragram,
+                      "fcmToken" : stringdeToken,
+                       "webSite" : webSite,
+                      "phoneNumber" : phoneNumber,
+                      "uidChurch" : uuid,
+                      "displayname" : displayname
+           
+               ] as [String : Any]
+           
+           userPostRef.child(uuid).updateChildValues(diction as [String : Any]) { (err, ref) in
+                                         if let err = err {
+                                             //self.navigationItem.rightBarButtonItem?.isEnabled = true
+                                             print("Failed to save post to DB", err)
+                                           completionHandler(false)
+                                             return
+                                         }
+                                         
+                                         print("Successfully saved new Church to DB")
+               
+                                           advengers.shared.currentChurch = displayname
+                                           advengers.shared.currentChurchInfo = Church(dictionary: diction)
+                                        
+               
+                                       completionHandler(true)
+                                         
+                                     }
+           
+           
+           
+       }
+       
+    
     func loadCurrentChurch () {
         
         

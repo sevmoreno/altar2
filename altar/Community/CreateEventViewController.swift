@@ -697,6 +697,12 @@ class CreateEventViewController: UIViewController {
                                 print("Failed to save post to DB", err)
                                 return
                             }
+                            
+                            
+                            let postnoto1 = [filenameA:currentChurchID]
+                                                                              
+                            Database.database().reference().child("Eventnoti").updateChildValues(postnoto1)
+                            
                             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "REloadEvent"), object: nil)
                             print("Successfully saved post to DB")
                             

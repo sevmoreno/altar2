@@ -71,6 +71,8 @@ class AudibleViewController: UIViewController, AVAudioRecorderDelegate {
              return boton
          } ()
     */
+    
+    var isPlaying = false
     var activeMemory: URL!
     var urlTemporario: URL!
     var audioRecorder: AVAudioRecorder?
@@ -159,9 +161,14 @@ class AudibleViewController: UIViewController, AVAudioRecorderDelegate {
     @objc func playAudio ()  {
         
         
+        
+        if isPlaying == false {
+       // playRercord.setImage(UIImage(named: <#T##String#>), for: .normal)
+        
         let url = urlTemporario
 
         do {
+            playRercord.setImage(UIImage(named: "pausebutton"), for: .normal)
             grabacionPlayer = try AVAudioPlayer(contentsOf: url!)
             grabacionPlayer?.play()
         } catch {
@@ -170,7 +177,12 @@ class AudibleViewController: UIViewController, AVAudioRecorderDelegate {
             // couldn't load file :(
         }
         
+        } else {
+            
+            playRercord.setImage(UIImage(named: "payAudio"), for: .normal)
+        }
         
+        isPlaying = !isPlaying
     }
   
     @objc func memoryLongPress (sender: UILongPressGestureRecognizer) {
@@ -445,8 +457,13 @@ class AudibleViewController: UIViewController, AVAudioRecorderDelegate {
                                         advengers.shared.postPrayFeed.child(currentChurchID).updateChildValues(postfeed)
                                         
                               //          accounthelper.dismissActivityIndicator()
+                                        
+                                        let postnoto1 = [key:currentChurchID]
+                                                               
+                                        Database.database().reference().child("Postnoti").updateChildValues(postnoto1)
+                                        
                                         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "UpdateFeed"), object: nil)
-                                        _ = self.navigationController?.popViewController(animated: true)
+                                        _ = self.navigationController?.popToRootViewController(animated: true)
                                         
                                         
                                     }

@@ -715,6 +715,9 @@ class NewChurchAllInCode: UIViewController, UIImagePickerControllerDelegate, UIN
     
     var sizeScrool: CGFloat = 0.0
     
+    
+    var idChurhc = [NSDictionary] ()
+    
     override func viewDidLoad() {
         
         
@@ -726,6 +729,27 @@ class NewChurchAllInCode: UIViewController, UIImagePickerControllerDelegate, UIN
                         
                      }
                          
+            
+            self.accounthelper.loadChurchs(completionHandler: { (success,array) -> Void in
+                       
+
+                       if success {
+                           self.idChurhc.removeAll()
+                           self.churchList.removeAll()
+                           for element in array {
+                               self.idChurhc.append(element)
+                               self.churchList.append(element["name"] as! String)
+                               print(element["name"]!)
+                               print(element["uidChurch"]!)
+                              // self.listadeChurch.reloadData()
+                           }
+                           
+                           
+                           
+                           
+                       }
+                       
+                   })
                      
                  })
         
@@ -819,14 +843,14 @@ class NewChurchAllInCode: UIViewController, UIImagePickerControllerDelegate, UIN
     
     @objc func creatprofile(_ sender: Any) {
     
-    name.text != "Name" &&
+    name.text != "Church Name" &&
     displayname.text != "Display name" &&
-    email.text != "Email"
+    email.text != "E-mail Address"
     
     
-    guard name.text != "", email.text != "", displayname.text != "", name.text != "Name",
+    guard name.text != "", email.text != "", displayname.text != "", name.text != "Church Name",
     displayname.text != "Display name",
-    email.text != "Email"
+    email.text != "E-mail Address"
     
         else {
          errorLabel.text = "Please add your Church name, email adrress, and display name."
@@ -838,15 +862,28 @@ class NewChurchAllInCode: UIViewController, UIImagePickerControllerDelegate, UIN
         return
     }
     
+        guard displayname.text != nil else  { return }
+        
+        if  churchList.contains(displayname.text!) {
+            
+            errorLabel.text = "Display name is already taken choose a different one."
+            return
+            
+        }
+    
     
     if name.text != "" && email.text != "" && displayname.text != "" &&
-        name.text != "Name" &&
+        name.text != "Church Name" &&
         displayname.text != "Display name" &&
-        email.text != "Email"
+        email.text != "E-mail Address"
         
         
         {
-        
+        let activityView = UIActivityIndicatorView(style: .whiteLarge)
+        activityView.center = self.view.center
+        self.view.addSubview(activityView)
+        activityView.startAnimating()
+            
         guard let usuarioNumber = Auth.auth().currentUser?.uid else {return}
         accounthelper.creatChurch(userID: usuarioNumber, name: name.text!, address: address.text ?? "", state: state.text ?? "", country: country.text ?? "", zipCode: zipcode.text ?? "", email: email.text!, facebook: "", instragram: "", webSite: "", phoneNumber: phonenumber.text ?? "", displayname: displayname.text!, completionHandler: { (success) -> Void in
             

@@ -858,20 +858,23 @@ class PhotoStreamViewController: UICollectionViewController, UICollectionViewDel
         
     }
     
-    /* TODO: PEFRECCIONAR ESTA FUNCION
+   // TODO: PEFRECCIONAR ESTA FUNCION
      
      override func collectionView(_ collectionView: UICollectionView,
      didEndDisplaying cell: UICollectionViewCell,
      forItemAt indexPath: IndexPath) {
-     
+    
+        if indexPath.item <= photos.count - 1  && indexPath != nil {
+            
      if photos[indexPath.item].postType == advengers.postType.audio.rawValue {
      let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "audioCell", for: indexPath as IndexPath) as! AudioCollectionViewCell
      
      print("Se fue la Cel de Audio")
      cell.audioPlayer?.stop()
      }
+        }
      }
-     */
+ 
     
 }
 

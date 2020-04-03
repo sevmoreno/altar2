@@ -458,10 +458,10 @@ class PrayPostViewController: UIViewController, UIImagePickerControllerDelegate,
                         
                         let postnoto1 = [key:currentChurchID]
                         
-                              Database.database().reference().child("Postnoti").updateChildValues(postnoto1)
+                        Database.database().reference().child("Postnoti").updateChildValues(postnoto1)
                               
-                              spinner.stopAnimating()
-                              spinner.isHidden = true
+                        spinner.stopAnimating()
+                        spinner.isHidden = true
                         
                         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "UpdateFeed"), object: nil)
                         _ = self.navigationController?.popViewController(animated: true)

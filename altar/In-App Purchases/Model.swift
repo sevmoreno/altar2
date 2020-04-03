@@ -70,6 +70,9 @@ class Model {
         } else {
             
             DispatchQueue.main.async {
+                
+                
+                
             IAPManager.shared.buy(product: product) { (result) in
              switch result {
              case .success(_): self.comproSubs(product: product)

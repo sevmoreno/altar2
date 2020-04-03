@@ -233,6 +233,13 @@ class AnnotatedPhotoCell: UICollectionViewCell, UIGestureRecognizerDelegate {
                               swipeCell2.delegate = self
                               
                               addGestureRecognizer(swipeCell2)
+        
+        
+                            print("********************************************")
+                            print("************Anotated Poto Cell *************")
+                               print(Auth.auth().currentUser?.uid)
+                               print(post?.userID)
+                                print("********************************************")
 
                           }
                           
@@ -246,15 +253,16 @@ class AnnotatedPhotoCell: UICollectionViewCell, UIGestureRecognizerDelegate {
             @objc func hiddenContainerViewTapped () {
                 
                 
+                print("Swiper")
+                
+                
+                               print(post?.userID )
+                                print(Auth.auth().currentUser?.uid)
+                
 
       if post?.userID == Auth.auth().currentUser?.uid || advengers.shared.isPastor == true {
 
-                    print("Swiper")
-        
-        
-                       print(post?.userID )
-                        print(Auth.auth().currentUser?.uid)
-        
+                    
         
                         
                        

@@ -25,8 +25,9 @@ class SubscribeViewController: UIViewController {
            let alertController = UIAlertController(title: product.localizedTitle,
                                                    message: product.localizedDescription,
                                                    preferredStyle: .alert)
-           
-           alertController.addAction(UIAlertAction(title: "Buy now for \(price)", style: .default, handler: { (_) in
+        guard let promocion = product.introductoryPrice?.price else { return }
+         if self.model.products[0].introductoryPrice?.price != nil {
+        alertController.addAction(UIAlertAction(title: "Buy now for $\(promocion) then \(price)", style: .default, handler: { (_) in
                
             
             if !self.model.purchase(product: product) {
@@ -37,6 +38,22 @@ class SubscribeViewController: UIViewController {
 //               }
                
            }))
+         } else  {
+            
+            alertController.addAction(UIAlertAction(title: "Buy now for $\(price)", style: .default, handler: { (_) in
+                           
+                        
+                        if !self.model.purchase(product: product) {
+                               self.showSingleAlert(withMessage: "In-App Purchases are not allowed in this device.")
+                           }
+            //               if !self.viewModel.purchase(product: product) {
+            //                   self.showSingleAlert(withMessage: "In-App Purchases are not allowed in this device.")
+            //               }
+                           
+                       }))
+            
+            
+        }
            
            alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
            self.present(alertController, animated: true, completion: nil)
@@ -50,6 +67,8 @@ class SubscribeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+      //  navigationController?.navigationBar.isHidden = false
 
         
         subcribeButton.backgroundColor = UIColor.rgb(red: 247, green: 131, blue: 97)
@@ -61,6 +80,8 @@ class SubscribeViewController: UIViewController {
         subcribeButton.setTitleColor(UIColor.white.withAlphaComponent(0.3), for: .highlighted )
         subcribeButton.applyGradient(colors: [WelcomeViewController.UIColorFromRGB(0xF78361).cgColor,WelcomeViewController.UIColorFromRGB(0xF54B64).cgColor])
         
+        subcribeButton.isEnabled = false
+        subcribeButton.alpha = 0.40
         
         model.delegate = self
         
@@ -78,11 +99,24 @@ class SubscribeViewController: UIViewController {
                         print("Exito bajando productos")
                         self.model.products = products
                          
-                        print(self.model.products.debugDescription)
+                        print(self.model.products[0].introductoryPrice?.price)
+                        
+                       // print(self.model.products[0].introductoryPrice?.subscriptionPeriod.)
+                        //print(self.model.products[1].debugDescription)
+                        //print(self.model.products[2].debugDescription)
                         
                         DispatchQueue.main.async {
+                            self.subcribeButton.isEnabled = true
+                            self.subcribeButton.alpha  = 100
+                            self.subcribeButton.isEnabled = true
+                            if self.model.products[0].introductoryPrice?.price != nil {
+                             self.subcribeButton.setTitle("Subscribe $\(self.model.products[0].introductoryPrice!.price) x 3 months.Then $\(self.model.products[0].price)/monthly", for: .normal)
+                                
+                            } else {
+                                
+                                  self.subcribeButton.setTitle("Subscribe for $\(self.model.products[0].price)/monthly", for: .normal)
+                            }
                             
-                             self.subcribeButton.setTitle("Subscribe for S\(self.model.products[0].price)/ mo", for: .normal)
                         }
                         
                        
@@ -94,6 +128,10 @@ class SubscribeViewController: UIViewController {
                     
                 }
         // Do any additional setup after loading the view.
+    }
+    @IBAction func goBack(_ sender: Any) {
+        
+       _ = navigationController?.popViewController(animated: true)
     }
     
     @IBAction func subscribe(_ sender: Any) {

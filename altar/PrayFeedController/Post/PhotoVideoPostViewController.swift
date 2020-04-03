@@ -176,7 +176,7 @@ class PhotoVideoPostViewController: UIViewController, UIImagePickerControllerDel
     @objc func postImageAndText(_ sender: Any) {
         
         
-        let accounthelper = AccountHelpers ()
+    //    let accounthelper = AccountHelpers ()
         
         
        let activityView = UIActivityIndicatorView(style: .whiteLarge)
@@ -233,7 +233,9 @@ class PhotoVideoPostViewController: UIViewController, UIImagePickerControllerDel
                     guard let currentChurchID = advengers.shared.currenUSer["churchID"] as? String else { return }
                     advengers.shared.postPrayFeed.child(currentChurchID).updateChildValues(postfeed)
                  //   advengers.shared.postPrayFeed.updateChildValues(postfeed)
-                    
+                    let postnoto1 = [key:currentChurchID]
+                                           
+                    Database.database().reference().child("Postnoti").updateChildValues(postnoto1)
                  //   accounthelper.dismissActivityIndicator()
                     NotificationCenter.default.post(name: NSNotification.Name(rawValue: "UpdateFeed"), object: nil)
                     _ = self.navigationController?.popToRootViewController(animated: true)

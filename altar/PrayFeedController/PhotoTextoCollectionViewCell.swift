@@ -237,6 +237,12 @@ class PhotoTextoCollectionViewCell: UICollectionViewCell, UIGestureRecognizerDel
                           swipeCell2.delegate = self
                           
                           addGestureRecognizer(swipeCell2)
+            
+//                        print("********************************************")
+//                        print("*************PHOTO TEXTO *****************")
+//                        print(Auth.auth().currentUser?.uid)
+//                        print(post?.userID)
+//                         print("********************************************")
 
                       }
                       
